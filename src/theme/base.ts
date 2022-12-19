@@ -4,8 +4,8 @@ import { css } from 'styled-components'
 const MEDIA_WIDTHS = {
   upToExtraSmall: 500,
   upToSmall: 600,
-  upToMedium: 960,
-  upToLarge: 1280
+  upToMedium: 955,
+  upToLarge: 956
 }
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(MEDIA_WIDTHS).reduce(
@@ -27,7 +27,7 @@ export default {
     md: 12,
     lg: 24
   },
-  gradient: 'linear-gradient(180deg, #fd9537 0%, #fd9537 76.22%)',
+  gradient: 'linear-gradient(88deg, #11c9ae, #1f6d99)',
   mediaWidth: mediaWidthTemplates,
   // css snippets
   flexColumnNoWrap: css`

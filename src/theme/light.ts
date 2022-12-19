@@ -5,20 +5,25 @@ export default {
   colors: {
     ...base.colors,
     shadow1: '#2F80ED',
-    text1: '#443e3e',
-    text2: '#fd9537',
+    text1: '#bbb',
+    text2: '#aa9b9b',
     text3: '#888D9B',
     text4: '#C3C5CB',
 
     // backgrounds / greys
-    bg0: 'rgb(244, 247, 250)',
-    bg1: '#fff',
+    bg0: '#343131',
+    bg1: '#242222',
     bg2: '#F5F3F3',
     bg3: '#EDEEF2',
     bg4: '#CED0D9',
     bg5: '#C4C4C4',
+    newbg3:'#121111',
+    newb1:'#64646444',
+    newb2:'#242222;',
     modalBG: 'rgba(0,0,0,0.3)',
     advancedBG: 'rgba(255,255,255,0.6)',
+    advancedBG2:'rgba(51, 57, 57, 0.6)',
+
 
     //primary colors
     primary1: '#fd9537',
@@ -39,7 +44,7 @@ export default {
     cardBg5: '#3D3D3D',
     primary: '#fd9537',
     secondary: '#6E84FB',
-    normal: '#000',
+    normal: '#bbb',
     inputBg: '#FFF9F0',
     strokColor: '#E1E1E1',
     navBg: '#C4C4C4'

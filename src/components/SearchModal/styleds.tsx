@@ -31,7 +31,7 @@ export const MenuItem = styled(RowBetween)`
   cursor: ${({ disabled }) => !disabled && 'pointer'};
   pointer-events: ${({ disabled }) => disabled && 'none'};
   :hover {
-    background-color: ${({ theme, disabled }) => !disabled && theme.colors.bg2};
+    background-color: ${({ theme, disabled }) => !disabled && theme.colors.newb1};
   }
   opacity: ${({ disabled, selected }) => (disabled || selected ? 0.5 : 1)};
 `
@@ -47,26 +47,26 @@ export const SearchInput = styled.input`
   border: none;
   outline: none;
   border-radius: 20px;
-  color: ${({ theme }) => theme.colors.text1};
+  color: #ccc;
   border-style: solid;
-  border: 1px solid ${({ theme }) => theme.colors.bg3};
+  border: 1px solid #706f6f;
   -webkit-appearance: none;
 
   font-size: 18px;
 
   ::placeholder {
-    color: ${({ theme }) => theme.colors.text3};
+    color: #ccc;
   }
   transition: border 100ms;
   :focus {
-    border: 1px solid ${({ theme }) => theme.colors.primary1};
+    border: 1px solid #706f6f;
     outline: none;
   }
 `
 export const Separator = styled.div`
   width: 100%;
   height: 1px;
-  background-color: ${({ theme }) => theme.colors.bg2};
+  background-color: ${({ theme }) => theme.colors.bg0};
 `
 
 export const SeparatorDark = styled.div`

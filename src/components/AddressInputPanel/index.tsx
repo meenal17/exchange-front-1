@@ -43,6 +43,7 @@ const Input = styled.input<{ error?: boolean }>`
   color: ${({ error, theme }) => (error ? theme.colors.red1 : theme.colors.primary1)};
   overflow: hidden;
   text-overflow: ellipsis;
+
   font-weight: 500;
   width: 100%;
   ::placeholder {
@@ -103,7 +104,7 @@ export default function AddressInputPanel({
               </TYPE.black>
               {address && chainId && (
                 <ExternalLink href={getEtherscanLink(chainId, name ?? address, 'address')} style={{ fontSize: '14px' }}>
-                  (View on HooScan)
+                  (View on BscScan)
                 </ExternalLink>
               )}
             </RowBetween>

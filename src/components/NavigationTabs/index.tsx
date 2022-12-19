@@ -12,7 +12,9 @@ const Tabs = styled.div`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
   border-radius: 3rem;
-  justify-content: space-evenly;
+  justify-content: center;
+
+  column-gap: 24px;
 `
 
 const activeClassName = 'ACTIVE'
@@ -23,18 +25,24 @@ const StyledNavLink = styled(NavLink).attrs({
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
   justify-content: center;
-  height: 3rem;
+  height: 2.4rem;
   border-radius: 3rem;
   outline: none;
   cursor: pointer;
   text-decoration: none;
+  padding:2px 40px;
+  margin:5px;
   color: ${({ theme }) => theme.colors.text3};
-  font-size: 20px;
+  font-size: 22px;
+  font-weight:bold;
 
   &.${activeClassName} {
-    border-radius: 12px;
-    font-weight: 500;
-    color: ${({ theme }) => theme.colors.text1};
+    border-radius: 2rem;
+    font-weight: bold;
+    background:linear-gradient(88deg,#11c9ae,#1f6d99);
+    color:#fff;
+    
+    // color: ${({ theme }) => theme.colors.text2};
   }
 
   :hover,
@@ -54,7 +62,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
 
 export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
   return (
-    <Tabs style={{ marginBottom: '20px' }}>
+    <Tabs style={{ marginBottom: '20px', background:'#1a1a1a',    boxShadow: '0px 0 8px rgb(68 235 214)'}}>
       <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
         <TranslatedText translationId={268}>Swap</TranslatedText>
       </StyledNavLink>

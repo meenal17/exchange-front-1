@@ -60,7 +60,7 @@ const MenuFlyout = styled.span`
   font-size: 1rem;
   position: absolute;
   top: 3rem;
-  right: 0rem;
+  right: -10rem;
   z-index: 100;
 `
 

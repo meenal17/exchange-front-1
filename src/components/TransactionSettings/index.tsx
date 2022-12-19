@@ -28,14 +28,14 @@ const FancyButton = styled.button`
   font-size: 12px;
   width: auto;
   min-width: 3rem;
-  border: 1px solid ${({ theme }) => theme.colors.bg3};
+  border: 1px solid #00829a;
   outline: none;
-  background: ${({ theme }) => theme.colors.bg1};
+  background:linear-gradient(88deg,#11c9ae,#1f6d99);
   :hover {
-    border: 1px solid ${({ theme }) => theme.colors.bg4};
+    border: 1px solid #00829a;
   }
   :focus {
-    border: 1px solid ${({ theme }) => theme.colors.primary1};
+    border: 1px solid #00829a;
   }
 `
 
@@ -49,7 +49,7 @@ const Option = styled(FancyButton)<{ active: boolean }>`
 `
 
 const Input = styled.input`
-  background: ${({ theme }) => theme.colors.bg1};
+  background: transparent;
   font-size: 16px;
   width: auto;
   outline: none;
@@ -57,7 +57,7 @@ const Input = styled.input`
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-  color: ${({ theme, color }) => (color === 'red' ? theme.colors.red1 : theme.colors.text1)};
+  color: ${({ theme, color }) => (color === 'red' ? theme.colors.red1 : theme.colors.buttonText)};
   text-align: right;
 `
 

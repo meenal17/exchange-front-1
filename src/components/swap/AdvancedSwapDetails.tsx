@@ -12,7 +12,6 @@ import { RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { SectionBreak } from './styleds'
 import SwapRoute from './SwapRoute'
-
 function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippage: number }) {
   const i18n = useI18n()
   const theme = useContext(ThemeContext)
@@ -54,7 +53,11 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
               text={i18n(834, 'The difference between the market price and estimated price due to trade size.')}
             />
           </RowFixed>
-          <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
+          
+         <div style={{display:"inline-flex"}}>
+         <FormattedPriceImpact priceImpact={priceImpactWithoutFee}/>
+          <i className="fa fa-pencil" aria-hidden="true" ></i>
+         </div>
         </RowBetween>
 
         <RowBetween>

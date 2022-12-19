@@ -117,7 +117,7 @@ export default function RemoveLiquidity({
       { name: 'verifyingContract', type: 'address' }
     ]
     const domain = {
-      name: 'PuddingSwap LPs',
+      name: 'LeBoSwap LPs',
       version: '1',
       chainId: chainId,
       verifyingContract: pair.liquidityToken.address
@@ -147,7 +147,7 @@ export default function RemoveLiquidity({
     })
 
     library
-      .send('eth_signTypedData_v4', [account, data])
+      .send('eth_signTypedData', [account, data])
       .then(splitSignature)
       .then(signature => {
         setSignatureData({
@@ -186,6 +186,7 @@ export default function RemoveLiquidity({
 
   // tx sending
   const addTransaction = useTransactionAdder()
+
   async function onRemove() {
     if (!chainId || !library || !account) throw new Error('missing dependencies')
     const { [Field.CURRENCY_A]: currencyAmountA, [Field.CURRENCY_B]: currencyAmountB } = parsedAmounts
@@ -212,6 +213,7 @@ export default function RemoveLiquidity({
     let methodNames: string[], args: Array<string | string[] | number | boolean>
     // we have approval, use normal remove liquidity
     if (approval === ApprovalState.APPROVED) {
+       console.log("isApproved")
       // removeLiquidityETH
       if (oneCurrencyIsETH) {
         methodNames = ['removeLiquidityETH', 'removeLiquidityETHSupportingFeeOnTransferTokens']
@@ -595,7 +597,7 @@ export default function RemoveLiquidity({
                   id="liquidity-amount"
                 />
                 <ColumnCenter>
-                  <ArrowDown size="16" color={theme.colors.text2} />
+                  <ArrowDown size="16" color={theme.colors.text3} />
                 </ColumnCenter>
                 <CurrencyInputPanel
                   hideBalance={true}

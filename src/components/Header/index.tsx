@@ -5,7 +5,6 @@ import { isMobile } from 'react-device-detect'
 import styled from 'styled-components'
 import Settings from '../Settings'
 import useHtPrice from '../../hooks/useHtPrice'
-import LngSwithForWeb from './LngSwithForWeb'
 import Nav from './Nav'
 import { useIsDarkMode } from '../../state/user/hooks'
 import Logo from './Logo'
@@ -40,7 +39,18 @@ const Menu = styled.div`
       display: block;
     }
   `};
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+  display: block;
+  width: 30px;
+  margin-right: 10px;
+  img {
+    width: 100%;
+    display: block;
+  }
+  `};
+  
 `
+
 const HeaderElement = styled.div`
   display: flex;
   align-items: center;
@@ -122,30 +132,41 @@ export default function Header() {
           <Menu onClick={handlePresentMobileMenu}>
             <img src={menuIcon} alt="menu" />
           </Menu>
-          <Title href="https://puddingswap.finance/">
+          <Title href="#">
             <Logo isDark={isDark} />
           </Title>
-          {!isMobile && <Nav />}
+         
+       
         </HeaderElement>
+     
+
+
         {isMobile && (
           <HeaderControlsMobile>
-            <AccountButton />
             <Settings />
+            <AccountButton />
+            
           </HeaderControlsMobile>
         )}
-        {!isMobile && (
+       
+         
+        
+        {!isMobile   && (
           <HeaderControls>
+               {!isMobile && <Nav />}
             <HeaderElement>
               <StyledAccountButtonWrapper>
                 <Web3Status />
                 {!isZero(pippiPrice) && <Price className="number price">1PUD=${pippiPrice.toFixed(3)}</Price>}
-                <AccountButton />
                 <Settings />
-                <LngSwithForWeb />
+                <AccountButton />
+              
+            
               </StyledAccountButtonWrapper>
             </HeaderElement>
           </HeaderControls>
         )}
+         
         <MobileMenu onDismiss={handleDismissMobileMenu} visible={mobileMenu} />
       </StyledTopBarInner>
     </HeaderFrame>

@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
-import userlogo from '../../assets/images/user-logo-gray.png'
 import useHTPrice from '../../hooks/useHtPrice'
 import useTokenBalance from '../../hooks/useTokenBalance'
 import { getBalanceNumber } from '../../utils/formatBalance'
@@ -44,11 +43,11 @@ const AccountButton: React.FC<{}> = () => {
       ) : (
         <AccountCn>
           <AccountInner>
-            <Account>
-              <img src={require('../../assets/images/link.png')} alt="" className="link" />
-              <span className="text">{shortenAddress(account)}</span>
-              <img src={userlogo} alt="" className="user-account" />
-            </Account>
+            <div className="accountbutton">
+              <img src="wallet.png" alt="" className="link" width={21} />
+              <span className="text customtextstyle"  style={{fontSize:'17px'}}>{shortenAddress(account)}</span>
+            
+            </div>
           </AccountInner>
           <Modal className="modal">
             <Content>
@@ -59,13 +58,11 @@ const AccountButton: React.FC<{}> = () => {
               </div>
             </Content>
             <Content>
-              <div className="title">
-                <TranslatedText translationId={226}>Your Pudding Balance</TranslatedText>
-              </div>
+             
               <div className="money">{getBalanceNumber(sushiBalance)}</div>
               <div className="title usdt">=${getBalanceNumber(sushiBalance) * pippiPrice}</div>
-              <Link href={`https://www.hooscan.com/address/address=${account}`}>
-                <TranslatedText translationId={250}>View on HscScan</TranslatedText>
+              <Link href={`https://testnet.bscscan.com/address/address=${account}`}>
+                <TranslatedText translationId={250}>View on BscScan</TranslatedText>
               </Link>
             </Content>
             <div className="flex">
@@ -158,29 +155,29 @@ const AccountInner = styled.div`
   left: 0;
   width: 100%;
 `
-const Account = styled.div`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  border-radius: 100px;
-  padding: 0 0 0 12px;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  justify-items: center;
-  cursor: pointer;
-  background: rgb(244, 247, 250);
-  .user-account {
-    width: 40px;
-  }
-  .text {
-    width: 95px;
-  }
-  .link {
-    width: 15px;
-  }
-`
+// const Account = styled.div`
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   border-radius: 100px;
+//   padding: 0 0 0 12px;
+//   display: flex;
+//   align-items: center;
+//   align-content: center;
+//   justify-content: space-between;
+//   justify-items: center;
+//   cursor: pointer;
+//   background: rgb(244, 247, 250);
+//   .user-account {
+//     width: 40px;
+//   }
+//   .text {
+//     width: 95px;
+//   }
+//   .link {
+//     width: 15px;
+//   }
+// `
 const StyledAccountButton = styled.div`
   button {
     :hover {

@@ -285,7 +285,7 @@ export default function WalletModal({
           <ContentWrapper>
             {error instanceof UnsupportedChainIdError ? (
               <h5>
-                Please connect to Hoo Chain network.
+                Please connect to BSC Chain network.
               </h5>
             ) : (
               'Error connecting. Try refreshing the page.'

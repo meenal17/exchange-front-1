@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 200px;
   width: 100%;
   z-index: 0;
-  background: url(${Img}) center / 100% no-repeat;
+  // background: url(${Img}) center / 100% no-repeat;
 `
 
 export default function RightDecoration() {

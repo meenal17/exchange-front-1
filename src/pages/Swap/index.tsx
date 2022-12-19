@@ -130,8 +130,8 @@ export default function Swap() {
         [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount
       }
 
-  console.log('currencies[Field.INPUT]', currencies[Field.INPUT])
-  console.log('currencies[Field.OUTPUT]', currencies[Field.OUTPUT])
+  // console.log('currencies[Field.INPUT]', currencies[Field.INPUT])
+  // console.log('currencies[Field.OUTPUT]', currencies[Field.OUTPUT])
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
   const isValid =
     !swapInputError || currencies[Field.INPUT]?.name !== 'SAME' || currencies[Field.OUTPUT]?.name !== 'SAME'
@@ -315,8 +315,9 @@ export default function Swap() {
         transactionType={syrupTransactionType}
         onConfirm={handleConfirmSyrupWarning}
       />
+      <SwapPoolTabs active={'swap'} />
       <AppBody>
-        <SwapPoolTabs active={'swap'} />
+        
         <Wrapper id="swap-page">
           <ConfirmSwapModal
             isOpen={showConfirm}
@@ -347,7 +348,12 @@ export default function Swap() {
             <AutoColumn justify="space-between">
               <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
                 <ArrowWrapper clickable>
-                  <ArrowDown
+                  <img width="50" src="arrowswap.png"
+                   onClick={() => {
+                    setApprovalSubmitted(false) // reset 2 step UI for approvals
+                    onSwitchTokens()
+                  }}/>
+                  {/* <ArrowDown
                     size="16"
                     onClick={() => {
                       setApprovalSubmitted(false) // reset 2 step UI for approvals
@@ -356,7 +362,7 @@ export default function Swap() {
                     color={
                       currencies[Field.INPUT] && currencies[Field.OUTPUT] ? theme.colors.primary1 : theme.colors.text2
                     }
-                  />
+                  /> */}
                 </ArrowWrapper>
                 {recipient === null && !showWrap && isExpertMode ? (
                   <LinkStyledButton id="add-recipient-button" onClick={() => onChangeRecipient('')}>
@@ -380,7 +386,7 @@ export default function Swap() {
               <>
                 <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
                   <ArrowWrapper clickable={false}>
-                    <ArrowDown size="16" color={theme.colors.text2} />
+                    <ArrowDown size="16" style={{color:'red'}} />
                   </ArrowWrapper>
                   <LinkStyledButton id="remove-recipient-button" onClick={() => onChangeRecipient(null)}>
                     - Remove send

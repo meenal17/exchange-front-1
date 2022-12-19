@@ -5,30 +5,23 @@ import TranslatedText from '../TranslatedText'
 const Nav: React.FC = () => {
   return (
     <StyledNav>
-      <StyledAbsoluteLink href="https://puddingswap.finance/farms">
-        <TranslatedText translationId={198}>Farm</TranslatedText>
+      <StyledAbsoluteLink href="#">
+        <TranslatedText translationId={198}>Mrarkets</TranslatedText>
       </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://puddingswap.finance/staking">
-        <TranslatedText translationId={200}>Staking</TranslatedText>
+      <StyledAbsoluteLink href="#">
+        <TranslatedText translationId={200}>Swap</TranslatedText>
       </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://puddingswap.finance/pudvault">
-        <TranslatedText translationId="nav-pud-vault">LockVault</TranslatedText>
+      <StyledAbsoluteLink href="#">
+        <TranslatedText translationId="nav-pud-vault">Bridge</TranslatedText>
       </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://puddingswap.finance/ePud">
-        <TranslatedText translationId={218}>ePUD Pools</TranslatedText>
+      <StyledAbsoluteLink href="#">
+        <TranslatedText translationId={218}>Staking</TranslatedText>
       </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://puddingswap.finance/chefnft">NFT</StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://exchange.puddingswap.finance/" className="active">
-        <TranslatedText translationId={202}>Exchange</TranslatedText>
-      </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://puddingswap.finance/ido" className="active">
-        IDO
-      </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://info.puddingswap.finance">
-        <TranslatedText translationId={348}>Analytics</TranslatedText>
-      </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="https://voting.puddingswap.finance">
-        <TranslatedText translationId={370}>Voting</TranslatedText>
+      <StyledAbsoluteLink href="#"> <TranslatedText translationId={219}>Farming</TranslatedText></StyledAbsoluteLink>
+     
+      <StyledAbsoluteLink href="#">
+      <TranslatedText translationId={220}>Liquidity</TranslatedText>
+        
       </StyledAbsoluteLink>
     </StyledNav>
   )
@@ -39,6 +32,13 @@ const StyledNav = styled.nav`
   display: flex;
   font-size: 14px;
   font-weight: 700;
+  padding-left: 25px;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+  display: none;
+  width: 30px;
+  margin-right: 10px;
+  `};
+  
 `
 
 const StyledAbsoluteLink = styled.a`

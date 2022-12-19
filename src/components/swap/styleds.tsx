@@ -47,7 +47,8 @@ export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
 export const StyledBalanceMaxMini = styled.button`
   height: 22px;
   width: 22px;
-  background-color: ${({ theme }) => theme.colors.bg2};
+  // background-color: ${({ theme }) => theme.colors.bg2};
+  background:transparent;
   border: none;
   border-radius: 50%;
   padding: 0.2rem;
@@ -55,14 +56,16 @@ export const StyledBalanceMaxMini = styled.button`
   font-weight: 400;
   margin-left: 0.4rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.text2};
+  // color: ${({ theme }) => theme.colors.text2};
+  color:#ffad3a;
   display: flex;
   justify-content: center;
   align-items: center;
   float: right;
 
   :hover {
-    background-color: ${({ theme }) => theme.colors.bg3};
+    // background-color: ${({ theme }) => theme.colors.bg3};
+    background: transparent
   }
   :focus {
     background-color: ${({ theme }) => theme.colors.bg3};

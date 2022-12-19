@@ -182,7 +182,7 @@ export default function Updater(): null {
               })
             )
 
-            console.log('Success to fetch multicall chunk', chunk, chainId)
+            // console.log('Success to fetch multicall chunk', chunk, chainId)
           })
           .catch((error: any) => {
             if (error instanceof CancelledError) {

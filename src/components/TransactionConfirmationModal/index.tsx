@@ -22,7 +22,8 @@ const Section = styled(AutoColumn)`
 `
 
 const BottomSection = styled(Section)`
-  background-color: ${({ theme }) => theme.colors.bg2};
+  // background-color: ${({ theme }) => theme.colors.bg2};
+  background:#242222;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 `
@@ -94,7 +95,7 @@ function TransactionSubmittedContent({
           {chainId && hash && (
             <ExternalLink href={getEtherscanLink(chainId, hash, 'transaction')}>
               <Text fontWeight={500} fontSize={14} color={theme.colors.primary1}>
-                View on HooScan
+                View on BscScan
               </Text>
             </ExternalLink>
           )}

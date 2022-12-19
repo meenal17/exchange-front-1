@@ -1,9 +1,8 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 import TranslatedText from '../TranslatedText'
-import LngSwith from '../Header/LngSwith'
 import useHTPrice from '../../hooks/useHtPrice'
 import { useActiveWeb3React } from '../../hooks'
 import TopDecoration from './TopDecoration'
@@ -31,54 +30,45 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           <TopDecoration />
           <BottomDecoration />
           <Cn>
-            <StyledAbsoluteLink href="https://puddingswap.finance">
-              <TranslatedText translationId={130}>Home</TranslatedText>
+            <StyledAbsoluteLink href="#">
+            <img src="LeBo.png" alt="LeBo" />
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
-            <StyledAbsoluteLink href="https://puddingswap.finance/farms">
-              <TranslatedText translationId={198}>Farm</TranslatedText>
+            <StyledAbsoluteLink href="#">
+            <TranslatedText translationId={198}>Markets</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
-            <StyledAbsoluteLink href="https://puddingswap.finance/staking">
-              <TranslatedText translationId={200}>Staking</TranslatedText>
+            <StyledAbsoluteLink href="#">
+            <TranslatedText translationId={200}>Swap</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
-            <StyledAbsoluteLink href="https://puddingswap.finance/pudvault">
-              <TranslatedText translationId="nav-pud-vault">LockVault</TranslatedText>
+            <StyledAbsoluteLink href="#">
+            <TranslatedText translationId="nav-pud-vault">Bridge</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
-            <StyledAbsoluteLink href="https://puddingswap.finance/ePUD">
-              <TranslatedText translationId={218}>ePUD Pools</TranslatedText>
+            <StyledAbsoluteLink href="#">
+            <TranslatedText translationId={218}>Staking</TranslatedText>
+            </StyledAbsoluteLink>
+          </Cn>
+         
+          
+          <Cn>
+            <StyledAbsoluteLink href="#">
+              <TranslatedText translationId={348}>Farming</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
-            <StyledAbsoluteLink href="https://puddingswap.finance/chefnft">NFT</StyledAbsoluteLink>
-          </Cn>
-          <Cn>
-            <StyledLink className="active" to="/">
-              <TranslatedText translationId={202}>Exchange</TranslatedText>
-            </StyledLink>
-          </Cn>
-          <Cn>
-            <StyledAbsoluteLink href="https://puddingswap.finance/ido">IDO</StyledAbsoluteLink>
-          </Cn>
-          <Cn>
-            <StyledAbsoluteLink href="https://info.puddingswap.finance">
-              <TranslatedText translationId={348}>Analytics</TranslatedText>
-            </StyledAbsoluteLink>
-          </Cn>
-          <Cn>
-            <StyledAbsoluteLink href="https://voting.puddingswap.finance">
-              <TranslatedText translationId={370}>Voting</TranslatedText>
+            <StyledAbsoluteLink href="#">
+              <TranslatedText translationId={370}>Liquidity</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Bottom>
             {account && !isZero(pippiPrice) && <Price className="number">1PUD=${pippiPrice.toFixed(3)}</Price>}
-            <LngSwith className="mobile-lng-swith"></LngSwith>
+           
           </Bottom>
         </StyledMobileMenu>
       </StyledMobileMenuWrapper>
@@ -120,7 +110,8 @@ const StyledBackdrop = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: ${props => props.theme.colors.bg5};
+  // background-color: ${props => props.theme.colors.bg5};
+  backdrop-filter: blur(3px);
 `
 
 const StyledMobileMenuWrapper = styled.div`
@@ -153,18 +144,18 @@ const StyledMobileMenu = styled.div`
   padding-top: 24px;
 `
 
-const StyledLink = styled(NavLink)`
-  position: relative;
-  box-sizing: border-box;
-  color: rgb(127, 134, 143);
-  font-size: 16px;
-  font-weight: 700;
-  text-align: left;
-  text-decoration: none;
-  &.active {
-    color: ${props => props.theme.colors.red3};
-  }
-`
+// const StyledLink = styled(NavLink)`
+//   position: relative;
+//   box-sizing: border-box;
+//   color: rgb(127, 134, 143);
+//   font-size: 16px;
+//   font-weight: 700;
+//   text-align: left;
+//   text-decoration: none;
+//   &.active {
+//     color: ${props => props.theme.colors.red3};
+//   }
+// `
 const StyledAbsoluteLink = styled.a`
   position: relative;
   color: rgb(127, 134, 143);

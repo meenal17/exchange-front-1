@@ -44,7 +44,62 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     body {
       min-height: 100vh;
-      background-position: 0 -30vh;
       background-repeat: no-repeat;
+      background-image:url(./background.png);
+      background-size:cover;
     }
+    .currency_scroller::-webkit-scrollbar {
+      width: 3px;
+    }
+     
+    .currency_scroller::-webkit-scrollbar-track {
+      background:blue;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+     
+    .currency_scroller::-webkit-scrollbar-thumb {
+      background-color: red;
+      outline: 1px solid slategrey;
+    }
+
+   @media screen and (max-width:480px){
+    nav {
+      display:none!important
+    }
+   }
+   .accountbutton{
+    background: #1D1F20;
+    position: relative;
+    border-radius:
+    borderWidth:3px;
+    border-radius:3px;
+    padding:10px;
+    display: inline-flex;
+    gap:3px;
+  }
+  .accountbutton:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * 3px);
+    left: calc(-1 * 3px);
+    height: calc(100% + 3px * 2);
+    width: calc(100% + 3px * 2);
+    background: linear-gradient(92deg,#ebc1a3,#d890a2,#be7d8d,#f5c1a9,#f0c1a6);
+    border-radius: calc(2 * 3px);
+    z-index: -1;
+    background-size: 300% 300%;
+  }
+  .seetingstyle{
+    color: silver;
+    font-size: 34px;
+    font-weight:bold;
+  }
+  .customtextstyle{
+    background: linear-gradient(92deg,#ebc1a3,#d890a2,#f5c1a9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+  }
+  
 `
+

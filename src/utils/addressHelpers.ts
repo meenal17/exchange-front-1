@@ -1,22 +1,19 @@
 export const contractAddresses = {
-  sushi: {
-    70: '0xbE8D16084841875a1f398E6C3eC00bBfcbFa571b',
-    170: '0x96D808A323d9eB1De23F7d82F83574e6969c5591',
-  },
   weth: {
-    70: '0x3EFF9D389D13D6352bfB498BCF616EF9b1BEaC87',
-    170: '0x96D808A323d9eB1De23F7d82F83574e6969c5591',
+    56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    97: '0xae13d989dac2f0debff460ac112a837c89baa7cd'
   }
 }
 
 const multicall = {
-  170: '0xbE8D16084841875a1f398E6C3eC00bBfcbFa571b',
-  70: '0x03fF6895aB1Fdff998665E34368B69a032F50578',
+  97: '0x8F3273Fb89B075b1645095ABaC6ed17B2d4Bc576',
+  56: '0xfF6FD90A470Aaa0c1B8A54681746b07AcdFedc9B'
 }
-const chainId = 70
+
+const chainId =97
 
 interface AddressProps {
-  70: string // Address of the contract
+  97: string // Address of the contract
 }
 export const getAddress = (obj: AddressProps) => {
   return obj[chainId] ? obj[chainId] : obj
@@ -27,5 +24,5 @@ export const getMulticallAddress = () => {
 }
 
 export const getPipiAddress = () => {
-  return getAddress(contractAddresses.sushi)
+  return getAddress(contractAddresses.weth)
 }

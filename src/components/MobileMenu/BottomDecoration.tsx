@@ -9,7 +9,7 @@ const Container = styled.div`
   left: 0;
   z-index: 0;
   height: 200px;
-  background: url(${Img}) center / 100% no-repeat;
+  // background: url(${Img}) center / 100% no-repeat;
 `
 
 export default function BottomDecoration() {

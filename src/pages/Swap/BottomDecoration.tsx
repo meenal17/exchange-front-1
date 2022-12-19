@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ReactComponent as BottomImg } from './Bottom.svg'
+// import { ReactComponent as BottomImg } from './Bottom.svg'
 
 const Container = styled.div`
   position: absolute;
@@ -13,7 +13,7 @@ const Container = styled.div`
 export default function BottomDecoration() {
   return (
     <Container>
-      <BottomImg />
+      {/* <BottomImg /> */}
     </Container>
   )
 }

@@ -19,7 +19,7 @@ const Base = styled(RebassButton)<{
   border-radius: 20px;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   outline: none;
-  border: 1px solid transparent;
+  // border: 1px solid transparent;
   color: white;
   text-decoration: none;
   display: flex;
@@ -48,11 +48,11 @@ export const ButtonPrimary = styled(Base)`
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.colors.primary1)};
   }
   &:disabled {
-    background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.gradient : theme.colors.bg3)};
+    background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.gradient : theme.colors.modalBG)};
     color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.colors.text3)};
-    cursor: auto;
+    cursor: not-allowed;
     box-shadow: none;
-    border: 1px solid transparent;
+    // border: 1px solid transparent;
     outline: none;
     opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.7' : '1')};
   }
@@ -80,7 +80,7 @@ export const ButtonLight = styled(Base)`
       cursor: auto;
       background-color: ${({ theme }) => theme.colors.primary5};
       box-shadow: none;
-      border: 1px solid transparent;
+      // border: 1px solid transparent;
       outline: none;
     }
   }
