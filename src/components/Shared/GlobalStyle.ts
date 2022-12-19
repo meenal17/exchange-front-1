@@ -45,8 +45,14 @@ export const ThemedGlobalStyle = createGlobalStyle`
     body {
       min-height: 100vh;
       background-repeat: no-repeat;
+      background-image:url(./bg_hero.png);
+      background-size:cover;
+      ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+      min-height: 100vh;
+      background-repeat: no-repeat;
       background-image:url(./background.png);
       background-size:cover;
+      `};
     }
     .currency_scroller::-webkit-scrollbar {
       width: 3px;

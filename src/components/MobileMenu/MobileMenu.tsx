@@ -36,7 +36,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
-            <TranslatedText translationId={198}>Markets</TranslatedText>
+            <img src="Vector.png" alt="" />
+            <TranslatedText translationId={198}>
+               Markets</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
