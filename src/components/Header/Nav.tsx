@@ -1,21 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import TranslatedText from '../TranslatedText'
-
+import { Link } from "react-router-dom";
 const Nav: React.FC = () => {
   return (
     <StyledNav>
       <StyledAbsoluteLink href="#">
      <div style={{display:"flex" ,gap:"3px"}}>
      <img src="Vector.png" alt="" />
-        <TranslatedText translationId={198}>Mrarkets</TranslatedText>
+        <TranslatedText translationId={198}>Markets</TranslatedText>
      </div>
       </StyledAbsoluteLink>
-      <StyledAbsoluteLink href="#">
+      <StyledAbsoluteLink >
+        <Link to="/swap">
       <div style={{display:"flex" ,gap:"3px"}}>
         <img src="Vector 2.png" alt="" />
         <TranslatedText translationId={200}>Swap</TranslatedText>
         </div>
+        </Link>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink href="#">
       <div style={{display:"flex" ,gap:"3px"}}>

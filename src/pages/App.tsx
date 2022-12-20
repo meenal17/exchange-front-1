@@ -5,19 +5,20 @@ import GoogleAnalyticsReporter from '../components/analytics/GoogleAnalyticsRepo
 import Header from '../components/Header'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
-import AddLiquidity from './AddLiquidity'
+import AddLiquidity from './AddLiquidity_new'
 import {
   RedirectDuplicateTokenIds,
   RedirectOldAddLiquidityPathStructure,
   RedirectToAddLiquidity
-} from './AddLiquidity/redirects'
+} from './AddLiquidity_new/redirects'
 import MigrateV1 from './MigrateV1'
 import MigrateV1Exchange from './MigrateV1/MigrateV1Exchange'
 import RemoveV1Exchange from './MigrateV1/RemoveV1Exchange'
-import Pool from './Pool'
+import Pool from './Pool_new'
 import PoolFinder from './PoolFinder'
 // import Farm from './Farm'
-import RemoveLiquidity from './RemoveLiquidity'
+import Home from "./Home"
+import RemoveLiquidity from './RemoveLiquidity_new'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
@@ -81,6 +82,7 @@ export default function App() {
             <Popups />
             <Web3ReactManager>
               <Switch>
+              <Route exact strict path="/" component={Home} />
                 <Route exact strict path="/swap" component={Swap} />
                 {/*<Route exact strict path="/farm" component={Farm} />*/}
                 <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />

@@ -10,7 +10,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ isDark }) => {
   return (
     <StyledLogo>
-      <img src="LeBo.png" alt="logo" width={80}/>
+      <img src="lebo_logo.png" alt="logo" width={80}/>
     </StyledLogo>
   )
 }
