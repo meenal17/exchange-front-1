@@ -424,6 +424,7 @@ export default function Swap() {
                 </AutoColumn>
               </Card>
             )}
+             <AdvancedSwapDetailsDropdown trade={trade} />
           </AutoColumn>
           <BottomGrouping>
             {!account ? (
@@ -520,7 +521,7 @@ export default function Swap() {
         {!trade && <BottomDecoration />}
         <RightDecoration />
       </AppBody>
-      <AdvancedSwapDetailsDropdown trade={trade} />
+     
     </>
   )
 }

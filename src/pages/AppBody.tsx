@@ -7,9 +7,10 @@ export const BodyWrapper = styled.div`
     width: 100%;
     max-width: 420px;
     // background: #242222;
-    box-shadow: 0px 2px 10px rgb(68 235 214);
-    border-radius: 21px;
+    box-shadow: 0px 2px 10px rgb(82 220 174);
+    border-radius: 9px;
     padding: 1rem
+    border: 1px solid #6a7c76;
 `
 
 export const Container = styled.div`

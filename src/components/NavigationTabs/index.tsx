@@ -11,7 +11,7 @@ import TranslatedText from '../TranslatedText'
 const Tabs = styled.div`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
-  border-radius: 3rem;
+  border-radius: 15px;
   justify-content: center;
 
   column-gap: 24px;
@@ -26,7 +26,7 @@ const StyledNavLink = styled(NavLink).attrs({
   align-items: center;
   justify-content: center;
   height: 2.4rem;
-  border-radius: 3rem;
+  border-radius: 15px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
@@ -37,10 +37,10 @@ const StyledNavLink = styled(NavLink).attrs({
   font-weight:bold;
 
   &.${activeClassName} {
-    border-radius: 2rem;
+    border-radius: 15px;
     font-weight: bold;
-    background:linear-gradient(88deg,#11c9ae,#1f6d99);
-    color:#fff;
+    background:linear-gradient(88deg,#0bc496,#1f6d99);
+    color:#c6cee1;
     
     // color: ${({ theme }) => theme.colors.text2};
   }
