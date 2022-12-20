@@ -31,46 +31,48 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           <BottomDecoration />
           <Cn>
             <StyledAbsoluteLink href="#">
-            <img src="LeBo.png" alt="LeBo" />
+              <img src="LeBo.png" alt="LeBo" />
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
-            <img src="Vector.png" alt="" />
-            <TranslatedText translationId={198}>
-               Markets</TranslatedText>
+              <img src="Vector.png" alt="" />
+              <TranslatedText translationId={198}>Markets</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
-            <TranslatedText translationId={200}>Swap</TranslatedText>
+              <img src="Vector 2.png" alt="" />
+              <TranslatedText translationId={200}>Swap</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
-            <TranslatedText translationId="nav-pud-vault">Bridge</TranslatedText>
+              <img src="bridge.png" />
+              <TranslatedText translationId="nav-pud-vault">Bridge</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
-            <TranslatedText translationId={218}>Staking</TranslatedText>
+              <img src="staking.png" alt="" />
+              <TranslatedText translationId={218}>Staking</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
-         
-          
+
           <Cn>
             <StyledAbsoluteLink href="#">
+              <img src="farming.png" alt="" />
               <TranslatedText translationId={348}>Farming</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
+              <img src="liquidity.png" alt="" />
               <TranslatedText translationId={370}>Liquidity</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Bottom>
             {account && !isZero(pippiPrice) && <Price className="number">1PUD=${pippiPrice.toFixed(3)}</Price>}
-           
           </Bottom>
         </StyledMobileMenu>
       </StyledMobileMenuWrapper>
@@ -161,6 +163,7 @@ const StyledMobileMenu = styled.div`
 const StyledAbsoluteLink = styled.a`
   position: relative;
   color: rgb(127, 134, 143);
+  font-size:16px;
   font-weight: 700;
   text-decoration: none;
   &:hover {

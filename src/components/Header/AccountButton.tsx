@@ -37,9 +37,11 @@ const AccountButton: React.FC<{}> = () => {
   return (
     <StyledAccountButton>
       {!account ? (
+         <div className="accountbutton">
         <Button onClick={toggleWalletModal}>
           <TranslatedText translationId={204}>Connect Wallet</TranslatedText>
         </Button>
+        </div>
       ) : (
         <AccountCn>
           <AccountInner>
@@ -78,21 +80,25 @@ const AccountButton: React.FC<{}> = () => {
 }
 const Button = styled.div`
   align-items: center;
-  background: ${props => props.theme.colors.primary};
+  background:transparent;
+  // background: ${props => props.theme.colors.primary};
   border-radius: 100px;
   color: #fff;
   cursor: pointer;
   display: flex;
-  font-size: 14px;
-  height: 36px;
+  // font-size: 14px;
+  // height: 36px;
   font-weight: 700;
   justify-content: center;
   outline: none;
-  padding-left: 16px;
-  padding-right: 16px;
+  // padding-left: 16px;
+  // padding-right: 16px;
   width: 100%;
+  background: linear-gradient(92deg,#ebc1a3,#d890a2,#f5c1a9);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
   &:hover {
-    background-color: ${props => props.theme.colors.primary};
+    // background-color: ${props => props.theme.colors.primary};
     box-shadow: 0px 4px 4px rgb(0 0 0 / 0.2);
   }
 `
