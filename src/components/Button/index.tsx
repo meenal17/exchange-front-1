@@ -106,22 +106,24 @@ export const ButtonGray = styled(Base)`
 `
 
 export const ButtonSecondary = styled(Base)`
-  background-color: ${({ theme }) => theme.colors.primary5};
-  color: ${({ theme }) => theme.colors.primaryText1};
-  font-size: 16px;
+background: linear-gradient(88deg,#0bc496,#1f6d99);
+  color: ${({ theme }) => theme.colors.buttonText};
+  font-size: 18px;
+  font-weight:bold;
   border-radius: 8px;
-  padding: ${({ padding }) => (padding ? padding : '10px')};
+  padding: 4px 2px;
+  // padding: ${({ padding }) => (padding ? padding : '10px')};
 
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.colors.primary4};
-    background-color: ${({ theme }) => theme.colors.primary4};
+    background: linear-gradient(88deg,#0bc496,#1f6d99);;
   }
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary4};
+    background: linear-gradient(88deg,#0bc496,#1f6d99);
   }
   &:active {
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.colors.primary4};
-    background-color: ${({ theme }) => theme.colors.primary4};
+    background: linear-gradient(88deg,#0bc496,#1f6d99);
   }
   &:disabled {
     background-color: ${({ theme }) => theme.colors.primary5};
@@ -171,6 +173,10 @@ export const ButtonOutlined = styled(Base)`
     cursor: auto;
   }
 `
+
+
+
+
 
 export const ButtonEmpty = styled(Base)`
   background-color: transparent;

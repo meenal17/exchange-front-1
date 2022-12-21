@@ -54,6 +54,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
       background-size:cover;
       `};
     }
+    
+  
     .currency_scroller::-webkit-scrollbar {
       width: 3px;
     }
@@ -106,6 +108,15 @@ export const ThemedGlobalStyle = createGlobalStyle`
     -webkit-text-fill-color: transparent;
     font-weight: bolder;
   }
-  
+
+ .poolcardsd{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bolder;
+  color: #e5e6e6;
+  border-bottom: 1px solid grey;
+  padding: 0px 10px 10px;
+}
+
 `
 

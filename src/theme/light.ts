@@ -23,6 +23,7 @@ export default {
     modalBG: 'rgba(0,0,0,0.3)',
     advancedBG: 'rgba(255,255,255,0.6)',
     advancedBG2:'rgba(51, 57, 57, 0.6)',
+   
 
 
     //primary colors

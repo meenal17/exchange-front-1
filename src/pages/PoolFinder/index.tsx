@@ -17,7 +17,7 @@ import { useTokenBalance } from '../../state/wallet/hooks'
 import { StyledInternalLink } from '../../components/Shared'
 import { currencyId } from '../../utils/currencyId'
 import AppBody from '../AppBody'
-import { Dots } from '../Pool/styleds'
+import { Dots } from '../Pool_new/styleds'
 import TranslatedText from '../../components/TranslatedText'
 
 enum Fields {
@@ -144,7 +144,7 @@ export default function PoolFinder() {
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">You don’t have liquidity in this pool yet.</Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                    <Text textAlign="center">
+                    <Text textAlign="center" color="red">
                       <TranslatedText translationId={202}>Add Liquidity</TranslatedText>
                     </Text>
                   </StyledInternalLink>

@@ -40,10 +40,13 @@ const Nav: React.FC = () => {
        </StyledAbsoluteLink>
      
       <StyledAbsoluteLink href="#">
+      <Link to="/add/ETH">
+      
       <div style={{display:"flex" ,gap:"3px"}}>
       <img src="liquidity.png" alt=""/>
       <TranslatedText translationId={220}>Liquidity</TranslatedText>
       </div>
+      </Link>
       </StyledAbsoluteLink>
     </StyledNav>
   )

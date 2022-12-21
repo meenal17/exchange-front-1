@@ -15,7 +15,7 @@ export default Card
 
 export const LightCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.colors.bg0};
-  background-color: ${({ theme }) => theme.colors.bg1};
+  background-color: ${({ theme }) => theme.colors.grediantbg};
 `
 
 export const GreyCard = styled(Card)`

@@ -11,7 +11,10 @@ export const BodyWrapper = styled.div`
     border-radius: 9px;
     padding: 1rem
     border: 1px solid #6a7c76;
+    margin-bottom:10px;
 `
+
+
 
 export const Container = styled.div`
   position: relative;

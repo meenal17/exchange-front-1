@@ -16,7 +16,25 @@ const Tabs = styled.div`
 
   column-gap: 24px;
 `
-
+const Liquiditybox=styled.div`
+bbox-sizing: border-box;
+margin: 0;
+min-width: 0;
+width: unset;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+padding: 0;
+-webkit-align-items: center;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-box-pack: justify;
+-webkit-justify-content: space-between;
+-ms-flex-pack: justify;
+justify-content: space-between;
+`
 const activeClassName = 'ACTIVE'
 
 const StyledNavLink = styled(NavLink).attrs({
@@ -66,7 +84,7 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
       <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
         <TranslatedText translationId={268}>Swap</TranslatedText>
       </StyledNavLink>
-      <StyledNavLink id={`pool-nav-link`} to={'/pool'} isActive={() => active === 'pool'}>
+      <StyledNavLink id={`pool-nav-link`} to="" isActive={() => active === 'pool'}>
         <TranslatedText translationId={270}>Pool</TranslatedText>
       </StyledNavLink>
     </Tabs>
@@ -77,7 +95,7 @@ export function FindPoolTabs() {
   return (
     <Tabs>
       <RowBetween style={{ padding: '1rem' }}>
-        <HistoryLink to="/pool">
+        <HistoryLink to="/add/ETH">
           <StyledArrowLeft />
         </HistoryLink>
         <ActiveText>Import Pool</ActiveText>
@@ -91,10 +109,8 @@ export function AddRemoveTabs({ adding }: { adding: boolean }) {
   return (
     <Tabs>
       <RowBetween style={{ padding: '1rem' }}>
-        <HistoryLink to="/pool">
-          <StyledArrowLeft />
-        </HistoryLink>
-        <ActiveText>{adding ? 'Add' : 'Remove'} Liquidity</ActiveText>
+        
+        <Liquiditybox>{adding ? 'Add' : 'Remove'} Liquidity</Liquiditybox>
         <QuestionHelper
           text={
             adding
