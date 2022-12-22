@@ -21,7 +21,8 @@ const HeaderFrame = styled.div`
   width: 100%;
   top: 0;
   position: absolute;
-  background:  ${({ theme }) => theme.colors.bg1}
+  background:#2422220d;
+ // background:  ${({ theme }) => theme.colors.bg1}
   z-index: 2;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     width: calc(100%);

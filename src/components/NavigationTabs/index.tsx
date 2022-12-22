@@ -16,25 +16,25 @@ const Tabs = styled.div`
 
   column-gap: 24px;
 `
-const Liquiditybox=styled.div`
-bbox-sizing: border-box;
-margin: 0;
-min-width: 0;
-width: unset;
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
-padding: 0;
--webkit-align-items: center;
--webkit-box-align: center;
--ms-flex-align: center;
-align-items: center;
--webkit-box-pack: justify;
--webkit-justify-content: space-between;
--ms-flex-pack: justify;
-justify-content: space-between;
-`
+// const Liquiditybox=styled.div`
+// bbox-sizing: border-box;
+// margin: 0;
+// min-width: 0;
+// width: unset;
+// display: -webkit-box;
+// display: -webkit-flex;
+// display: -ms-flexbox;
+// display: flex;
+// padding: 0;
+// -webkit-align-items: center;
+// -webkit-box-align: center;
+// -ms-flex-align: center;
+// align-items: center;
+// -webkit-box-pack: justify;
+// -webkit-justify-content: space-between;
+// -ms-flex-pack: justify;
+// justify-content: space-between;
+// `
 const activeClassName = 'ACTIVE'
 
 const StyledNavLink = styled(NavLink).attrs({
@@ -107,18 +107,6 @@ export function FindPoolTabs() {
 
 export function AddRemoveTabs({ adding }: { adding: boolean }) {
   return (
-    <Tabs>
-      <RowBetween style={{ padding: '1rem' }}>
-        
-        <Liquiditybox>{adding ? 'Add' : 'Remove'} Liquidity</Liquiditybox>
-        <QuestionHelper
-          text={
-            adding
-              ? 'When you add liquidity, you are given pool tokens representing your position. These tokens automatically earn fees proportional to your share of the pool, and can be redeemed at any time.'
-              : 'Removing pool tokens converts your position back into underlying tokens at the current rate, proportional to your share of the pool. Accrued fees are included in the amounts you receive.'
-          }
-        />
-      </RowBetween>
-    </Tabs>
+        <div className='poolcardsd'>{adding ? 'Add' : 'Remove'} Liquidity</div>
   )
 }

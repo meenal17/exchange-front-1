@@ -7,7 +7,7 @@ import useHTPrice from '../../hooks/useHtPrice'
 import { useActiveWeb3React } from '../../hooks'
 import TopDecoration from './TopDecoration'
 import BottomDecoration from './BottomDecoration'
-
+import { Link } from 'react-router-dom'
 interface MobileMenuProps {
   onDismiss: () => void
   visible?: boolean
@@ -40,12 +40,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
               <TranslatedText translationId={198}>Markets</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
-          <Cn>
-            <StyledAbsoluteLink href="#">
-              <img src="Vector 2.png" alt="" />
-              <TranslatedText translationId={200}>Swap</TranslatedText>
-            </StyledAbsoluteLink>
-          </Cn>
+          <Link to="/swap">
+            <Cn>
+              <StyledAbsoluteLink>
+                <img src="Vector 2.png" alt="" />
+                <TranslatedText translationId={200}>Swap</TranslatedText>
+              </StyledAbsoluteLink>
+            </Cn>
+          </Link>
           <Cn>
             <StyledAbsoluteLink href="#">
               <img src="bridge.png" />
@@ -65,12 +67,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
               <TranslatedText translationId={348}>Farming</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
+          <Link to="/add/ETH">
           <Cn>
             <StyledAbsoluteLink href="#">
               <img src="liquidity.png" alt="" />
               <TranslatedText translationId={370}>Liquidity</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
+          </Link>
           <Bottom>
             {account && !isZero(pippiPrice) && <Price className="number">1PUD=${pippiPrice.toFixed(3)}</Price>}
           </Bottom>
@@ -163,7 +167,7 @@ const StyledMobileMenu = styled.div`
 const StyledAbsoluteLink = styled.a`
   position: relative;
   color: rgb(127, 134, 143);
-  font-size:16px;
+  font-size: 16px;
   font-weight: 700;
   text-decoration: none;
   &:hover {

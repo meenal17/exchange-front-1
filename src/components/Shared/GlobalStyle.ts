@@ -97,6 +97,30 @@ export const ThemedGlobalStyle = createGlobalStyle`
     z-index: -1;
     background-size: 300% 300%;
   }
+  .LaunchButton{
+    background: #000;
+    position: relative;
+    border-radius:
+    borderWidth:3px;
+    border-radius:9px;
+    padding: 12px 1rem;
+   font-size: 28px;
+    display: inline-flex;
+    font-weight:600;
+   
+  }
+  .LaunchButton:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * 3px);
+    left: calc(-1 * 3px);
+    height: calc(100% + 3px * 2);
+    width: calc(100% + 3px * 2);
+    background: linear-gradient(127deg,#46c2a8,#3e8b9a,#498fb5);
+    border-radius: 12px;
+    z-index: -1;
+    background-size: 300% 300%;
+  }
   .seetingstyle{
     color: silver;
     font-size: 34px;
@@ -116,7 +140,23 @@ export const ThemedGlobalStyle = createGlobalStyle`
   color: #e5e6e6;
   border-bottom: 1px solid grey;
   padding: 0px 10px 10px;
+  margin-bottom:15px;
 }
 
+.mytexfdxdd{
+  color: #fff !important;
+    font-size: 55px;
+    line-height: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+.textnew{
+  background: linear-gradient(127deg,#46c2a8,#3e8b9a,#498fb5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 `
 
