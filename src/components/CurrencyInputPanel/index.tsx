@@ -136,7 +136,8 @@ interface CurrencyInputPanelProps {
   otherCurrency?: Currency | null
   id: string
   showCommonBases?: boolean
-  onTwentyper?:(value:Number) => void 
+  onTwentyper?:() => void
+  onThirtyper?:()=>void
 }
 export default function CurrencyInputPanel({
   value,
@@ -145,7 +146,8 @@ export default function CurrencyInputPanel({
   showMaxButton,
   label = '',
   onCurrencySelect,
-  
+  onTwentyper,
+  onThirtyper,
   currency,
   disableCurrencySelect = false,
   hideBalance = false,
@@ -157,7 +159,7 @@ export default function CurrencyInputPanel({
 }: CurrencyInputPanelProps) {
   const i18n = useI18n()
   label = label || i18n(298, 'Input')
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
   const theme = useContext(ThemeContext)
@@ -166,11 +168,7 @@ export default function CurrencyInputPanel({
     setModalOpen(false)
   }, [setModalOpen])
 
-      function onTwentyper(){
-    return (Number({selectedCurrencyBalance})*100)
-
-
-      }
+  
   return (
     <InputPanel id={id}>
          <div style={{display:"flex" ,justifyContent:"space-between",padding:"8px 8px 0px 8px"}}>
@@ -185,7 +183,7 @@ export default function CurrencyInputPanel({
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
               {account && currency  && label !== 'To' && (
-                <StyledBalanceMax >30%</StyledBalanceMax>
+                <StyledBalanceMax onClick={onThirtyper}>30%</StyledBalanceMax>
               )}
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>

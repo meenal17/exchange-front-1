@@ -48,7 +48,7 @@ import Loader from '../../components/Loader'
 import { useI18n } from 'i18n/i18n-react'
 import BottomDecoration from './BottomDecoration'
 import RightDecoration from './RightDecoration'
-
+// import { JSBI } from '@pancakeswap-libs/sdk'
 export default function Swap() {
   const i18n = useI18n()
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -293,6 +293,13 @@ export default function Swap() {
     maxAmountInput && onUserInput(Field.INPUT, maxAmountInput.toExact())
   }, [maxAmountInput, onUserInput])
 
+  const handleTwentyinput = useCallback(()=>{
+    console.log("hello");
+    
+    // const balance = (Field.INPUT, maxAmountInput?.raw);
+
+    // (Field.INPUT(Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+  },[])
   const handleOutputSelect = useCallback(
     outputCurrency => {
       onCurrencySelection(Field.OUTPUT, outputCurrency)
@@ -341,6 +348,7 @@ export default function Swap() {
               currency={currencies[Field.INPUT]}
               onUserInput={handleTypeInput}
               onMax={handleMaxInput}
+              onTwentyper={handleTwentyinput}
               onCurrencySelect={handleInputSelect}
               otherCurrency={currencies[Field.OUTPUT]}
               id="swap-currency-input"

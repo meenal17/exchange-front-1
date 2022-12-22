@@ -40,7 +40,7 @@ import { currencyId } from '../../utils/currencyId'
 import { useI18n } from 'i18n/i18n-react'
 import { PoolPriceBar } from './PoolPriceBar'
 import Pool from 'pages/Pool_new'
-
+import { JSBI } from '@pancakeswap-libs/sdk'
 export const AppBody2=styled.div`
 background: #121111;
 position: relative;
@@ -417,7 +417,14 @@ export default function AddLiquidity({
                   onFieldAInput(maxAmounts[Field.CURRENCY_A]?.toExact() ?? '')
                 }}
                 onTwentyper={()=>{
-                  onFieldAInput(maxAmounts[Field.CURRENCY_A]?.toExact() ?? '')
+                  const balance = maxAmounts[Field.CURRENCY_A]?.raw;
+                  // JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20));
+                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+                }}
+
+                onThirtyper={()=>{
+                  const balance = maxAmounts[Field.CURRENCY_A]?.raw;
+                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(30)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
                 }}
                 onCurrencySelect={handleCurrencyASelect}
                 showMaxButton={!atMaxAmounts[Field.CURRENCY_A]}
@@ -434,6 +441,16 @@ export default function AddLiquidity({
                 onCurrencySelect={handleCurrencyBSelect}
                 onMax={() => {
                   onFieldBInput(maxAmounts[Field.CURRENCY_B]?.toExact() ?? '')
+                }}
+                onTwentyper={()=>{
+                  const balance = maxAmounts[Field.CURRENCY_A]?.raw;
+                  // JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20));
+                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+                }}
+
+                onThirtyper={()=>{
+                  const balance = maxAmounts[Field.CURRENCY_A]?.raw;
+                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(30)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
                 }}
                 showMaxButton={!atMaxAmounts[Field.CURRENCY_B]}
                 currency={currencies[Field.CURRENCY_B]}
