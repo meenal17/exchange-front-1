@@ -39,7 +39,7 @@ export const FixedGlobalStyle = createGlobalStyle`
 export const ThemedGlobalStyle = createGlobalStyle`
     html {
       color: ${({ theme }) => (theme as any).colors.text1};
-      background-color:${({ theme }) => (theme as any).colors.bg0};
+      background-image:url(./background.png);
     }
 
     body {
