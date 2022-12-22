@@ -124,7 +124,7 @@ const Sectiotwosection = styled.div`
 `
 const Cardcustom = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   display: unset;
