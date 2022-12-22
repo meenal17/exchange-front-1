@@ -416,6 +416,9 @@ export default function AddLiquidity({
                 onMax={() => {
                   onFieldAInput(maxAmounts[Field.CURRENCY_A]?.toExact() ?? '')
                 }}
+                onTwentyper={()=>{
+                  onFieldAInput(maxAmounts[Field.CURRENCY_A]?.toExact() ?? '')
+                }}
                 onCurrencySelect={handleCurrencyASelect}
                 showMaxButton={!atMaxAmounts[Field.CURRENCY_A]}
                 currency={currencies[Field.CURRENCY_A]}

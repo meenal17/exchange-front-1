@@ -136,8 +136,8 @@ interface CurrencyInputPanelProps {
   otherCurrency?: Currency | null
   id: string
   showCommonBases?: boolean
+  onTwentyper?:(value:Number) => void 
 }
-
 export default function CurrencyInputPanel({
   value,
   onUserInput,
@@ -145,6 +145,7 @@ export default function CurrencyInputPanel({
   showMaxButton,
   label = '',
   onCurrencySelect,
+  
   currency,
   disableCurrencySelect = false,
   hideBalance = false,
@@ -165,6 +166,11 @@ export default function CurrencyInputPanel({
     setModalOpen(false)
   }, [setModalOpen])
 
+      function onTwentyper(){
+    return (Number({selectedCurrencyBalance})*100)
+
+
+      }
   return (
     <InputPanel id={id}>
          <div style={{display:"flex" ,justifyContent:"space-between",padding:"8px 8px 0px 8px"}}>
@@ -174,7 +180,7 @@ export default function CurrencyInputPanel({
       <div style={{display:"flex"}}>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
               {account && currency  && label !== 'To' && (
-                <StyledBalanceMax  onClick={onMax} >20%</StyledBalanceMax>
+                <StyledBalanceMax  onClick={onTwentyper}>20%</StyledBalanceMax>
               )}
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
@@ -253,6 +259,7 @@ export default function CurrencyInputPanel({
               )}
           </div>
         )}
+       
         
       </Container>
       {!disableCurrencySelect && onCurrencySelect && (
