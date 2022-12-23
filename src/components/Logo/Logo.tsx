@@ -37,7 +37,7 @@ const StyledLogo = styled(Link)`
 
 const StyledText = styled.span`
   color: ${(props) => props.theme.colors.normal}; 
-  font-family: "Noto Sans", sans-serif;
+  font-family: Noto;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.03em;

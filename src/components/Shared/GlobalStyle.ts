@@ -28,6 +28,7 @@ export const FixedGlobalStyle = createGlobalStyle`
 
     html {
       font-family: "Noto Sans", sans-serif;
+      font-family: 'TSChapinero', sans-serif;
       font-size: 16px;
       font-variant: none;
       -webkit-font-smoothing: antialiased;
@@ -144,19 +145,59 @@ export const ThemedGlobalStyle = createGlobalStyle`
 }
 
 .mytexfdxdd{
-  color: #fff !important;
-    font-size: 55px;
-    line-height: 1.2em;
-    font-weight: 600;
-    text-align: center;
+  color: #fff !important;   
     background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
+    ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+    font-size: unset;
+    `};
+
 }
 .textnew{
-  background: linear-gradient(127deg,#46c2a8,#3e8b9a,#498fb5);
+  background: linear-gradient(106deg,#46c2a8,#5bbbce,#498fb5);;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.cardimgsize{
+  width:3rem;
+  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+  width: 1.8rem;
+`}
+${({ theme }) => (theme as any).mediaWidth.upToMedium`
+  width: 1.8rem;
+`}
+;
+
+}
+.cardimgsizeto{
+  width:3rem;
+  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+width:1.2rem;
+`};
+}
+.mobiletext{
+  white-space:unset;
+  font-size:unset;
+  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+  white-space: nowrap;
+  font-size: 16px;
+`};
+}
+.mobiletext{
+ 
+  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+  white-space: nowrap;
+  font-size: 15px;
+`};
+
+${({ theme }) => (theme as any).mediaWidth.upToLarge`
+font-size: 13px;
+`};
+
+}
+
+
+
 `
 
