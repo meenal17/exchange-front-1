@@ -161,42 +161,58 @@ export const ThemedGlobalStyle = createGlobalStyle`
 }
 .cardimgsize{
   width:3rem;
-  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
-  width: 1.8rem;
+${({ theme }) => (theme as any).mediaWidth.upToLarge`
+  width: 3.8rem;
 `}
 ${({ theme }) => (theme as any).mediaWidth.upToMedium`
-  width: 1.8rem;
+width: 1.8rem;
 `}
+${({ theme }) =>  (theme as any).mediaWidth.upToExtraSmall`
+width:2rem;
+`};
 ;
-
 }
 .cardimgsizeto{
   width:3rem;
-  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+  ${({ theme }) => (theme as any).mediaWidth.upToLarge`
+width:3.2rem;
+`};
+${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
 width:1.2rem;
 `};
 }
+
 .mobiletext{
-  white-space:unset;
-  font-size:unset;
-  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
-  white-space: nowrap;
-  font-size: 16px;
-`};
-}
-.mobiletext{
- 
   ${({ theme }) => (theme as any).mediaWidth.upToMedium`
   white-space: nowrap;
   font-size: 15px;
 `};
 
 ${({ theme }) => (theme as any).mediaWidth.upToLarge`
-font-size: 13px;
+font-size: 25px;
+white-space: nowrap;
+`};
+${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
+font-size: 15px;
+white-space: nowrap;
+`};
+}
+.headingfontsize{
+  
+  ${({ theme }) => (theme as any).mediaWidth.upToLarge`
+  font-size:2.2rem;
+`};
+${({ theme }) =>  (theme as any).mediaWidth.upToExtraSmall`
+font-size:1.2rem;
+`};
+${({ theme }) =>(theme as any).mediaWidth.upToSmall`
+
+`};
+${({ theme }) =>(theme as any).mediaWidth.upToMedium`
+
 `};
 
 }
-
 
 
 `

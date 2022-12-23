@@ -1,11 +1,11 @@
 import { white, black, green, red, yellow } from './colors'
 import { css } from 'styled-components'
 
-const MEDIA_WIDTHS = {
+const MEDIA_WIDTHS =  {
   upToExtraSmall: 500,
   upToSmall: 600,
-  upToMedium: 955,
-  upToLarge: 1112
+  upToMedium: 960,
+  upToLarge: 1280
 }
 
 const mediaWidthTemplates: { [width in keyof typeof MEDIA_WIDTHS]: typeof css } = Object.keys(MEDIA_WIDTHS).reduce(

@@ -16,33 +16,22 @@ const Support = () => {
     gap: 5px;
     align-items: center;
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    margin: 19px 1px;
-    width: 9.8rem;
-    /* padding: unset; */
-    max-height: 55px;
-    
+     width: 10rem !important;
+     margin: 15px !important;
+     max-height:45px !important;
   `};
     ${({ theme }) => theme.mediaWidth.upToSmall`
-  margin: 19px 1px;
-  width: 9.8rem;
-  /* padding: unset; */
-  max-height: 55px;
+   width: 10.5rem;
 `};
     ${({ theme }) => theme.mediaWidth.upToMedium`
-    width: 20.8rem;
-    margin: 20px 10px;
-    font-size: 22px;
-    max-height: 87px;
-
+     width: 15rem;
 `};
 
-${({ theme }) => theme.mediaWidth.upToLarge`
-width: 10rem;
-margin: 20px 10px;
-font-size: 22px;
-max-height: 45px;
-
-`};
+    ${({ theme }) => theme.mediaWidth.upToLarge`
+width: 20rem;
+margin: 20px;
+max-height: 95px;
+ `};
   `
   const Supportecardto = styled.div`
     padding: 7px 4px;
@@ -56,56 +45,39 @@ max-height: 45px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    padding:none;
-    margin: 0 1px;
-    max-height: 41px;
-    align-items: center;
+    ${({ theme }) => theme.mediaWidth.upToLarge`
+    margin: 0 16px;
   `};
-    ${({ theme }) => theme.mediaWidth.upToSmall`
-  padding:none;
-  margin: 0 1px;
-  max-height: 41px;
-  align-items: center;
-  `};
-    ${({ theme }) => theme.mediaWidth.upToMedium`
-  padding:none;
-    margin: 0 1px;
-    max-height: 41px;
-    align-items: center;
-  `};
-  ${({ theme }) => theme.mediaWidth.upToLarge`
-  padding:none;
-  margin: 0 12px;
-  max-height: 41px;
-  align-items: center;
-  `};
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  margin: 0 5px;
+  max-height:40px
+`};
   `
   const Supportecarddesk = styled.div`
-    padding:14px 75px;
+    padding: 14px 75px;
     border-radius: 9px;
     background: #2b2b2b91;
-    color:#d2d2d2;
-    margin:10px;
+    color: #d2d2d2;
+    margin: 10px;
     // width: 20rem;
     opacity: 0.2px;
     box-shadow: 0px 0px 5px 4px rgb(38 49 91);
     box-shadow: crimson;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    gap:5px;
+    gap: 5px;
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     margin:19px 1px;
     width: 10.8rem;
     padding:unset;
   `};
-  ${({ theme }) => theme.mediaWidth.upToSmall`
+    ${({ theme }) => theme.mediaWidth.upToSmall`
   margin:19px 1px;
   width: 10.8rem;
   padding:unset;
   `};
-  ${({ theme }) => theme.mediaWidth.upToMedium`
+    ${({ theme }) => theme.mediaWidth.upToMedium`
   margin:19px 1px;
   width: 10.8rem;
   padding:unset;
@@ -167,7 +139,7 @@ max-height: 45px;
   `};
   `
 
-    const Parentsupportcarddesk = styled.div`
+  const Parentsupportcarddesk = styled.div`
     display: flex;
     padding: 20px 0px;
     justify-content: center;
@@ -176,12 +148,12 @@ max-height: 45px;
     justify-content:space-between;
     padding:unset;
   `};
-  ${({ theme }) => theme.mediaWidth.upToSmall`
+    ${({ theme }) => theme.mediaWidth.upToSmall`
   display:none;
   justify-content:space-between;
   padding:unset;
   `};
-  ${({ theme }) => theme.mediaWidth.upToMedium`
+    ${({ theme }) => theme.mediaWidth.upToMedium`
    display:none;
     justify-content:space-between;
     padding:unset;
@@ -242,7 +214,7 @@ font-size: 28px;
               <img src="eth.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'>Ethereum</h2>
+              <h2 className="headingfontsize">Ethereum</h2>
             </Cardimg>
           </Supportecard>
           <Supportecard style={{ boxShadow: 'hsl(0deg 1% 66% / 63%) 1px 0px 4px 3px' }}>
@@ -250,7 +222,7 @@ font-size: 28px;
               <img src="polygon.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'> Polygon</h2>
+              <h2 className="headingfontsize"> Polygon</h2>
             </Cardimg>
           </Supportecard>
 
@@ -259,7 +231,7 @@ font-size: 28px;
               <img src="ava.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'>Avalanche</h2>
+              <h2 className="headingfontsize">Avalanche</h2>
             </Cardimg>
           </Supportecard>
           <Supportecard style={{ boxShadow: '0px 0px 5px 4px rgb(38 49 91)' }}>
@@ -267,7 +239,7 @@ font-size: 28px;
               <img src="fantom.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'>Fantom</h2>
+              <h2 className="headingfontsize">Fantom</h2>
             </Cardimg>
           </Supportecard>
         </Parentsupportcard>
@@ -278,7 +250,7 @@ font-size: 28px;
               <img src="bsc.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'>Bsc</h2>
+              <h2 className="headingfontsize">Bsc</h2>
             </Cardimg>
           </Supportecard>
           <Supportecard style={{ boxShadow: 'rgb(90 15 15) 0px 0px 5px 4px' }}>
@@ -286,7 +258,7 @@ font-size: 28px;
               <img src="tron.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'>Tron</h2>
+              <h2 className="headingfontsize">Tron</h2>
             </Cardimg>
           </Supportecard>
           <Supportecard style={{ boxShadow: 'rgb(48 23 91) 0px 0px 5px 4px' }}>
@@ -294,7 +266,7 @@ font-size: 28px;
               <img src="wyzth.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'>Wyzth</h2>
+              <h2 className="headingfontsize">Wyzth</h2>
             </Cardimg>
           </Supportecard>
           <Supportecard style={{ boxShadow: 'rgb(47 75 88) 0px 0px 5px 4px' }}>
@@ -302,7 +274,7 @@ font-size: 28px;
               <img src="fantom.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
-              <h2 className='headingfontsize'>Lebo Chain</h2>
+              <h2 className="headingfontsize">Lebo Chain</h2>
             </Cardimg>
           </Supportecard>
         </Parentsupportcard>
@@ -342,33 +314,32 @@ font-size: 28px;
 
       {/* backend by best for desktop */}
 
-      
- <Parentsupportcarddesk>
-          <Supportecarddesk >
-            <Cardimg>
-              <img src="bsc.png" alt="bsc" className="cardimgsize" />
-            </Cardimg>
-            <Cardimg>
-              <h2>Conitelgraph</h2>
-            </Cardimg>
-          </Supportecarddesk>
-          <Supportecarddesk >
-            <Cardimg>
-              <img src="tron.png" alt="bsc" className="cardimgsize" />
-            </Cardimg>
-            <Cardimg>
-              <h2>Yourstory</h2>
-            </Cardimg>
-          </Supportecarddesk>
-          <Supportecarddesk >
-            <Cardimg>
-              <img src="wyzth.png" alt="bsc" className="cardimgsize" />
-            </Cardimg>
-            <Cardimg>
-              <h2>Coindesk</h2>
-            </Cardimg>
-          </Supportecarddesk>
-        </Parentsupportcarddesk> 
+      <Parentsupportcarddesk>
+        <Supportecarddesk>
+          <Cardimg>
+            <img src="bsc.png" alt="bsc" className="cardimgsize" />
+          </Cardimg>
+          <Cardimg>
+            <h2>Conitelgraph</h2>
+          </Cardimg>
+        </Supportecarddesk>
+        <Supportecarddesk>
+          <Cardimg>
+            <img src="tron.png" alt="bsc" className="cardimgsize" />
+          </Cardimg>
+          <Cardimg>
+            <h2>Yourstory</h2>
+          </Cardimg>
+        </Supportecarddesk>
+        <Supportecarddesk>
+          <Cardimg>
+            <img src="wyzth.png" alt="bsc" className="cardimgsize" />
+          </Cardimg>
+          <Cardimg>
+            <h2>Coindesk</h2>
+          </Cardimg>
+        </Supportecarddesk>
+      </Parentsupportcarddesk>
     </>
   )
 }

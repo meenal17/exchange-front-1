@@ -2,13 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 // import Carsole from "./Carsolle/Carasole"
 import Support from './Support'
+import Footer from "./HomeFooter/Footer"
 const Body = styled.div`
   background: url('/background.png');
   // background: black;
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-  // position: fixed;
+   //position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -215,6 +216,7 @@ display: none;
 
 const Home = () => {
   return (
+    <>
     <Body>
       <Container>
         <Bannerheading>
@@ -294,8 +296,12 @@ const Home = () => {
         </Bannerheading>
 
         <Support />
+      
       </Container>
+     
     </Body>
+    <Footer/>
+     </>
   )
 }
 
