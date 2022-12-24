@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Carsole from "./Carsolle/Carasole"
+import Carsole from "./Carsolle/Carasole"
 import Support from './Support'
 import Footer from "./HomeFooter/Footer"
 const Body = styled.div`
@@ -121,7 +121,7 @@ const HeadingMytext = styled.div`
   line-height: 1.2em;
   font-weight: 600;
   text-align: center;
-  background: linear-gradient(127deg,#46c2a8,#3e8b9a,#498fb5);
+  background:linear-gradient(75deg,#46c2a8,#3e8b9a,#498fb5)
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -177,6 +177,23 @@ const Buttondiv = styled.div`
 `
 
 const Sectiotwosection = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  display: unset;
+  justify-content: unset;
+  
+`};
+ ${({ theme }) => theme.mediaWidth.upToSmall`
+  display: unset;
+  justify-content: unset;
+  
+`};
+`
+
+const Carsolesection = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -282,22 +299,22 @@ const Home = () => {
       </Container>
 
       {/* section three start */}
-      {/* <Container>
+      <Container>
         <Bannerheading>
           <Mytext>Why We Use LeBo</Mytext>
         </Bannerheading>
-        // <Sectiotwosection>{/* <Carsole/> */}
-      {/* </Sectiotwosection>
-      </Container>  */}
+         <Carsolesection>
+          <Carsole/> 
+       </Carsolesection>
+      </Container> 
       {/* section four start */}
-      <Container>
-        <Bannerheading>
+     
+        {/* <Bannerheading>
           <HeadingMytext>Supported Networks</HeadingMytext>
-        </Bannerheading>
+        </Bannerheading> */}
 
         <Support />
-      
-      </Container>
+     
      
     </Body>
     <Footer/>

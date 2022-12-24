@@ -205,9 +205,22 @@ justify-content:center;
 font-size: 28px;
 `};
   `
+  const Container = styled.div`
+  padding: 3rem 0 ;
+  // width: 50%;
+    margin: 0 auto;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  padding: 0;
+ `};
+`
   return (
     <>
-      <SupportCardForMobile>
+    <Container>
+
+    <Bannerheading>
+        <HeadingMytext>Backend By The Best</HeadingMytext>
+      </Bannerheading>
+      <SupportCardForMobile>       
         <Parentsupportcard>
           <Supportecard style={{ boxShadow: '0px 0px 5px 4px rgb(38 49 91)' }}>
             <Cardimg>
@@ -340,6 +353,7 @@ font-size: 28px;
           </Cardimg>
         </Supportecarddesk>
       </Parentsupportcarddesk>
+      </Container>
     </>
   )
 }

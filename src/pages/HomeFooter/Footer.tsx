@@ -1,65 +1,99 @@
 import React from 'react'
-import "./Style.css"
+import './Style.css'
 const Footer = () => {
-
   return (
-  
-<div className="footer">
-  <div className="inner-footer">
+    <div className="footer">
+      <div className="inner-footer">
+        <div className="footer-items">
+          <h1>Resources</h1>
+          <div className="border1"></div>
+          <ul>
+            <a href="#">
+              <li>Documentation</li>
+            </a>
+            <a href="#">
+              <li>FAQs</li>
+            </a>
+            <a href="#">
+              <li>User policy</li>
+            </a>
+          </ul>
+        </div>
 
-    <div className="footer-items">
-      <h1>Company Name</h1>
-      <p>Description of any product or motto of the company.</p>
+        <div className="footer-items">
+          <h1>Product</h1>
+          {/* <div className="border1"></div> */}
+          <div className='productparent'>
+           <div>
+           <div>
+           swap
+            </div>
+            <div>
+              Bridge
+            </div>
+            <div>
+            Farm
+            </div>
+           </div>
+           <div>
+           <div>
+              liquidity
+            </div>
+            <div>
+              Staking
+            </div>
+            <div>
+              Markets
+            </div>
+           </div>
+          </div>
+          <div className="social-media">
+            <a href="#">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="#">
+              <i className="fab fa-facebook"></i>
+            </a>
+            <a href="#">
+              <i className="fab fa-google-plus-square"></i>
+            </a>
+          </div>
+        </div>
+        <div className="footer-items">
+          <h1>Newsletter</h1>
+          <p>Join the most vibrant community of DeFi users</p>
+          <p>and get early access to new features.</p>
+          <div className="input-group mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter your email"
+              aria-label="Enter your email"
+              aria-describedby="basic-addon2"
+            />
+            <div className="input-group-append">
+              <button className="btn btn-outline-secondary" type="button">
+                Submit
+              </button>
+            </div>
+          </div>
+          <div style={{ display: 'flex',justifyContent:"space-between",alignItems:"center" }}>
+            <h1>Community</h1>
+            <p>icons</p>
+            <p>icons</p>
+            <p>icons</p>
+            <p>icons</p>
+          </div>
+        </div>
+      </div>
+      <div style={{ display: 'flex',justifyContent:"space-between",alignItems:"center",margin: "0px 23px" }}>
+        <div className="">
+          <img src="LeBo.png" alt="" style={{ width: '5rem' }} />
+        </div>
+        <div className="footer-bottom">2022 Lebo.All rights reserved</div>
+      </div>
+      
     </div>
-
-    <div className="footer-items">
-      <h3>Quick Links</h3>
-      <div className="border1"></div>
-        <ul>
-          <a href="#"><li>Home</li></a>
-          <a href="#"><li>Search</li></a>
-          <a href="#"><li>Contact</li></a>
-          <a href="#"><li>About</li></a>
-        </ul>
-    </div>
-
-    <div className="footer-items">
-      <h3>Recipes</h3>
-      <div className="border1"></div>  
-        <ul>
-          <a href="#"><li>Indian</li></a>
-          <a href="#"><li>Chinese</li></a>
-          <a href="#"><li>Mexican</li></a>
-          <a href="#"><li>Italian</li></a>
-        </ul>
-    </div>
-
-    <div className="footer-items">
-      <h3>Contact us</h3>
-      <div className="border1"></div>
-        <ul>
-          <li><i className="fa fa-map-marker" aria-hidden="true"></i>XYZ, abc</li>
-          <li><i className="fa fa-phone" aria-hidden="true"></i>123456789</li>
-          <li><i className="fa fa-envelope" aria-hidden="true"></i>xyz@gmail.com</li>
-        </ul> 
-        <div className="social-media">
-          <a href="#"><i className="fab fa-instagram"></i></a>
-          <a href="#"><i className="fab fa-facebook"></i></a>
-          <a href="#"><i className="fab fa-google-plus-square"></i></a>
-        </div> 
-    </div>
-  </div>
-  
-
-  <div className="footer-bottom">
-    Copyright &copy; Food and Burps 2020.
-  </div>
-</div>
-  
-
-  
-
-
   )
 }
 
