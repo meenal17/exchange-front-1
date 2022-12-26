@@ -39,7 +39,7 @@ function Carsole() {
       <div class="text">
         Ankara is Turkey's beating heart, second largest city, located in the Central Anatolia region and home to the Grand National Assembly of Turkey.
       </div>
-      <button>Read More</button>
+     
     </div>
   </div>
 
@@ -51,7 +51,7 @@ function Carsole() {
       <div class="title">İzmir</div>
       <div class="text">Located on the shores of the Aegean Sea, west of the Anatolian Peninsula, İzmir is the third-largest city in Turkey.
       </div>
-      <button>Read More</button>
+ 
     </div>
   </div>
    <div class="slider">

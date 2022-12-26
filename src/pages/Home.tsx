@@ -4,7 +4,7 @@ import Carsole from "./Carsolle/Carasole"
 import Support from './Support'
 import Footer from "./HomeFooter/Footer"
 const Body = styled.div`
-  background: url('/background.png');
+  // background: url('/background.png');
   // background: black;
   background-size: contain;
   background-position: center center;
@@ -18,10 +18,43 @@ const Body = styled.div`
   height: 100%;
 `
 
-const Container = styled.div`
-  padding: 3rem 0 ;
-  // width: 50%;
-    margin: 0 auto;
+// const Container = styled.div`
+//   padding: 3rem 0 ;
+//   // width: 50%;
+//     margin: 0 auto;
+//   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+//   padding: 0;
+//  `};
+// `
+const Container1 = styled.div`
+padding: 8.8rem 0;
+margin: 0 auto;
+background: url(/bg_handshake.png);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  padding: 0;
+ `};
+`
+const Container2 = styled.div`
+padding: 3.8rem 0;
+margin: 0 auto;
+background: url(/bg_moon.png);
+// background-size: cover;
+// background-position: center;
+background-repeat: no-repeat;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  padding: 0;
+ `};
+`
+const Container3 = styled.div`
+padding: 3.8rem 0;
+margin: 0 auto;
+// background: url(/bg_moon.png);
+// background-size: cover;
+// background-position: center;
+background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
  `};
@@ -111,21 +144,46 @@ const Mytext = styled.div`
   line-height: 1.2em;
   font-weight: 600;
   text-align: center;
+  
+  
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   font-size: 28px;
+  `};
+`
+const Textwhy = styled.div`
+  color: #fff;
+ font-size: 55px;
+  line-height: 0.9em;
+  font-weight: 600;
+  text-align: center;
+  background:linear-gradient(75deg,#46c2a8,#3e8b9a,#498fb5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid #46c2a8;
+    width: 494px;
+    margin: 0 auto;
+  
+  
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  font-size: 28px;
+  width: 249px;
   `};
 `
 const HeadingMytext = styled.div`
   color: #fff;
   font-size: 55px;
-  line-height: 1.2em;
+  line-height: 0.9em;
   font-weight: 600;
   text-align: center;
-  background:linear-gradient(75deg,#46c2a8,#3e8b9a,#498fb5)
+  background:linear-gradient(75deg,#46c2a8,#3e8b9a,#498fb5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid #46c2a8;
+    width: 242px;
+    margin: 0 auto;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   font-size: 28px;
+  width: 124px;
   `};
 `
 const Mytextto = styled.div`
@@ -234,8 +292,9 @@ display: none;
 const Home = () => {
   return (
     <>
+  <div className='xyz'>
     <Body>
-      <Container>
+      <Container1>
         <Bannerheading>
           <Mytextto>
             A Cross-Chain Protocol 
@@ -254,10 +313,10 @@ const Home = () => {
             </div>
           </Buttondiv>
         </Bannerheading>
-      </Container>
+      </Container1>
       {/* section two start  */}
 
-      <Container>
+      <Container2>
         <Containerto>
           <Bannerheading>
             <HeadingMytext>Statistics</HeadingMytext>
@@ -296,17 +355,17 @@ const Home = () => {
             </Imangecard>
           </Sectiotwosection>
         </Containerto>
-      </Container>
+      </Container2>
 
       {/* section three start */}
-      <Container>
+      <Container3>
         <Bannerheading>
-          <Mytext>Why We Use LeBo</Mytext>
+          <Textwhy>Why We Use LeBo</Textwhy>
         </Bannerheading>
          <Carsolesection>
           <Carsole/> 
        </Carsolesection>
-      </Container> 
+      </Container3> 
       {/* section four start */}
      
         {/* <Bannerheading>
@@ -317,7 +376,9 @@ const Home = () => {
      
      
     </Body>
+   
     <Footer/>
+    </div>
      </>
   )
 }

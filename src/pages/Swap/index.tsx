@@ -49,6 +49,7 @@ import { useI18n } from 'i18n/i18n-react'
 import BottomDecoration from './BottomDecoration'
 import RightDecoration from './RightDecoration'
 // import { JSBI } from '@pancakeswap-libs/sdk'
+import Globe from "../Globe";
 export default function Swap() {
   const i18n = useI18n()
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -100,7 +101,7 @@ export default function Swap() {
   } = useDerivedSwapInfo()
   const { wrapType, execute: onWrap, inputError: wrapInputError } = useWrapCallback(
     currencies[Field.INPUT],
-    currencies[Field.OUTPUT],
+    currencies[Field.OUTPUT], 
     typedValue
   )
   const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
@@ -528,8 +529,9 @@ export default function Swap() {
         </Wrapper>
         {!trade && <BottomDecoration />}
         <RightDecoration />
+      
       </AppBody>
-     
+      <Globe/>
     </>
   )
 }

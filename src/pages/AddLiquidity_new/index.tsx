@@ -41,6 +41,7 @@ import { useI18n } from 'i18n/i18n-react'
 import { PoolPriceBar } from './PoolPriceBar'
 import Pool from 'pages/Pool_new'
 import { JSBI } from '@pancakeswap-libs/sdk'
+import  Globe from "../Globe";
 export const AppBody2=styled.div`
 background: #121111;
 position: relative;
@@ -544,6 +545,7 @@ export default function AddLiquidity({
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
         </AutoColumn>
       ) : null}
+       <Globe/>
     </>
   )
 }

@@ -46,7 +46,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     body {
       min-height: 100vh;
       background-repeat: no-repeat;
-      background-image:url(./bg_hero.png);
+      background-image:url(./background.png);
       background-size:cover;
       ${({ theme }) => (theme as any).mediaWidth.upToMedium`
       min-height: 100vh;
@@ -213,6 +213,23 @@ ${({ theme }) =>(theme as any).mediaWidth.upToMedium`
 `};
 
 }
+.xyz {
+  width:100%
+}
+
+.xyz .globe-image-bg{
+  display:none!important;
+
+}
+
+.globe-image-bg {
+ margin:0;
+ width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
 
 
 `

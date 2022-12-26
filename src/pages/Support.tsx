@@ -205,17 +205,22 @@ justify-content:center;
 font-size: 28px;
 `};
   `
-  const Container = styled.div`
+  const Containersupport = styled.div`
   padding: 3rem 0 ;
   // width: 50%;
     margin: 0 auto;
+    background: url(/astronaut.png);
+// background-size: cover;
+ background-position: center;
+background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
+  background:unset;
  `};
 `
   return (
     <>
-    <Container>
+    <Containersupport>
 
     <Bannerheading>
         <HeadingMytext>Backend By The Best</HeadingMytext>
@@ -353,7 +358,7 @@ font-size: 28px;
           </Cardimg>
         </Supportecarddesk>
       </Parentsupportcarddesk>
-      </Container>
+      </Containersupport>
     </>
   )
 }

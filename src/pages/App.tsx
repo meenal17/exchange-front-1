@@ -22,6 +22,7 @@ import RemoveLiquidity from './RemoveLiquidity_new'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
+// import Globe from "./Globe"
 
 const AppWrapper = styled.div`
   display: flex;
@@ -54,9 +55,9 @@ const BodyWrapper = styled.div`
   z-index: 1;
 `
 
-const Marginer = styled.div`
-  margin-top: 5rem;
-`
+// const Marginer = styled.div`
+//   margin-top: 5rem;
+// `
 
 // const LogoTitle = styled.img`
 //   width: 350px;
@@ -78,6 +79,7 @@ export default function App() {
           <HeaderWrapper>
             <Header />
           </HeaderWrapper>
+       
           <BodyWrapper>
             <Popups />
             <Web3ReactManager>
@@ -99,11 +101,14 @@ export default function App() {
                 <Route exact strict path="/migrate/v1" component={MigrateV1} />
                 <Route exact strict path="/migrate/v1/:address" component={MigrateV1Exchange} />
                 <Route component={RedirectPathToSwapOnly} />
+                {/* <Globe/> */}
               </Switch>
             </Web3ReactManager>
             {/* <LogoTitle src={LogoH} alt="bg" /> */}
-            <Marginer />
+            {/* <Marginer /> */}
+         
           </BodyWrapper>
+        
         </AppWrapper>
       </HashRouter>
     </Suspense>
