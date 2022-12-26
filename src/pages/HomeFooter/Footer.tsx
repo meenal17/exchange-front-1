@@ -77,13 +77,13 @@ const Footer = () => {
               </button>
             </div>
           </div>
-          <div style={{ display: 'flex',justifyContent:"space-between",alignItems:"center" }}>
+          {/* <div style={{ display: 'flex',justifyContent:"space-between",alignItems:"center" }}>
             <h1>Community</h1>
             <p>icons</p>
             <p>icons</p>
             <p>icons</p>
             <p>icons</p>
-          </div>
+          </div> */}
         </div>
       </div>
       <div style={{ display: 'flex',justifyContent:"space-between",alignItems:"center",margin: "0px 23px" }}>
