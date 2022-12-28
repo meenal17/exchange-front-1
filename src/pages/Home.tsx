@@ -49,14 +49,15 @@ background-repeat: no-repeat;
  `};
 `
 const Container3 = styled.div`
-padding: 3.8rem 0;
+padding: 14.8rem 0;
 margin: 0 auto;
-// background: url(/bg_moon.png);
+ background: url(/ar.png);
 // background-size: cover;
 // background-position: center;
 background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
+  background:unset;
  `};
 `
 const Containerto = styled.div`

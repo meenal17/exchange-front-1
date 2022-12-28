@@ -38,6 +38,10 @@ export const MyRowfixed =styled.div`
       display:flex;
       text-align:center; 
       padding:20px;
+       ${({ theme }) =>theme.mediaWidth.upToMedium`
+white-space: nowrap;
+ padding:unset;
+`};
       `
 export const HoverCard = styled(Card)`
   // border: 1px solid ${({ theme }) => theme.colors.bg2};
@@ -128,7 +132,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
                 </Text>
                 {token1Deposited ? (
                   <RowFixed>
-                    <Text color="#888D9B" fontSize={16} fontWeight={500} marginLeft={'6px'}>
+                    <Text color="#888D9B" fontSize={16} fontWeight={500}>
                       {token1Deposited?.toSignificant(6)}
                     </Text>
                   </RowFixed>
@@ -187,9 +191,9 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
               <MyRowfixed>
               
              <div style={{display:"flex", alignItems:'center'}}>
-            
-             <CurrencyLogo size="40px" currency={currency0} />
-              <CurrencyLogo size="40px" currency={currency1} style={
+           
+             <CurrencyLogo  currency={currency0} />
+              <CurrencyLogo  currency={currency1} style={
                 {marginLeft:'-12px'}
               }/>
             
@@ -213,7 +217,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
              
               {token0Deposited ? (
                 
-                  <Text fontSize={16} fontWeight={500} marginLeft={'6px'}>
+                  <Text className='fontss' fontWeight={500} >
                     {token0Deposited?.toSignificant(6)}
                   </Text>
                   
@@ -221,7 +225,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
               ) : (
                 '-'
               )}
-               <Text fontSize={16} fontWeight={500}>
+               <Text className='fontss' fontWeight={500}>
                   Pooled {currency0.symbol}:
                 </Text>
                </div>
@@ -232,14 +236,14 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
                 
               {token1Deposited ? (
              
-                  <Text fontSize={16} fontWeight={500} marginLeft={'6px'}>
+                  <Text className='fontss' fontWeight={500} >
                     {token1Deposited?.toSignificant(6)}
                   </Text>
               
               ) : (
                 '-'
               )}
-              <Text fontSize={16} fontWeight={500}>
+              <Text className='fontss' fontWeight={500}>
                   Pooled {currency1.symbol}:
                 </Text>
              
@@ -256,10 +260,10 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             <FixedHeightRow>
             <div style={{marginTop:"10px"}}>
               
-              <Text fontSize={16} fontWeight={500}>
+              <Text className='fontss' fontWeight={500}>
                 {poolTokenPercentage ? poolTokenPercentage.toFixed(2) + '%' : '-'}
               </Text>
-              <Text fontSize={16} fontWeight={500}>
+              <Text className='fontss' fontWeight={500}>
                 Your pool share:
               </Text>
               </div>

@@ -111,7 +111,7 @@ background: linear-gradient(88deg,#0bc496,#1f6d99);
   font-size: 18px;
   font-weight:bold;
   border-radius: 8px;
-  padding: 4px 2px;
+  padding: 8px 43px;
   // padding: ${({ padding }) => (padding ? padding : '10px')};
 
   &:focus {
@@ -130,6 +130,11 @@ background: linear-gradient(88deg,#0bc496,#1f6d99);
     opacity: 50%;
     cursor: auto;
   }
+
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+  padding: 0px 8px;
+font-size: 14px;
+  `};
 `
 
 export const ButtonPink = styled(Base)`

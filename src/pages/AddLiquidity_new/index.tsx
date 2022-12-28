@@ -52,6 +52,9 @@ border-radius: 9px;
 padding: 1rem;
 margin-bottom: 10px;
 min-height: 245px;
+${({ theme }) => theme.mediaWidth.upToMedium`
+max-width: 350px;
+`};
 `
 export const LayoutWrapper = styled.div`
   display: -webkit-box;

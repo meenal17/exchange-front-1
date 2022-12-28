@@ -13,6 +13,9 @@ export const BodyWrapper = styled.div`
    /* border: 1px solid #6a7c76; */
    margin-bottom: 10px;
    margin-top: 10px;
+   ${({ theme }) => theme.mediaWidth.upToMedium`
+max-width: 350px;
+`};
 `
 
 

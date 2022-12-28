@@ -228,9 +228,15 @@ ${({ theme }) =>(theme as any).mediaWidth.upToMedium`
   position: absolute;
   left: 0;
   bottom: 0;
+  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+display:none;
+`};
 }
-
-
-
+.fontss{
+  font-size: 15px !important;
+  ${({ theme }) => (theme as any).mediaWidth.upToMedium`
+  font-size:13px !important;
+  `};
+}
 `
 

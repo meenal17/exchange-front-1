@@ -4,7 +4,7 @@ const Globe = () => {
 
   return (
     <div className='globe-image-bg'>
-    <img src="/globe.png"/>
+    <img className='globaleimg' src="/globe.png"/>
     </div>
   )
 }
