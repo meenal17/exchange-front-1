@@ -23,29 +23,17 @@ const Footer = () => {
         <div className="footer-items">
           <h1>Product</h1>
           {/* <div className="border1"></div> */}
-          <div className='productparent'>
-           <div>
-           <div>
-           swap
+          <div className="productparent">
+            <div>
+              <div>swap</div>
+              <div>Bridge</div>
+              <div>Farm</div>
             </div>
             <div>
-              Bridge
+              <div>liquidity</div>
+              <div>Staking</div>
+              <div>Markets</div>
             </div>
-            <div>
-            Farm
-            </div>
-           </div>
-           <div>
-           <div>
-              liquidity
-            </div>
-            <div>
-              Staking
-            </div>
-            <div>
-              Markets
-            </div>
-           </div>
           </div>
           <div className="social-media">
             <a href="#">
@@ -77,22 +65,34 @@ const Footer = () => {
               </button>
             </div>
           </div>
-          {/* <div style={{ display: 'flex',justifyContent:"space-between",alignItems:"center" }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <h1>Community</h1>
-            <p>icons</p>
-            <p>icons</p>
-            <p>icons</p>
-            <p>icons</p>
-          </div> */}
+            <div className="icons">
+              <div>
+                <img src="icon1.png" alt="" style={{ width: '20px' }} />
+              </div>
+              <div>
+                <img src="icon2.png" alt="" style={{ width: '20px' }} />
+              </div>
+              <div>
+                <img src="icon3.png" alt="" style={{ width: '20px' }} />
+              </div>
+              <div>
+                <img src="icon4.png" alt="" style={{ width: '20px' }} />
+              </div>
+              <div>
+                <img src="icon5.png" alt="" style={{ width: '20px' }} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div style={{ display: 'flex',justifyContent:"space-between",alignItems:"center",margin: "0px 23px" }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px 23px' }}>
         <div className="">
           <img src="LeBo.png" alt="" style={{ width: '5rem' }} />
         </div>
         <div className="footer-bottom">2022 Lebo.All rights reserved</div>
       </div>
-      
     </div>
   )
 }

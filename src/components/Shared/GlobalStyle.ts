@@ -238,5 +238,11 @@ display:none;
   font-size:13px !important;
   `};
 }
+.icons{
+  display:flex;
+  gap:10px;
+  align-items: center;
+  margin-top: 10px;
+}
 `
 
