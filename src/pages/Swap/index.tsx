@@ -295,12 +295,12 @@ export default function Swap() {
   }, [maxAmountInput, onUserInput])
 
   const handleTwentyinput = useCallback(()=>{
-    console.log("hello");
+    // let data = maxAmountInput && onUserInput(Field.INPUT,JSBI.BigInt(String(maxAmountInput?.raw);
+    console.log("data");
     
-    // const balance = (Field.INPUT, maxAmountInput?.raw);
-
-    // (Field.INPUT(Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
-  },[])
+    // onUserInput(string(data*20))
+  //  onUserInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(data)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+  },[maxAmountInput,onUserInput])
   const handleOutputSelect = useCallback(
     outputCurrency => {
       onCurrencySelection(Field.OUTPUT, outputCurrency)

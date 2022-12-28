@@ -306,7 +306,7 @@ background-repeat: no-repeat;
       <Parentsupportcardnew>
         <Supportecardto>
           <Cardimg>
-            <img src="bsc.png" alt="bsc" className="cardimgsizeto" />
+            <img src="Group6.png" alt="bsc" className="cardimgsizeto" />
           </Cardimg>
           <Cardimg>
             <h2 className="mobiletext">Conitelgraph</h2>
@@ -314,7 +314,7 @@ background-repeat: no-repeat;
         </Supportecardto>
         <Supportecardto>
           <Cardimg>
-            <img src="tron.png" alt="bsc" className="cardimgsizeto" />
+            <img src="Group7.png" alt="bsc" className="cardimgsizeto" />
           </Cardimg>
           <Cardimg>
             <h2 className="mobiletext">Yourstory</h2>
@@ -322,7 +322,7 @@ background-repeat: no-repeat;
         </Supportecardto>
         <Supportecardto>
           <Cardimg>
-            <img src="wyzth.png" alt="bsc" className="cardimgsizeto" />
+            <img src="Group8.png" alt="bsc" className="cardimgsizeto" />
           </Cardimg>
           <Cardimg>
             <h2 className="mobiletext">Coindesk</h2>
@@ -335,7 +335,7 @@ background-repeat: no-repeat;
       <Parentsupportcarddesk>
         <Supportecarddesk>
           <Cardimg>
-            <img src="bsc.png" alt="bsc" className="cardimgsize" />
+            <img src="Group6.png" alt="bsc" className="cardimgsize" />
           </Cardimg>
           <Cardimg>
             <h2>Conitelgraph</h2>
@@ -343,7 +343,7 @@ background-repeat: no-repeat;
         </Supportecarddesk>
         <Supportecarddesk>
           <Cardimg>
-            <img src="tron.png" alt="bsc" className="cardimgsize" />
+            <img src="Group7.png" alt="bsc" className="cardimgsize" />
           </Cardimg>
           <Cardimg>
             <h2>Yourstory</h2>
@@ -351,7 +351,7 @@ background-repeat: no-repeat;
         </Supportecarddesk>
         <Supportecarddesk>
           <Cardimg>
-            <img src="wyzth.png" alt="bsc" className="cardimgsize" />
+            <img src="Group8.png" alt="bsc" className="cardimgsize" />
           </Cardimg>
           <Cardimg>
             <h2>Coindesk</h2>
