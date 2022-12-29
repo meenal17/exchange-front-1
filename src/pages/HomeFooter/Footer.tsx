@@ -1,8 +1,10 @@
 import React from 'react'
 import './Style.css'
+import Particle from "../particle/Particle"
 const Footer = () => {
   return (
     <div className="footer">
+         <Particle/>
       <div className="inner-footer">
         <div className="footer-items">
           <h1>Resources</h1>

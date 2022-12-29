@@ -40,19 +40,20 @@ export const FixedGlobalStyle = createGlobalStyle`
 export const ThemedGlobalStyle = createGlobalStyle`
     html {
       color: ${({ theme }) => (theme as any).colors.text1};
-      background-image:url(./background.png);
+      // background-image:url(./background.png);
     }
 
     body {
       min-height: 100vh;
-      background-repeat: no-repeat;
-      background-image:url(./background.png);
-      background-size:cover;
+      background:#000;
+      // background-repeat: no-repeat;
+      // background-image:url(./background.png);
+      // background-size:cover;
       ${({ theme }) => (theme as any).mediaWidth.upToMedium`
       min-height: 100vh;
-      background-repeat: no-repeat;
-      background-image:url(./background.png);
-      background-size:cover;
+      // background-repeat: no-repeat;
+      // background-image:url(./background.png);
+      // background-size:cover;
       `};
     }
     
@@ -244,5 +245,13 @@ display:none;
   align-items: center;
   margin-top: 10px;
 }
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 `
 

@@ -180,7 +180,7 @@
 }
 .card {
   height: 235px !important;
-  width:unset !important;
+  /* width:unset !important; */
 }
 .slider .slide {
   height: 10px;

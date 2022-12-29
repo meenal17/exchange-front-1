@@ -22,6 +22,7 @@ import RemoveLiquidity from './RemoveLiquidity_new'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
+ import Particle from "./particle/Particle"
 // import Globe from "./Globe"
 
 const AppWrapper = styled.div`
@@ -41,7 +42,7 @@ const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-top: 160px;
+  //  padding-top: 160px;
   align-items: center;
   flex: 1;
   overflow-y: auto;
@@ -49,7 +50,7 @@ const BodyWrapper = styled.div`
   z-index: 10;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-      padding: 16px;
+      // padding: 16px;
   `};
 
   z-index: 1;
@@ -81,9 +82,11 @@ export default function App() {
           </HeaderWrapper>
        
           <BodyWrapper>
+          <Particle/>
             <Popups />
             <Web3ReactManager>
               <Switch>
+             
               <Route exact strict path="/" component={Home} />
                 <Route exact strict path="/swap" component={Swap} />
                 {/*<Route exact strict path="/farm" component={Farm} />*/}

@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import Carsole from "./Carsolle/Carasole"
+import Carsole from './Carsolle/Carasole'
 import Support from './Support'
-import Footer from "./HomeFooter/Footer"
+import Footer from './HomeFooter/Footer'
+import Particle from "./particle/Particle"
 const Body = styled.div`
   // background: url('/background.png');
   // background: black;
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
-   //position: fixed;
+  //position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -27,34 +28,34 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-padding: 8.8rem 0;
-margin: 0 auto;
-background: url(/bg_handshake.png);
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+  padding: 8.8rem 0;
+  margin: 0 auto;
+  background: url(/bg_handshake.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
  `};
 `
 const Container2 = styled.div`
-padding: 3.8rem 0;
-margin: 0 auto;
-background: url(/bg_moon.png);
-// background-size: cover;
-// background-position: center;
-background-repeat: no-repeat;
+  padding: 3.8rem 0;
+  margin: 0 auto;
+  background: url(/bg_moon.png);
+  // background-size: cover;
+  // background-position: center;
+  background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
  `};
 `
 const Container3 = styled.div`
-padding: 14.8rem 0;
-margin: 0 auto;
- background: url(/ar.png);
-// background-size: cover;
-// background-position: center;
-background-repeat: no-repeat;
+  padding: 14.8rem 0;
+  margin: 0 auto;
+  background: url(/ar.png);
+  // background-size: cover;
+  // background-position: center;
+  background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
   background:unset;
@@ -70,14 +71,14 @@ const Containerto = styled.div`
     top: 25%;
  `};
 
- ${({ theme }) => theme.mediaWidth.upToSmall`
+  ${({ theme }) => theme.mediaWidth.upToSmall`
  background-size: contain;
  background-image: url(./missioto.png);
  background-repeat: no-repeat;
  background-position: center;
  top: 25%;
 `};
-${({ theme }) => theme.mediaWidth.upToMedium`
+  ${({ theme }) => theme.mediaWidth.upToMedium`
 background-size: contain;
     background-image: url(./missioto.png);
     background-repeat: no-repeat;
@@ -96,7 +97,8 @@ const Homecard = styled.div`
   box-shadow: 0px 0px 5px 4px rgb(56 115 116);
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
    white-space:no-wrap;
-   padding:1.5rem;
+      padding: 19px 4px;
+    margin: 5px 12px;
   `};
 `
 const Homecardtrade = styled.div`
@@ -109,7 +111,8 @@ const Homecardtrade = styled.div`
   box-shadow: 0px 0px 5px 4px rgb(237 170 108);
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   white-space:no-wrap;
-  padding:1.5rem;
+     padding: 19px 4px;
+    margin: 20px 12px;
  `};
 `
 const Homecardto = styled.div`
@@ -145,26 +148,24 @@ const Mytext = styled.div`
   line-height: 1.2em;
   font-weight: 600;
   text-align: center;
-  
-  
+
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   font-size: 28px;
   `};
 `
 const Textwhy = styled.div`
   color: #fff;
- font-size: 55px;
+  font-size: 55px;
   line-height: 0.9em;
   font-weight: 600;
   text-align: center;
-  background:linear-gradient(75deg,#46c2a8,#3e8b9a,#498fb5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 1px solid #46c2a8;
-    width: 494px;
-    margin: 0 auto;
-  
-  
+  background: linear-gradient(75deg, #46c2a8, #3e8b9a, #498fb5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px solid #46c2a8;
+  width: 494px;
+  margin: 0 auto;
+
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   font-size: 28px;
   width: 249px;
@@ -176,12 +177,12 @@ const HeadingMytext = styled.div`
   line-height: 0.9em;
   font-weight: 600;
   text-align: center;
-  background:linear-gradient(75deg,#46c2a8,#3e8b9a,#498fb5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: 1px solid #46c2a8;
-    width: 242px;
-    margin: 0 auto;
+  background: linear-gradient(75deg, #46c2a8, #3e8b9a, #498fb5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px solid #46c2a8;
+  width: 242px;
+  margin: 0 auto;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   font-size: 28px;
   width: 124px;
@@ -204,7 +205,7 @@ const Mytextto = styled.div`
 const Bannertxt = styled.div`
   color: #fff;
   font-size: 22px;
-  margin-top:10px;
+  margin-top: 10px;
   line-height: 1.3em;
   padding: 0 9rem;
   font-weight: 600;
@@ -217,7 +218,7 @@ const Bannertxt = styled.div`
     font-size: 13px;
     line-height: 1.8em;
    `};
-   ${({ theme }) => theme.mediaWidth.upToLarge`
+  ${({ theme }) => theme.mediaWidth.upToLarge`
    
     padding:0 5px;
     font-size:16px;
@@ -245,7 +246,7 @@ const Sectiotwosection = styled.div`
   justify-content: unset;
   
 `};
- ${({ theme }) => theme.mediaWidth.upToSmall`
+  ${({ theme }) => theme.mediaWidth.upToSmall`
   display: unset;
   justify-content: unset;
   
@@ -262,7 +263,7 @@ const Carsolesection = styled.div`
   justify-content: unset;
   
 `};
- ${({ theme }) => theme.mediaWidth.upToSmall`
+  ${({ theme }) => theme.mediaWidth.upToSmall`
   display: unset;
   justify-content: unset;
   
@@ -274,7 +275,7 @@ const Cardcustom = styled.div`
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   display: flex;
-  justify-content:space-between;
+  justify-content: space-around;
 `};
 `
 const Imangecard = styled.div`
@@ -282,10 +283,10 @@ const Imangecard = styled.div`
 display: none;
 
 `};
-${({ theme }) => theme.mediaWidth.upToSmall`
+  ${({ theme }) => theme.mediaWidth.upToSmall`
 display: none;
 `};
-${({ theme }) => theme.mediaWidth.upToMedium`
+  ${({ theme }) => theme.mediaWidth.upToMedium`
 display: none;
 `};
 `
@@ -293,94 +294,95 @@ display: none;
 const Home = () => {
   return (
     <>
-  <div className='xyz'>
-    <Body>
-      <Container1>
-        <Bannerheading>
-          <Mytextto>
-            A Cross-Chain Protocol 
-            <div>Where <span className="mytexfdxdd">Trust</span> meets{' '}
-            <span className="mytexfdxdd">Needs</span>
-            </div>
-          </Mytextto>
+      <div className="xyz">
+        <Body>
+          <div className="stars-wrapper">
+            {/* <Particle/> */}
+            <Container1>
+              <Bannerheading>
+                <Mytextto>
+                  A Cross-Chain Protocol
+                  <div>
+                    Where <span className="mytexfdxdd">Trust</span> meets <span className="mytexfdxdd">Needs</span>
+                  </div>
+                </Mytextto>
 
-          <Bannertxt>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. <div>Minima nostrum delectus commodi.</div>
-          </Bannertxt>
-          <Buttondiv>
-            <div className="LaunchButton">
-              {' '}
-              <span className="textnew">Launch Swap</span>{' '}
-            </div>
-          </Buttondiv>
-        </Bannerheading>
-      </Container1>
-      {/* section two start  */}
+                <Bannertxt>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. <div>Minima nostrum delectus commodi.</div>
+                </Bannertxt>
+                <Buttondiv>
+                  <div className="LaunchButton">
+                    {' '}
+                    <span className="textnew">Launch Swap</span>{' '}
+                  </div>
+                </Buttondiv>
+              </Bannerheading>
+              <Particle/>
+            </Container1>
+            {/* section two start  */}
 
-      <Container2>
-        <Containerto>
-          <Bannerheading>
-            <HeadingMytext>Statistics</HeadingMytext>
-          </Bannerheading>
-          <Sectiotwosection>
-            <div>
-              <Homecard>
-                <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
-                  Total Value Locked(TVL)
-                </h2>
-                <Mytext> $1,154,896.54</Mytext>
-              </Homecard>
-              <Homecardtrade>
-                <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
-                  Total Value Locked(TVL)
-                </h2>
-                <Mytext> $1,154,896.54</Mytext>
-              </Homecardtrade>
-              <Cardcustom>
-                <Homecardto>
-                  <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
-                    Tokens
-                  </h2>
-                  <Mytext>3500+</Mytext>
-                </Homecardto>
-                <Homecardthree>
-                  <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
-                    APY
-                  </h2>
-                  <Mytext>27%</Mytext>
-                </Homecardthree>
-              </Cardcustom>
-            </div>
-            <Imangecard>
-              <img src="mission.png" alt="" style={{ width: '100%' }} />
-            </Imangecard>
-          </Sectiotwosection>
-        </Containerto>
-      </Container2>
+            <Container2>
+              <Containerto>
+                <Bannerheading>
+                  <HeadingMytext>Statistics</HeadingMytext>
+                </Bannerheading>
+                <Sectiotwosection>
+                  <div>
+                    <Homecard>
+                      <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
+                        Total Value Locked(TVL)
+                      </h2>
+                      <Mytext> $1,154,896.54</Mytext>
+                    </Homecard>
+                    <Homecardtrade>
+                      <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
+                        Total Value Locked(TVL)
+                      </h2>
+                      <Mytext> $1,154,896.54</Mytext>
+                    </Homecardtrade>
+                    <Cardcustom>
+                      <Homecardto>
+                        <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
+                          Tokens
+                        </h2>
+                        <Mytext>3500+</Mytext>
+                      </Homecardto>
+                      <Homecardthree>
+                        <h2 className="" style={{ margin: '0', lineHeight: '37px' }}>
+                          APY
+                        </h2>
+                        <Mytext>27%</Mytext>
+                      </Homecardthree>
+                    </Cardcustom>
+                  </div>
+                  <Imangecard>
+                    <img src="mission.png" alt="" style={{ width: '100%' }} />
+                  </Imangecard>
+                </Sectiotwosection>
+                <Particle/>
+              </Containerto>
+            </Container2>
 
-      {/* section three start */}
-      <Container3>
-        <Bannerheading>
-          <Textwhy>Why We Use LeBo</Textwhy>
-        </Bannerheading>
-         <Carsolesection>
-          <Carsole/> 
-       </Carsolesection>
-      </Container3> 
-      {/* section four start */}
-     
-        {/* <Bannerheading>
-          <HeadingMytext>Supported Networks</HeadingMytext>
-        </Bannerheading> */}
+            {/* section three start */}
+            <Container3>
+              <Bannerheading>
+                <Textwhy>Why We Use LeBo</Textwhy>
+              </Bannerheading>
+              <Carsolesection>
+                <Carsole />
+              </Carsolesection>
+              <Particle/>
+            </Container3>
 
-        <Support />
-     
-     
-    </Body>
-   
-    <Footer/>
-    </div>
-     </>
+
+            <Support />
+            <Particle/>
+          </div>
+        </Body>
+
+        <Footer />
+      </div>
+    </>
   )
 }
 
