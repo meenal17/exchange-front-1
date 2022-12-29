@@ -1,10 +1,10 @@
 import React from 'react'
 import './Style.css'
-import Particle from "../particle/Particle"
+// import Particle from "../particle/Particle"
 const Footer = () => {
   return (
     <div className="footer">
-         <Particle/>
+         {/* <Particle/> */}
       <div className="inner-footer">
         <div className="footer-items">
           <h1>Resources</h1>
@@ -37,17 +37,7 @@ const Footer = () => {
               <div>Markets</div>
             </div>
           </div>
-          <div className="social-media">
-            <a href="#">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="#">
-              <i className="fab fa-facebook"></i>
-            </a>
-            <a href="#">
-              <i className="fab fa-google-plus-square"></i>
-            </a>
-          </div>
+         
         </div>
         <div className="footer-items">
           <h1>Newsletter</h1>

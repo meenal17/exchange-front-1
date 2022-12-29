@@ -22,7 +22,7 @@ import RemoveLiquidity from './RemoveLiquidity_new'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
- import Particle from "./particle/Particle"
+//  import Particle from "./particle/Particle"
 // import Globe from "./Globe"
 
 const AppWrapper = styled.div`
@@ -80,13 +80,13 @@ export default function App() {
           <HeaderWrapper>
             <Header />
           </HeaderWrapper>
-       
+          
           <BodyWrapper>
-          <Particle/>
+          {/* <Particle/> */}
+          
             <Popups />
             <Web3ReactManager>
               <Switch>
-             
               <Route exact strict path="/" component={Home} />
                 <Route exact strict path="/swap" component={Swap} />
                 {/*<Route exact strict path="/farm" component={Farm} />*/}
@@ -106,6 +106,7 @@ export default function App() {
                 <Route component={RedirectPathToSwapOnly} />
                 {/* <Globe/> */}
               </Switch>
+
             </Web3ReactManager>
             {/* <LogoTitle src={LogoH} alt="bg" /> */}
             {/* <Marginer /> */}

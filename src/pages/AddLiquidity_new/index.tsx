@@ -42,6 +42,7 @@ import { PoolPriceBar } from './PoolPriceBar'
 import Pool from 'pages/Pool_new'
 import { JSBI } from '@pancakeswap-libs/sdk'
 import  Globe from "../Globe";
+import Particle from "../particle/Particle"
 export const AppBody2=styled.div`
 background: #121111;
 position: relative;
@@ -376,6 +377,7 @@ export default function AddLiquidity({
 
   return (
     <>
+    <Particle/>
       <LayoutWrapper>
         <AppBody>
           <AddRemoveTabs adding={true} />

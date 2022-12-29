@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Carsole from './Carsolle/Carasole'
 import Support from './Support'
 import Footer from './HomeFooter/Footer'
-import Particle from "./particle/Particle"
+import Particle from './particle/Particle'
 const Body = styled.div`
   // background: url('/background.png');
   // background: black;
@@ -28,14 +28,14 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-  padding: 8.8rem 0;
-  margin: 0 auto;
-  background: url(/bg_handshake.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+padding: 136px 10px;
+background: url(/bg_handshake.png);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
+  margin: unset;
  `};
 `
 const Container2 = styled.div`
@@ -47,6 +47,7 @@ const Container2 = styled.div`
   background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
+  background: unset;
  `};
 `
 const Container3 = styled.div`
@@ -294,10 +295,13 @@ display: none;
 const Home = () => {
   return (
     <>
+  
       <div className="xyz">
+      {/* <Particle />  */}
         <Body>
+        {/* <Particle /> */}
           <div className="stars-wrapper">
-            {/* <Particle/> */}
+          <Particle /> 
             <Container1>
               <Bannerheading>
                 <Mytextto>
@@ -317,11 +321,11 @@ const Home = () => {
                   </div>
                 </Buttondiv>
               </Bannerheading>
-              <Particle/>
             </Container1>
             {/* section two start  */}
 
             <Container2>
+            
               <Containerto>
                 <Bannerheading>
                   <HeadingMytext>Statistics</HeadingMytext>
@@ -359,7 +363,6 @@ const Home = () => {
                     <img src="mission.png" alt="" style={{ width: '100%' }} />
                   </Imangecard>
                 </Sectiotwosection>
-                <Particle/>
               </Containerto>
             </Container2>
 
@@ -371,12 +374,8 @@ const Home = () => {
               <Carsolesection>
                 <Carsole />
               </Carsolesection>
-              <Particle/>
             </Container3>
-
-
             <Support />
-            <Particle/>
           </div>
         </Body>
 

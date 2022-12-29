@@ -49,6 +49,7 @@ import { useI18n } from 'i18n/i18n-react'
 import BottomDecoration from './BottomDecoration'
 import RightDecoration from './RightDecoration'
 // import { JSBI } from '@pancakeswap-libs/sdk'
+import Particle from "../particle/Particle"
 import Globe from "../Globe";
 export default function Swap() {
   const i18n = useI18n()
@@ -313,6 +314,7 @@ export default function Swap() {
 
   return (
     <>
+    <Particle/>
       <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
