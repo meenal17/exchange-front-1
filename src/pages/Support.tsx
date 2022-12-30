@@ -194,15 +194,19 @@ justify-content:center;
   `
   const HeadingMytext = styled.div`
     color: #fff;
-    font-size: 55px;
+    font-size: 46px;
     line-height: 1.2em;
-    font-weight: 600;
+    font-weight: 800;
     text-align: center;
-    background: linear-gradient(127deg, #46c2a8, #3e8b9a, #498fb5);
+    font-family: 'Inter', sans-serif !important;
+ background: linear-gradient(113deg,#45ff6c,#47a7ae,#0892ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
 font-size: 28px;
+background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
+ -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 `};
   `
   const Containersupport = styled.div`
@@ -223,7 +227,10 @@ background-repeat: no-repeat;
     <Containersupport>
 
     <Bannerheading>
-        <HeadingMytext>Backend By The Best</HeadingMytext>
+        <HeadingMytext>Support Network</HeadingMytext>
+        <div className='headingborderthree'>
+
+                  </div>
       </Bannerheading>
       <SupportCardForMobile>       
         <Parentsupportcard>
@@ -301,6 +308,9 @@ background-repeat: no-repeat;
       {/* backend by the best */}
       <Bannerheading>
         <HeadingMytext>Backend By The Best</HeadingMytext>
+        <div className='headingborderfour'>
+
+                  </div>
       </Bannerheading>
 
       <Parentsupportcardnew>

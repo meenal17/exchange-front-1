@@ -82,7 +82,7 @@
   font-weight: 700;
   color: #fff;
   margin: 0 0 20px 0;
-  background: linear-gradient(92deg,#ebc1a3,#d890a2,#f5c1a9);
+  background: linear-gradient(92deg,#ebc1a3,#d890a2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -176,7 +176,8 @@
     line-height: 1.2em !important;
 }
 .content .title{
-  font-size: 22px !important;
+  font-size: 18px !important;
+  white-space: nowrap !important;
 }
 .card {
   height: 235px !important;

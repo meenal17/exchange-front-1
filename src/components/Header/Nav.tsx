@@ -12,7 +12,7 @@ const Nav: React.FC = () => {
      </div>
       </StyledAbsoluteLink>
       <StyledAbsoluteLink >
-        <Link to="/swap">
+        <Link to="/swap" style={{textDecoration:"none"}}>
       <div style={{display:"flex" ,gap:"3px"}}>
         <img src="Vector 2.png" alt="" />
         <TranslatedText translationId={200}>Swap</TranslatedText>
@@ -40,7 +40,7 @@ const Nav: React.FC = () => {
        </StyledAbsoluteLink>
      
       <StyledAbsoluteLink href="#">
-      <Link to="/add/ETH">
+      <Link to="/add/ETH" style={{textDecoration:"none"}}>
       
       <div style={{display:"flex" ,gap:"3px"}}>
       <img src="liquidity.png" alt=""/>

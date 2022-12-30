@@ -51,7 +51,7 @@ const Container2 = styled.div`
  `};
 `
 const Container3 = styled.div`
-  padding: 14.8rem 0;
+  padding: 8.8rem 0;
   margin: 0 auto;
   background: url(/ar.png);
   // background-size: cover;
@@ -156,54 +156,76 @@ const Mytext = styled.div`
 `
 const Textwhy = styled.div`
   color: #fff;
-  font-size: 55px;
-  line-height: 0.9em;
-  font-weight: 600;
+  font-size:46px;
+  font-family: 'Inter', sans-serif !important;
+ background: linear-gradient(113deg,#45ff6c,#47a7ae,#0892ff);
+  font-weight: 800;
   text-align: center;
-  background: linear-gradient(75deg, #46c2a8, #3e8b9a, #498fb5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 1px solid #46c2a8;
-  width: 494px;
   margin: 0 auto;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   font-size: 28px;
   width: 249px;
+ background:linear-gradient(113deg,#abe0b6,#67b1b6,#44a8f6cf);
+  font-weight: 800;
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   `};
 `
 const HeadingMytext = styled.div`
+ font-family: 'Inter', sans-serif !important;
+ background: linear-gradient(113deg,#45ff6c,#47a7ae,#0892ff);
   color: #fff;
-  font-size: 55px;
+  font-size: 46px;
   line-height: 0.9em;
-  font-weight: 600;
+  font-weight: 900;
   text-align: center;
-  background: linear-gradient(75deg, #46c2a8, #3e8b9a, #498fb5);
+  
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 1px solid #46c2a8;
-  width: 242px;
   margin: 0 auto;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-  font-size: 28px;
-  width: 124px;
+  font-size: 30px;
+  background: linear-gradient(113deg,#abe0b6,#47a7ae,#0892ff);
+  color: #fff;
+  line-height: 0.9em;
+  font-weight: 900;
+  text-align: center;
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  // width: 124px;
   `};
 `
+
+
 const Mytextto = styled.div`
-  font-family: arial !important;
   color: #fff;
   font-size: 3rem;
   line-height: 1.2em;
-  font-weight: 800;
+  font-weight: 900;
   text-align: center;
-  background: linear-gradient(127deg, #46c2a8, #3e8b9a, #498fb5);
+  font-family: 'Inter', sans-serif !important;
+ background: linear-gradient(113deg,#92f0a6,#47a7ae,#0892ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     font-size: 27px;
+    line-height: 1.2em;
+  font-weight: 900;
+  text-align: center;
+  font-family: 'Inter', sans-serif !important;
+  background: linear-gradient(113deg,#abe0b6,#47a7ae,#0892ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+  color: #fff;
   `};
 `
 const Bannertxt = styled.div`
+font-family: 'Inter', sans-serif !important;
   color: #fff;
   font-size: 22px;
   margin-top: 10px;
@@ -211,18 +233,21 @@ const Bannertxt = styled.div`
   padding: 0 9rem;
   font-weight: 600;
   text-align: center;
-  background: linear-gradient(214deg, #cb739b, #b07e89, #ecc5a3);
+  background: linear-gradient(92deg,#ebc1a3,#d890a2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-   
-    font-size: 13px;
+
+    font-size: 16px;
     line-height: 1.8em;
    `};
   ${({ theme }) => theme.mediaWidth.upToLarge`
-   
     padding:0 5px;
-    font-size:16px;
+    font-size:19px;
+   `};
+   ${({ theme }) => theme.mediaWidth.upToMedium`
+    padding:0 5px;
+    font-size:12px;
    `};
 `
 const Bannerheading = styled.div`
@@ -234,6 +259,7 @@ const Bannerheading = styled.div`
 `
 const Buttondiv = styled.div`
   text-align: -webkit-center;
+   text-align: center;
   padding-top: 50px;
 `
 
@@ -329,6 +355,10 @@ const Home = () => {
               <Containerto>
                 <Bannerheading>
                   <HeadingMytext>Statistics</HeadingMytext>
+                  <div className='headingborder'>
+
+                  </div>
+
                 </Bannerheading>
                 <Sectiotwosection>
                   <div>
@@ -370,6 +400,10 @@ const Home = () => {
             <Container3>
               <Bannerheading>
                 <Textwhy>Why We Use LeBo</Textwhy>
+
+                <div className='headingborderto'>
+
+                  </div>
               </Bannerheading>
               <Carsolesection>
                 <Carsole />

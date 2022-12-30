@@ -328,7 +328,7 @@ li i {
 		width: 100%;
 		background: #1615153d;
 		display: block;
-		border-top: 1px solid;
+		border-top: 1px solid #444;
 		margin-top: 2.5rem;
 	}
 	.productparent{
