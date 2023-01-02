@@ -1,215 +1,185 @@
-import React, { useRef, useContext, useState } from 'react'
-import {  X } from 'react-feather'
+import React from 'react'
 import styled from 'styled-components'
-import { useOnClickOutside } from '../../hooks/useOnClickOutside'
-import {
-  useUserSlippageTolerance,
-  useExpertModeManager,
-  useUserDeadline,
-  useAudioModeManager
-} from '../../state/user/hooks'
-import TransactionSettings from '../TransactionSettings'
-import { RowFixed, RowBetween } from '../Row'
-import { TYPE } from '../Shared'
-import Toggle from '../Toggle'
-import { ThemeContext } from 'styled-components'
-import { AutoColumn } from '../Column'
-import { ButtonError } from '../Button'
-import { useSettingsMenuOpen, useToggleSettingsMenu } from '../../state/application/hooks'
-import { Text } from 'rebass'
-import Modal from '../Modal'
-import TranslatedText from '../TranslatedText'
+// import useTokenBalance from '../../hooks/useTokenBalance'
+// import { getBalanceNumber } from '../../utils/formatBalance'
+// import { getPipiAddress } from '../../utils/addressHelpers'
+// import { useI18n } from 'i18n/i18n-react'
+import { useWalletModalTogglecustome } from '../../state/application/hooks'
+// import { useActiveWeb3React } from '../../hooks'
+// import TranslatedText from '../TranslatedText'
+// import copyIcon from '../../assets/images/copy.png'
 
+export const CONNECTOR_STORAGE_ID = 'CONNECTOR_STORAGE_ID'
 
-const StyledCloseIcon = styled(X)`
-  height: 20px;
-  width: 20px;
-  :hover {
-    cursor: pointer;
-  }
-
-  > * {
-    stroke: ${({ theme }) => theme.colors.text1};
-  }
-`
-
-const StyledMenuButton = styled.button`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: none;
-  background-color: transparent;
-  margin: 0;
-  padding: 0;
-  height: 35px;
-  // background-color: ${({ theme }) => theme.colors.bg3};
-
-  padding: 0.15rem 0.5rem;
-  border-radius: 0.5rem;
-
-  :hover,
-  :focus {
-    cursor: pointer;
-    outline: none;
-    // background-color: ${({ theme }) => theme.colors.bg4};
-  }
-
-  svg {
-    margin-top: 2px;
-  }
-`
-const EmojiWrapper = styled.div`
-  position: absolute;
-  bottom: -6px;
-  right: 0px;
-  font-size: 14px;
-`
-
-const StyledMenu = styled.div`
-  margin-left: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border: none;
-  text-align: left;
-`
-
-const MenuFlyout = styled.span`
-  min-width: 20.125rem;
-  background-color: ${({ theme }) => theme.colors.bg1};
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
-    0px 24px 32px rgba(0, 0, 0, 0.01);
-
-  border: 1px solid ${({ theme }) => theme.colors.bg3};
-
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  position: absolute;
-  top: 3rem;
-  right: -11rem;
-  z-index: 100;
-
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-    min-width: 18.125rem;
-    right: -104px;
-  `};
-`
-
-const Break = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.colors.bg3};
-`
-
-const ModalContentWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-  background-color: ${({ theme }) => theme.colors.bg2};
-  border-radius: 20px;
-`
-
-export default function SettingsTab() {
-  const node = useRef<HTMLDivElement>()
-  const open = useSettingsMenuOpen()
-  const toggle = useToggleSettingsMenu()
-
-  const theme = useContext(ThemeContext)
-  const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
-
-  const [deadline, setDeadline] = useUserDeadline()
-
-  const [expertMode, toggleExpertMode] = useExpertModeManager()
-
-  const [audioMode, toggleSetAudioMode] = useAudioModeManager()
-
-  // show confirmation view before turning on
-  const [showConfirmation, setShowConfirmation] = useState(false)
-
-  useOnClickOutside(node, open ? toggle : undefined)
-
+const SettingsTab: React.FC<{}> = () => {
+  // const i18n = useI18n()
+  // const { account } = useActiveWeb3React()
+  // const sushiBalance = useTokenBalance(getPipiAddress() as any)
+  const toggleWalletModalcustome = useWalletModalTogglecustome()
+ 
+  // const copy = () => {
+  //   const input = document.createElement('input')
+  //   input.setAttribute('readonly', 'readonly')
+  //   input.setAttribute('value', account || '')
+  //   document.body.appendChild(input)
+  //   input.setSelectionRange(0, 9999)
+  //   if (document.execCommand('copy')) {
+  //     document.execCommand('copy')
+  //   }
+  //   document.body.removeChild(input)
+  // }
   return (
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
-    <StyledMenu ref={node as any}>
-      <Modal isOpen={showConfirmation} onDismiss={() => setShowConfirmation(false)} maxHeight={100}>
-        <ModalContentWrapper>
-          <AutoColumn gap="lg">
-            <RowBetween style={{ padding: '0 2rem' }}>
-              <div />
-              <Text fontWeight={500} fontSize={20}>
-                Are you sure?
-              </Text>
-              <StyledCloseIcon onClick={() => setShowConfirmation(false)} />
-            </RowBetween>
-            <Break />
-            <AutoColumn gap="lg" style={{ padding: '0 2rem' }}>
-              <Text fontWeight={500} fontSize={20}>
-                Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result
-                in bad rates and lost funds.
-              </Text>
-              <Text fontWeight={600} fontSize={20}>
-                ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING.
-              </Text>
-              <ButtonError
-                error={true}
-                padding={'12px'}
-                onClick={() => {
-                  if (window.prompt(`Please type the word "confirm" to enable expert mode.`) === 'confirm') {
-                    toggleExpertMode()
-                    setShowConfirmation(false)
-                  }
-                }}
-              >
-                <Text fontSize={20} fontWeight={500} id="confirm-expert-mode">
-                  Turn On Expert Mode
-                </Text>
-              </ButtonError>
-            </AutoColumn>
-          </AutoColumn>
-        </ModalContentWrapper>
-      </Modal>
-      <StyledMenuButton onClick={toggle} id="open-settings-dialog-button">
-      <i className="fa fa-cog seetingstyle" aria-hidden="true" ></i>
-
-        {expertMode && (
-          <EmojiWrapper>
-            <span role="img" aria-label="wizard-icon">
-              🧙
-            </span>
-          </EmojiWrapper>
-        )}
-      </StyledMenuButton>
-      {open && (
-        <MenuFlyout>
-          <AutoColumn gap="md" style={{ padding: '1rem' }}>
-            <Text fontWeight={600} fontSize={14}>
-              <TranslatedText translationId={190}>Transaction Settings</TranslatedText>
-            </Text>
-            <TransactionSettings
-              rawSlippage={userSlippageTolerance}
-              setRawSlippage={setUserslippageTolerance}
-              deadline={deadline}
-              setDeadline={setDeadline}
-            />
-            <Text fontWeight={600} fontSize={14}>
-              <TranslatedText translationId={192}>Interface Settings</TranslatedText>
-            </Text>
-
-            <RowBetween>
-              <RowFixed>
-                <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>
-                  <TranslatedText translationId={280}>Toggle Audio Mode</TranslatedText>
-                </TYPE.black>
-              </RowFixed>
-              <Toggle isActive={audioMode} toggle={toggleSetAudioMode} />
-            </RowBetween>
-          </AutoColumn>
-        </MenuFlyout>
-      )}
-    </StyledMenu>
+    <StyledAccountButton>
+    
+         <div className="accountbuttontest">
+        <Button onClick={toggleWalletModalcustome}>
+        <i className="fa fa-cog seetingstyle" aria-hidden="true" ></i>
+        </Button>
+        </div>
+      
+      
+    </StyledAccountButton>
   )
 }
+const Button = styled.div`
+  align-items: center;
+  // background:transparent;
+  // background: ${props => props.theme.colors.primary};
+  // border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  // font-size: 14px;
+  // height: 36px;
+  font-weight: 700;
+  justify-content: center;
+  outline: none;
+  // padding-left: 16px;
+  // padding-right: 16px;
+  width: 100%;
+  // background: linear-gradient(92deg,#ebc1a3,#d890a2,#f5c1a9);
+	// -webkit-background-clip: text;
+	// -webkit-text-fill-color: transparent;
+  &:hover {
+    // background-color: ${props => props.theme.colors.primary};
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 0.2);
+  }
+`
+// const Link = styled.a`
+//   display: block;
+//   margin-top: 20px;
+//   color: ${props => props.theme.colors.primary};
+//   font-size: 14px;
+//   line-height: 16px;
+//   font-weight: bolder;
+//   text-decoration: none;
+// `
+// const ButtonCustom = styled.div`
+//   margin: 12px 0;
+//   padding: 5px 12px;
+//   border: 1px solid #7f868f;
+//   color: #2f3644;
+//   text-align: center;
+//   border-radius: 24px;
+//   cursor: pointer;
+// `
+// const Content = styled.div`
+//   padding-top: 12px;
+//   padding-bottom: 12px;
+//   border-bottom: 1px solid #d8dee3;
+//   font-size: 14px;
+//   line-height: 24px;
+//   font-weight: bolder;
+//   color: #2f3644;
+//   .title {
+//     color: #7f868f;
+//   }
+//   .money {
+//     font-size: 16px;
+//   }
+//   .usdt {
+//     font-size: 12px;
+//   }
+//   .subtitle {
+//     display: flex;
+//     justify-content: space-between;
+//     img {
+//       height: 18px;
+//     }
+//   }
+// `
+// const AccountCn = styled.div`
+//   position: relative;
+//   width: 185px;
+//   height: 40px;
+//   &:hover {
+//     .modal {
+//       display: block;
+//     }
+//   }
+// `
+// const AccountInner = styled.div`
+//   position: absolute;
+//   height: 70px;
+//   left: 0;
+//   width: 100%;
+// `
+// const Account = styled.div`
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   border-radius: 100px;
+//   padding: 0 0 0 12px;
+//   display: flex;
+//   align-items: center;
+//   align-content: center;
+//   justify-content: space-between;
+//   justify-items: center;
+//   cursor: pointer;
+//   background: rgb(244, 247, 250);
+//   .user-account {
+//     width: 40px;
+//   }
+//   .text {
+//     width: 95px;
+//   }
+//   .link {
+//     width: 15px;
+//   }
+// `
+const StyledAccountButton = styled.div`
+  button {
+    :hover {
+      background: ${props => props.theme.colors.primary};
+    }
+  }
+  @media (max-width: 850px) {
+    button {
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 8px;
+    }
+  }
+`
+// const Modal = styled.div`
+//   position: absolute;
+//   right: 0;
+//   top: 56px;
+//   width: 300px;
+//   padding: 4px 12px 12px 12px;
+//   display: none;
+//   padding-left: 20px;
+//   padding-bottom: 0;
+//   box-sizing: border-box;
+//   background: #fdfdfd;
+//   box-shadow: 0px 4px 20px rgba(117, 117, 117, 0.1);
+//   border-radius: 12px;
+//   .flex {
+//     display: flex;
+//     width: 100%;
+//     align-items: center;
+//     justify-content: center;
+//   }
+// `
+
+export default SettingsTab

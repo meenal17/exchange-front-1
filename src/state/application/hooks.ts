@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from 'react'
 import { useActiveWeb3React } from '../../hooks'
-import { addPopup, PopupContent, removePopup, toggleWalletModal, toggleSettingsMenu } from './actions'
+import { addPopup, PopupContent, removePopup, toggleWalletModal, toggleSettingsMenu ,toggleWalletModalcustome} from './actions'
 import { useSelector, useDispatch } from 'react-redux'
 import { AppState } from '../index'
 
@@ -13,11 +13,19 @@ export function useBlockNumber(): number | undefined {
 export function useWalletModalOpen(): boolean {
   return useSelector((state: AppState) => state.application.walletModalOpen)
 }
+export function useWalletModalOpencustome(): boolean {
+  return useSelector((state: AppState) => state.application.walletModalOpencustome)
+}
 
 export function useWalletModalToggle(): () => void {
   const dispatch = useDispatch()
   return useCallback(() => dispatch(toggleWalletModal()), [dispatch])
 }
+export function useWalletModalTogglecustome(): () => void {
+  const dispatch = useDispatch()
+  return useCallback(() => dispatch(toggleWalletModalcustome()), [dispatch])
+}
+
 
 export function useSettingsMenuOpen(): boolean {
   return useSelector((state: AppState) => state.application.settingsMenuOpen)

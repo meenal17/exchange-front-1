@@ -5,7 +5,7 @@ import useENSName from '../../hooks/useENSName'
 import { isTransactionRecent, useAllTransactions } from '../../state/transactions/hooks'
 import { TransactionDetails } from '../../state/transactions/reducer'
 import WalletModal from '../WalletModal'
-
+import WalletModalcustome from '../../components/WalletModal/CustomWalletModal'
 // we want the latest one to come first, so return negative if a is after b
 function newTransactionsFirst(a: TransactionDetails, b: TransactionDetails) {
   return b.addedTime - a.addedTime
@@ -34,6 +34,7 @@ export default function Web3Status() {
   return (
     <>
       <WalletModal ENSName={ENSName ?? undefined} pendingTransactions={pending} confirmedTransactions={confirmed} />
+      <WalletModalcustome />
     </>
   )
 }
