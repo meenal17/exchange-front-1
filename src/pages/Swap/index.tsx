@@ -49,6 +49,8 @@ import { useI18n } from 'i18n/i18n-react'
 import BottomDecoration from './BottomDecoration'
 import RightDecoration from './RightDecoration'
 // import { JSBI } from '@pancakeswap-libs/sdk'
+import Settings from "../../components/Settings/index"
+import AccountButton from "../../components/Header/AccountButton"
 import Particle from "../particle/Particle"
 import Globe from "../Globe";
 export default function Swap() {
@@ -315,6 +317,10 @@ export default function Swap() {
   return (
     <>
     <Particle/>
+    <div className='settingmy'>
+    <Settings/>
+    <AccountButton/>
+    </div>
       <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}

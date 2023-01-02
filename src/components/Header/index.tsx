@@ -3,14 +3,14 @@ import { isMobile } from 'react-device-detect'
 // import { Text } from 'rebass'
 
 import styled from 'styled-components'
-import Settings from '../Settings'
+//  import Settings from '../Settings'
 import useHtPrice from '../../hooks/useHtPrice'
 import Nav from './Nav'
 import { useIsDarkMode } from '../../state/user/hooks'
 import Logo from './Logo'
 import menuIcon from '../../assets/images/menu.png'
 import MobileMenu from '../MobileMenu'
-import AccountButton from './AccountButton'
+//  import AccountButton from './AccountButton'
 import Web3Status from '../Web3Status'
 
 const HeaderFrame = styled.div`
@@ -144,8 +144,8 @@ export default function Header() {
 
         {isMobile && (
           <HeaderControlsMobile>
-            <Settings />
-            <AccountButton />
+            {/* <Settings />
+            <AccountButton /> */}
             
           </HeaderControlsMobile>
         )}
@@ -159,8 +159,8 @@ export default function Header() {
               <StyledAccountButtonWrapper>
                 <Web3Status />
                 {!isZero(pippiPrice) && <Price className="number price">1PUD=${pippiPrice.toFixed(3)}</Price>}
-                <Settings />
-                <AccountButton />
+                {/* <Settings />
+                <AccountButton /> */}
               
             
               </StyledAccountButtonWrapper>

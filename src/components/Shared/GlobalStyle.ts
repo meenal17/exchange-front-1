@@ -298,5 +298,12 @@ width:18rem;
 margin-top:-4px;
 `};
 }
+.settingmy{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-left:-80px;
+    margin-top:-90px
+}
 `
 
