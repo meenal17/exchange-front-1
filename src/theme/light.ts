@@ -9,7 +9,7 @@ export default {
     text2: '#aa9b9b',
     text3: '#888D9B',
     text4: '#C3C5CB',
-
+textmy:'#131416',
     // backgrounds / greys
     bg0: '#343131',
     bg1: '#242222',
@@ -23,7 +23,7 @@ export default {
     modalBG: 'rgba(0,0,0,0.3)',
     advancedBG: 'rgba(255,255,255,0.6)',
     advancedBG2:'rgba(51, 57, 57, 0.6)',
-   
+   mybg:'linear-gradient(88deg,#11c9ae,#1f6d99)',
 
 
     //primary colors

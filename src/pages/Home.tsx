@@ -28,7 +28,8 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-padding: 136px 10px;
+padding: 0px 10px;
+padding-top: 7rem;
 background: url(/bg_handshake.png);
 background-size: cover;
 background-position: center;
@@ -51,7 +52,7 @@ const Container2 = styled.div`
  `};
 `
 const Container3 = styled.div`
-  padding: 8.8rem 0;
+  padding: 0rem 0;
   margin: 0 auto;
   background: url(/ar.png);
   // background-size: cover;
@@ -410,10 +411,12 @@ const Home = () => {
               </Carsolesection>
             </Container3>
             <Support />
+            <Footer />
           </div>
+          
         </Body>
 
-        <Footer />
+       
       </div>
     </>
   )

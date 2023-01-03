@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useI18n } from 'i18n/i18n-react'
 
 const ToggleElement = styled.span<{ isActive?: boolean; isOnSwitch?: boolean }>`
-  padding: 0.25rem 0.5rem;
+  padding: 0.8rem;
   border-radius: 14px;
   background: ${({ theme, isActive, isOnSwitch }) =>
     isActive ? (isOnSwitch ? theme.colors.primary1 : theme.colors.text4) : 'none'};
@@ -13,7 +12,7 @@ const ToggleElement = styled.span<{ isActive?: boolean; isOnSwitch?: boolean }>`
   font-weight: 400;
 `
 
-const StyledToggle = styled.button<{ isActive?: boolean; activeElement?: boolean }>`
+const StyledToggle = styled.button<{ isActive?: boolean; activeElement?: boolean ; isOnSwitch?: boolean }>`
   border-radius: 16px;
   border: 1px solid ${({ theme, isActive }) => (isActive ? theme.colors.primary5 : theme.colors.text4)};
   display: flex;
@@ -21,7 +20,9 @@ const StyledToggle = styled.button<{ isActive?: boolean; activeElement?: boolean
   cursor: pointer;
   outline: none;
   padding: 0;
-  background-color: transparent;
+   background: ${({ theme, isActive, isOnSwitch }) =>
+    isActive ? (isOnSwitch ? theme.colors.mybg : theme.colors.textmy) :  theme.colors.mybg};
+  // background-color: transparent;
 `
 
 export interface ToggleProps {
@@ -31,15 +32,15 @@ export interface ToggleProps {
 }
 
 export default function Toggle({ id, isActive, toggle }: ToggleProps) {
-  const i18n = useI18n()
+
 
   return (
     <StyledToggle id={id} isActive={isActive} onClick={toggle}>
       <ToggleElement isActive={isActive} isOnSwitch={true}>
-        {i18n(764, 'On')}
+        
       </ToggleElement>
       <ToggleElement isActive={!isActive} isOnSwitch={false}>
-        {i18n(766, 'Off')}
+       
       </ToggleElement>
     </StyledToggle>
   )

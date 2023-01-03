@@ -210,7 +210,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
 `};
   `
   const Containersupport = styled.div`
-  padding: 3rem 0 ;
+  padding: 4rem 0 ;
   // width: 50%;
     margin: 0 auto;
     background: url(/astronaut.png);

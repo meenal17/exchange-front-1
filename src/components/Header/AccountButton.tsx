@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
-import useHTPrice from '../../hooks/useHtPrice'
-import useTokenBalance from '../../hooks/useTokenBalance'
-import { getBalanceNumber } from '../../utils/formatBalance'
-import { getPipiAddress } from '../../utils/addressHelpers'
+// import useHTPrice from '../../hooks/useHtPrice'
+// import useTokenBalance from '../../hooks/useTokenBalance'
+// import { getBalanceNumber } from '../../utils/formatBalance'
+// import { getPipiAddress } from '../../utils/addressHelpers'
 import { useI18n } from 'i18n/i18n-react'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { useActiveWeb3React } from '../../hooks'
@@ -15,9 +15,9 @@ export const CONNECTOR_STORAGE_ID = 'CONNECTOR_STORAGE_ID'
 
 const AccountButton: React.FC<{}> = () => {
   const i18n = useI18n()
-  const { pippiPrice } = useHTPrice()
+  // const { pippiPrice } = useHTPrice()
   const { account } = useActiveWeb3React()
-  const sushiBalance = useTokenBalance(getPipiAddress() as any)
+  // const sushiBalance = useTokenBalance(getPipiAddress() as any)
   const toggleWalletModal = useWalletModalToggle()
   const handleSignOutClick = useCallback(() => {
     window.localStorage.removeItem(CONNECTOR_STORAGE_ID)
@@ -34,6 +34,11 @@ const AccountButton: React.FC<{}> = () => {
     }
     document.body.removeChild(input)
   }
+  
+  const Function=()=>{
+    console.log("hello"); 
+  }
+  
   return (
     <StyledAccountButton>
       {!account ? (
@@ -43,8 +48,9 @@ const AccountButton: React.FC<{}> = () => {
         </Button>
         </div>
       ) : (
-        <AccountCn>
-          <AccountInner>
+        <>
+        <AccountCn onClick={Function}>
+          <AccountInner >
             <div className="accountbutton">
               <img src="wallet.png" alt="" className="link" width={21} />
               <span className="text customtextstyle"  style={{fontSize:'17px'}}>{shortenAddress(account)}</span>
@@ -59,21 +65,16 @@ const AccountButton: React.FC<{}> = () => {
                 <img src={copyIcon} alt="" onClick={copy} />
               </div>
             </Content>
-            <Content>
-             
-              <div className="money">{getBalanceNumber(sushiBalance)}</div>
-              <div className="title usdt">=${getBalanceNumber(sushiBalance) * pippiPrice}</div>
-              <Link href={`https://testnet.bscscan.com/address/address=${account}`}>
-                <TranslatedText translationId={250}>View on BscScan</TranslatedText>
-              </Link>
-            </Content>
+           
             <div className="flex">
               <ButtonCustom onClick={handleSignOutClick}>
-                <TranslatedText translationId={252}>Sign out</TranslatedText>
+                Disconnect
               </ButtonCustom>
             </div>
           </Modal>
         </AccountCn>
+       
+        </>
       )}
     </StyledAccountButton>
   )
@@ -102,15 +103,15 @@ const Button = styled.div`
     box-shadow: 0px 4px 4px rgb(0 0 0 / 0.2);
   }
 `
-const Link = styled.a`
-  display: block;
-  margin-top: 20px;
-  color: ${props => props.theme.colors.primary};
-  font-size: 14px;
-  line-height: 16px;
-  font-weight: bolder;
-  text-decoration: none;
-`
+// const Link = styled.a`
+//   display: block;
+//   margin-top: 20px;
+//   color: ${props => props.theme.colors.primary};
+//   font-size: 14px;
+//   line-height: 16px;
+//   font-weight: bolder;
+//   text-decoration: none;
+// `
 const ButtonCustom = styled.div`
   margin: 12px 0;
   padding: 5px 12px;

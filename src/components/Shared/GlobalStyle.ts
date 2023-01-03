@@ -251,6 +251,7 @@ ${({ theme }) =>(theme as any).mediaWidth.upToMedium`
   position: absolute;
   left: 0;
   bottom: 0;
+  z-index:-1;
   ${({ theme }) => (theme as any).mediaWidth.upToMedium`
 display:none;
 `};
@@ -328,5 +329,6 @@ margin-top:-4px;
     margin-top:-90px;
     align-items:center;
 }
+
 `
 

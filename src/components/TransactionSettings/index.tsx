@@ -1,14 +1,14 @@
-import React, { useState, useRef, useContext } from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import React, { useState, useRef } from 'react'
+import styled from 'styled-components'
 
 import QuestionHelper from '../QuestionHelper'
-import { TYPE } from '../../components/Shared'
+// import { TYPE } from '../../components/Shared'
 import { useI18n } from 'i18n/i18n-react'
 import { AutoColumn } from '../Column'
 import { RowBetween, RowFixed } from '../Row'
 
 import { darken } from 'polished'
-import TranslatedText from '../TranslatedText'
+// import TranslatedText from '../TranslatedText'
 
 enum SlippageError {
   InvalidInput = 'InvalidInput',
@@ -16,21 +16,23 @@ enum SlippageError {
   RiskyHigh = 'RiskyHigh'
 }
 
-enum DeadlineError {
-  InvalidInput = 'InvalidInput'
-}
+// enum DeadlineError {
+//   InvalidInput = 'InvalidInput'
+// }
 
 const FancyButton = styled.button`
-  color: ${({ theme }) => theme.colors.text1};
+  color: #fff;
   align-items: center;
   height: 2rem;
-  border-radius: 36px;
-  font-size: 12px;
+  border-radius: 8px;
+  font-size: 19px;
+  font-weight: 600;
+  font-family: Inter, sans-serif !important
   width: auto;
-  min-width: 3rem;
+  max-width: 3.5rem;
   border: 1px solid #00829a;
   outline: none;
-  background:linear-gradient(88deg,#11c9ae,#1f6d99);
+  background:#0d0b0b;
   :hover {
     border: 1px solid #00829a;
   }
@@ -44,7 +46,7 @@ const Option = styled(FancyButton)<{ active: boolean }>`
   :hover {
     cursor: pointer;
   }
-  background-color: ${({ active, theme }) => active && theme.colors.primary1};
+  background: ${({ active, theme }) =>(active ? theme.colors.mybg: theme.colors.textmy)};
   color: ${({ active, theme }) => (active ? theme.colors.white : theme.colors.text1)};
 `
 
@@ -97,16 +99,16 @@ export interface SlippageTabsProps {
 
 export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, setDeadline }: SlippageTabsProps) {
   const i18n = useI18n()
-  const theme = useContext(ThemeContext)
+  // const theme = useContext(ThemeContext)
 
   const inputRef = useRef<HTMLInputElement>()
 
   const [slippageInput, setSlippageInput] = useState('')
-  const [deadlineInput, setDeadlineInput] = useState('')
+  // const [deadlineInput, setDeadlineInput] = useState('')
 
   const slippageInputIsValid =
     slippageInput === '' || (rawSlippage / 100).toFixed(2) === Number.parseFloat(slippageInput).toFixed(2)
-  const deadlineInputIsValid = deadlineInput === '' || (deadline / 60).toString() === deadlineInput
+  // const deadlineInputIsValid = deadlineInput === '' || (deadline / 60).toString() === deadlineInput
 
   let slippageError: SlippageError | undefined
   if (slippageInput !== '' && !slippageInputIsValid) {
@@ -119,12 +121,12 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
     slippageError = undefined
   }
 
-  let deadlineError: DeadlineError | undefined
-  if (deadlineInput !== '' && !deadlineInputIsValid) {
-    deadlineError = DeadlineError.InvalidInput
-  } else {
-    deadlineError = undefined
-  }
+  // let deadlineError: DeadlineError | undefined
+  // if (deadlineInput !== '' && !deadlineInputIsValid) {
+  //   deadlineError = DeadlineError.InvalidInput
+  // } else {
+  //   deadlineError = undefined
+  // }
 
   function parseCustomSlippage(value: string) {
     setSlippageInput(value)
@@ -137,24 +139,24 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
     } catch {}
   }
 
-  function parseCustomDeadline(value: string) {
-    setDeadlineInput(value)
+  // function parseCustomDeadline(value: string) {
+  //   setDeadlineInput(value)
 
-    try {
-      const valueAsInt: number = Number.parseInt(value) * 60
-      if (!Number.isNaN(valueAsInt) && valueAsInt > 0) {
-        setDeadline(valueAsInt)
-      }
-    } catch {}
-  }
+  //   try {
+  //     const valueAsInt: number = Number.parseInt(value) * 60
+  //     if (!Number.isNaN(valueAsInt) && valueAsInt > 0) {
+  //       setDeadline(valueAsInt)
+  //     }
+  //   } catch {}
+  // }
 
   return (
     <AutoColumn gap="md">
       <AutoColumn gap="sm">
         <RowFixed>
-          <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>
-            <TranslatedText translationId={282}>Slippage tolerance</TranslatedText>
-          </TYPE.black>
+          {/* <TYPE.black fontWeight={400} fontSize={16} color={theme.colors.text2}> */}
+           <h3> Slippage tolerance </h3>
+          {/* </TYPE.black> */}
           <QuestionHelper text={i18n(762, "Your transaction will revert if the price changes unfavorably by more than this percentage.")} />
         </RowFixed>
         <RowBetween>
@@ -227,7 +229,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
         )}
       </AutoColumn>
 
-      <AutoColumn gap="sm">
+      {/* <AutoColumn gap="sm">
         <RowFixed>
           <TYPE.black fontSize={14} fontWeight={400} color={theme.colors.text2}>
             <TranslatedText translationId={284}>Transaction deadline</TranslatedText>
@@ -250,7 +252,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
             <TranslatedText translationId={286}>minutes</TranslatedText>
           </TYPE.body>
         </RowFixed>
-      </AutoColumn>
+      </AutoColumn> */}
     </AutoColumn>
   )
 }

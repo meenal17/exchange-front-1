@@ -34,7 +34,7 @@ const Footer = () => {
             <div>
               <div>liquidity</div>
               <div>Staking</div>
-              <div>Markets</div>
+              <div className='Markets'>Markets</div>
             </div>
           </div>
          
@@ -57,29 +57,29 @@ const Footer = () => {
               </button>
             </div>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className='community'>
             <h1>Community</h1>
             <div className="icons">
               <div>
-                <img src="icon1.png" alt="" style={{ width: '20px' }} />
+                <img src="icon1.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon2.png" alt="" style={{ width: '20px' }} />
+                <img src="icon2.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon3.png" alt="" style={{ width: '20px' }} />
+                <img src="icon3.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon4.png" alt="" style={{ width: '20px' }} />
+                <img src="icon4.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon5.png" alt="" style={{ width: '20px' }} />
+                <img src="icon5.png" alt="" className='iconfont' />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px 23px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '8px 23px' }}>
         <div className="">
           <img src="LeBo.png" alt="" style={{ width: '5rem' }} />
         </div>
