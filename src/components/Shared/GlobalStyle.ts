@@ -45,7 +45,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     body {
       min-height: 100vh;
-      background:#000;
+      background:hwb(188deg 6% 92%);
+      // background:#1c1717;
       // background-repeat: no-repeat;
       // background-image:url(./background.png);
       // background-size:cover;
@@ -133,6 +134,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     gap:3px;
     border:none;
     align-items:center;
+    width:195px;
   }
   .accountbuttonxyz:after {
     content: '';
@@ -354,8 +356,12 @@ margin-top:-4px;
     justify-content: end;
     width: 100%;
     margin-left:-80px;
-    margin-top:-90px;
+    margin-top:65px;
     align-items:center;
+    ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
+    margin-top:0px;
+    margin-bottom:10px;
+`};
 }
 #myDIV {
   // width: 100%;

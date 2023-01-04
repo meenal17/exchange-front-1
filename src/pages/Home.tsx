@@ -28,8 +28,7 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-padding: 0px 10px;
-padding-top: 7rem;
+padding: 143px 0 112px;
 background: url(/bg_handshake.png);
 background-size: cover;
 background-position: center;
@@ -52,9 +51,9 @@ const Container2 = styled.div`
  `};
 `
 const Container3 = styled.div`
-  padding: 0rem 0;
+ padding: 0 0 14rem 0;
   margin: 0 auto;
-  background: url(/ar.png);
+  background: url(/images/astroball.png);
   // background-size: cover;
   // background-position: center;
   background-repeat: no-repeat;

@@ -209,8 +209,8 @@ const Modal = styled.div`
     position: absolute;
     margin-top: -5px;
     left: -3px;
-    top: 43px;
-    width: 179px;
+    top: 37px;
+    width: 200px;
     padding: 4px 12px 12px 12px;
     display: none;
     padding-left: 20px;

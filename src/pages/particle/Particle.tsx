@@ -2,7 +2,7 @@ import React from 'react'
 import "./style.css";
 const particle = () => {
   return (
-    <div>
+    <div style={{height:"0"}}>
       
      
   <svg className="stars" width="100%" height="100%" preserveAspectRatio="none">
