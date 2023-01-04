@@ -91,7 +91,7 @@ const StyledTopBarInner = styled.div`
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 24px;
+  padding: 24px 24px;
   @media (max-width: 850px) {
     min-width: auto;
   }
