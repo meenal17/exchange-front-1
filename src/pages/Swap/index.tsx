@@ -298,12 +298,14 @@ export default function Swap() {
   }, [maxAmountInput, onUserInput])
 
   const handleTwentyinput = useCallback(() => {
-    // let data = maxAmountInput && onUserInput(Field.INPUT,JSBI.BigInt(String(maxAmountInput?.raw);
-    console.log('data')
+     maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*20/100).toString());
 
-    // onUserInput(string(data*20))
-    //  onUserInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(data)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
   }, [maxAmountInput, onUserInput])
+
+  const handleThirtyinput = useCallback(() => {
+    maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*30/100).toString());
+
+ }, [maxAmountInput, onUserInput])
   const handleOutputSelect = useCallback(
     outputCurrency => {
       onCurrencySelection(Field.OUTPUT, outputCurrency)
@@ -360,6 +362,7 @@ export default function Swap() {
               onUserInput={handleTypeInput}
               onMax={handleMaxInput}
               onTwentyper={handleTwentyinput}
+              onThirtyper={handleThirtyinput}
               onCurrencySelect={handleInputSelect}
               otherCurrency={currencies[Field.OUTPUT]}
               id="swap-currency-input"
