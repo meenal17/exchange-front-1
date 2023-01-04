@@ -21,7 +21,7 @@ import TransactionSettings from '../TransactionSettings'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import { TYPE } from '../Shared'
 import Toggle from '../Toggle'
-import TranslatedText from '../TranslatedText'
+// import TranslatedText from '../TranslatedText'
 const CloseIcon = styled.div`
   position: absolute;
   right: 1rem;
@@ -60,7 +60,7 @@ const HeaderRow = styled.div`
 const ContentWrapper = styled.div`
   // background-color: ${({ theme }) => theme.colors.bg2};
   background-color:#0d0b0b;
-  padding: 2rem;
+  padding: 1rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 
@@ -100,10 +100,10 @@ const StyledCloseIcon = styled(X)`
 
 
 const StyledMenu = styled.div`
-  margin-left: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // margin-left: 0.5rem;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   position: relative;
   border: none;
   text-align: left;
@@ -223,9 +223,9 @@ useOnClickOutside(node, open ? toggle : undefined)
               deadline={deadline}
               setDeadline={setDeadline}
             />
-            <Text fontWeight={600} fontSize={14}>
+            {/* <Text fontWeight={600} fontSize={14}>
               <TranslatedText translationId={192}>Interface Settings</TranslatedText>
-            </Text>
+            </Text> */}
             {/* <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>

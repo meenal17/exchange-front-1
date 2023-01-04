@@ -152,10 +152,10 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
 
   return (
     <AutoColumn gap="md">
-      <AutoColumn gap="sm">
+      <AutoColumn>
         <RowFixed>
           {/* <TYPE.black fontWeight={400} fontSize={16} color={theme.colors.text2}> */}
-           <h3> Slippage tolerance </h3>
+           <h3> Slippage Tolerance </h3>
           {/* </TYPE.black> */}
           <QuestionHelper text={i18n(762, "Your transaction will revert if the price changes unfavorably by more than this percentage.")} />
         </RowFixed>

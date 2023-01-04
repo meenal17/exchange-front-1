@@ -4,17 +4,17 @@ import styled from 'styled-components'
 // import useTokenBalance from '../../hooks/useTokenBalance'
 // import { getBalanceNumber } from '../../utils/formatBalance'
 // import { getPipiAddress } from '../../utils/addressHelpers'
-import { useI18n } from 'i18n/i18n-react'
+// import { useI18n } from 'i18n/i18n-react'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { useActiveWeb3React } from '../../hooks'
 import TranslatedText from '../TranslatedText'
 import { shortenAddress } from '../../utils'
-import copyIcon from '../../assets/images/copy.png'
+// import copyIcon from '../../assets/images/copy.png'
 
 export const CONNECTOR_STORAGE_ID = 'CONNECTOR_STORAGE_ID'
 
 const AccountButton: React.FC<{}> = () => {
-  const i18n = useI18n()
+  // const i18n = useI18n()
   // const { pippiPrice } = useHTPrice()
   const { account } = useActiveWeb3React()
   // const sushiBalance = useTokenBalance(getPipiAddress() as any)
@@ -23,57 +23,62 @@ const AccountButton: React.FC<{}> = () => {
     window.localStorage.removeItem(CONNECTOR_STORAGE_ID)
     // unsetConnector()
   }, [])
-  const copy = () => {
-    const input = document.createElement('input')
-    input.setAttribute('readonly', 'readonly')
-    input.setAttribute('value', account || '')
-    document.body.appendChild(input)
-    input.setSelectionRange(0, 9999)
-    if (document.execCommand('copy')) {
-      document.execCommand('copy')
+  // const copy = () => {
+  //   const input = document.createElement('input')
+  //   input.setAttribute('readonly', 'readonly')
+  //   input.setAttribute('value', account || '')
+  //   document.body.appendChild(input)
+  //   input.setSelectionRange(0, 9999)
+  //   if (document.execCommand('copy')) {
+  //     document.execCommand('copy')
+  //   }
+  //   document.body.removeChild(input)
+  // }
+
+  function myFunction() {
+    console.log("hello im calling");
+    var x = document.getElementById('myDIV')?.style
+    if (x?.display === 'none') {
+      x?.setProperty('display', 'block')
+    } else {
+      x?.setProperty('display', 'none')
     }
-    document.body.removeChild(input)
   }
-  
-  const Function=()=>{
-    console.log("hello"); 
-  }
-  
   return (
     <StyledAccountButton>
       {!account ? (
-         <div className="accountbutton">
-        <Button onClick={toggleWalletModal}>
-          <TranslatedText translationId={204}>Connect Wallet</TranslatedText>
-        </Button>
+        <div className="accountbutton">
+          <Button onClick={toggleWalletModal}>
+            <TranslatedText translationId={204}>Connect Wallet</TranslatedText>
+          </Button>
         </div>
       ) : (
         <>
-        <AccountCn onClick={Function}>
-          <AccountInner >
-            <div className="accountbutton">
+          <AccountCn>
+            <AccountInner>
+              <button className="accountbuttonxyz" onClick={myFunction}>
               <img src="wallet.png" alt="" className="link" width={21} />
-              <span className="text customtextstyle"  style={{fontSize:'17px'}}>{shortenAddress(account)}</span>
-            
-            </div>
-          </AccountInner>
-          <Modal className="modal">
-            <Content>
-              <div className="title">{i18n(758, 'your wallet')}</div>
-              <div className="subtitle">
-                <span>{shortenAddress(account)}</span>
-                <img src={copyIcon} alt="" onClick={copy} />
+                <span className="text customtextstyle" style={{ fontSize: '17px' }}>
+                  {shortenAddress(account)}
+                </span>
+                <img src="images/down_arrow.png" alt="" style={{width:"20px",height:"12px"}}/>
+              </button>
+               
+            </AccountInner>
+            {/* <div id="myDIV" >This is my DIV element.</div> */}
+            <Modal className="modal" id="myDIV" style={{display:"none"}}>
+              <div>
+                <h4 className="">Transactions</h4>
+                <div>
+                <ButtonCustom onClick={handleSignOutClick}>Disconnect</ButtonCustom>
               </div>
-            </Content>
-           
-            <div className="flex">
-              <ButtonCustom onClick={handleSignOutClick}>
-                Disconnect
-              </ButtonCustom>
-            </div>
-          </Modal>
-        </AccountCn>
-       
+              </div>
+
+              {/* <div className="flex">
+                <ButtonCustom onClick={handleSignOutClick}>Disconnect</ButtonCustom>
+              </div> */}
+            </Modal>
+          </AccountCn>
         </>
       )}
     </StyledAccountButton>
@@ -114,46 +119,46 @@ const Button = styled.div`
 // `
 const ButtonCustom = styled.div`
   margin: 12px 0;
-  padding: 5px 12px;
-  border: 1px solid #7f868f;
-  color: #2f3644;
-  text-align: center;
-  border-radius: 24px;
+  // padding: 5px 12px;
+  // border: 1px solid #7f868f;
+  color:#dc2a2a;
+  // text-align: center;
+  // border-radius: 24px;
   cursor: pointer;
 `
-const Content = styled.div`
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #d8dee3;
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: bolder;
-  color: #2f3644;
-  .title {
-    color: #7f868f;
-  }
-  .money {
-    font-size: 16px;
-  }
-  .usdt {
-    font-size: 12px;
-  }
-  .subtitle {
-    display: flex;
-    justify-content: space-between;
-    img {
-      height: 18px;
-    }
-  }
-`
+// const Content = styled.div`
+//   padding-top: 12px;
+//   padding-bottom: 12px;
+//   border-bottom: 1px solid #d8dee3;
+//   font-size: 14px;
+//   line-height: 24px;
+//   font-weight: bolder;
+//   color: #2f3644;
+//   .title {
+//     color: #7f868f;
+//   }
+//   .money {
+//     font-size: 16px;
+//   }
+//   .usdt {
+//     font-size: 12px;
+//   }
+//   .subtitle {
+//     display: flex;
+//     justify-content: space-between;
+//     img {
+//       height: 18px;
+//     }
+//   }
+// `
 const AccountCn = styled.div`
   position: relative;
   width: 185px;
   height: 40px;
-  &:hover {
-    .modal {
-      display: block;
-    }
+  // &:hover {
+  //   .modal {
+  //     display: block;
+  //   }
   }
 `
 const AccountInner = styled.div`
@@ -209,7 +214,8 @@ const Modal = styled.div`
   padding-left: 20px;
   padding-bottom: 0;
   box-sizing: border-box;
-  background: #fdfdfd;
+  background: #000;
+  border:1px solid red;
   box-shadow: 0px 4px 20px rgba(117, 117, 117, 0.1);
   border-radius: 12px;
   .flex {

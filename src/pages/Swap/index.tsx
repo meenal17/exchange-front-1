@@ -49,10 +49,10 @@ import { useI18n } from 'i18n/i18n-react'
 import BottomDecoration from './BottomDecoration'
 import RightDecoration from './RightDecoration'
 // import { JSBI } from '@pancakeswap-libs/sdk'
-import Settings from "../../components/Settings/index"
-import AccountButton from "../../components/Header/AccountButton"
-import Particle from "../particle/Particle"
-import Globe from "../Globe";
+import Settings from '../../components/Settings/index'
+import AccountButton from '../../components/Header/AccountButton'
+import Particle from '../particle/Particle'
+import Globe from '../Globe'
 export default function Swap() {
   const i18n = useI18n()
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -104,7 +104,7 @@ export default function Swap() {
   } = useDerivedSwapInfo()
   const { wrapType, execute: onWrap, inputError: wrapInputError } = useWrapCallback(
     currencies[Field.INPUT],
-    currencies[Field.OUTPUT], 
+    currencies[Field.OUTPUT],
     typedValue
   )
   const showWrap: boolean = wrapType !== WrapType.NOT_APPLICABLE
@@ -297,13 +297,13 @@ export default function Swap() {
     maxAmountInput && onUserInput(Field.INPUT, maxAmountInput.toExact())
   }, [maxAmountInput, onUserInput])
 
-  const handleTwentyinput = useCallback(()=>{
+  const handleTwentyinput = useCallback(() => {
     // let data = maxAmountInput && onUserInput(Field.INPUT,JSBI.BigInt(String(maxAmountInput?.raw);
-    console.log("data");
-    
+    console.log('data')
+
     // onUserInput(string(data*20))
-  //  onUserInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(data)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
-  },[maxAmountInput,onUserInput])
+    //  onUserInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(data)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+  }, [maxAmountInput, onUserInput])
   const handleOutputSelect = useCallback(
     outputCurrency => {
       onCurrencySelection(Field.OUTPUT, outputCurrency)
@@ -313,14 +313,17 @@ export default function Swap() {
     },
     [onCurrencySelection, checkForSyrup]
   )
+  
 
   return (
     <>
-    <Particle/>
-    <div className='settingmy'>
-    <Settings/>
-    <AccountButton/>
-    </div>
+      <Particle />
+      <div className="settingmy">
+        <Settings />
+        <AccountButton />
+       
+      </div>
+
       <TokenWarningModal
         isOpen={urlLoadedTokens.length > 0 && !dismissTokenWarning}
         tokens={urlLoadedTokens}
@@ -333,7 +336,6 @@ export default function Swap() {
       />
       <SwapPoolTabs active={'swap'} />
       <AppBody>
-        
         <Wrapper id="swap-page">
           <ConfirmSwapModal
             isOpen={showConfirm}
@@ -365,11 +367,14 @@ export default function Swap() {
             <AutoColumn justify="space-between">
               <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
                 <ArrowWrapper clickable>
-                  <img width="50" src="arrowswap.png"
-                   onClick={() => {
-                    setApprovalSubmitted(false) // reset 2 step UI for approvals
-                    onSwitchTokens()
-                  }}/>
+                  <img
+                    width="50"
+                    src="arrowswap.png"
+                    onClick={() => {
+                      setApprovalSubmitted(false) // reset 2 step UI for approvals
+                      onSwitchTokens()
+                    }}
+                  />
                   {/* <ArrowDown
                     size="16"
                     onClick={() => {
@@ -403,7 +408,7 @@ export default function Swap() {
               <>
                 <AutoRow justify="space-between" style={{ padding: '0 1rem' }}>
                   <ArrowWrapper clickable={false}>
-                    <ArrowDown size="16" style={{color:'red'}} />
+                    <ArrowDown size="16" style={{ color: 'red' }} />
                   </ArrowWrapper>
                   <LinkStyledButton id="remove-recipient-button" onClick={() => onChangeRecipient(null)}>
                     - Remove send
@@ -441,7 +446,7 @@ export default function Swap() {
                 </AutoColumn>
               </Card>
             )}
-             <AdvancedSwapDetailsDropdown trade={trade} />
+            <AdvancedSwapDetailsDropdown trade={trade} />
           </AutoColumn>
           <BottomGrouping>
             {!account ? (
@@ -537,9 +542,8 @@ export default function Swap() {
         </Wrapper>
         {!trade && <BottomDecoration />}
         <RightDecoration />
-      
       </AppBody>
-      <Globe/>
+      <Globe />
     </>
   )
 }

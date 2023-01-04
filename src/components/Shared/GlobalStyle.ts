@@ -121,6 +121,34 @@ export const ThemedGlobalStyle = createGlobalStyle`
   //   z-index: -1;
   //   background-size: 300% 300%;
   // }
+
+  .accountbuttonxyz{
+    background: #1D1F20;
+    position: relative;
+    border-radius:
+    borderWidth:3px;
+    border-radius:3px;
+    padding:10px;
+    display: inline-flex;
+    gap:3px;
+    border:none;
+    align-items:center;
+  }
+  .accountbuttonxyz:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * 3px);
+    left: calc(-1 * 3px);
+    height: calc(100% + 3px * 2);
+    width: calc(100% + 3px * 2);
+    background: linear-gradient(92deg,#ebc1a3,#d890a2,#be7d8d,#f5c1a9,#f0c1a6);
+    border-radius: calc(2 * 3px);
+    z-index: -1;
+    background-size: 300% 300%;
+  }
+  .accountbuttonxyz:hover{
+    background:#000 !important;
+  }
   .LaunchButton{
     background: #000;
     position: relative;
@@ -329,6 +357,20 @@ margin-top:-4px;
     margin-top:-90px;
     align-items:center;
 }
-
+#myDIV {
+  // width: 100%;
+  // padding: 50px 0;
+  // text-align: center;
+  // background-color: lightblue;
+  // margin-top: 20px;
+display:none;
+z-index:1111;
+}
+.buttonbdg{
+  z-index:1111;
+}
+// .modal{
+//   display:none;
+// }
 `
 
