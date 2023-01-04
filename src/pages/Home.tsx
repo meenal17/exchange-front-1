@@ -51,7 +51,7 @@ const Container2 = styled.div`
  `};
 `
 const Container3 = styled.div`
- padding: 0 0 14rem 0;
+//  padding: 0 0 14rem 0;
   margin: 0 auto;
   background: url(/images/astroball.png);
   // background-size: cover;
@@ -408,8 +408,9 @@ const Home = () => {
               <Carsolesection>
                 <Carsole />
               </Carsolesection>
+              <Support />
+
             </Container3>
-            <Support />
             <Footer />
           </div>
           

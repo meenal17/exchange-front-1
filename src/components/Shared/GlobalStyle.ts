@@ -45,8 +45,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
 
     body {
       min-height: 100vh;
-      background:hwb(188deg 6% 92%);
-      // background:#1c1717;
+      // background:hwb(188deg 6% 92%);
+      background:#1c1717;
       // background-repeat: no-repeat;
       // background-image:url(./background.png);
       // background-size:cover;
