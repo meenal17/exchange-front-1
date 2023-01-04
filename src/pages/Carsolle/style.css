@@ -1,5 +1,6 @@
 
 .card {
+  position: relative;
   height: 350px;
   width: 90%;
   margin: auto;
@@ -114,7 +115,7 @@
 
 .slider {
   position: absolute;
-    top:60%;
+    bottom:10%;
     transform: translateX(46%);
     z-index: 1;
   left: 43%;
@@ -194,13 +195,7 @@
   height: 245px !important; 
   /* position: absolute; */
 }
-.slider {
-  position: absolute;
-  top: 63%;
-  transform: translateX(46%);
-  z-index: 1;
-  left: 43%;
-}
+
 }
 @media screen and (max-width: 1275px) {
   .inner_part .img{
@@ -213,12 +208,5 @@
 }
 .card {
   width: 85%;
-}
-.slider {
-  position: absolute;
-  top: 63%;
-  transform: translateX(46%);
-  z-index: 1;
-  left: 43%;
 }
 }

@@ -166,6 +166,7 @@ const AccountInner = styled.div`
   height: 70px;
   left: 0;
   width: 100%;
+  z-index: 100000;
 `
 // const Account = styled.div`
 //   position: absolute;
@@ -205,19 +206,26 @@ const StyledAccountButton = styled.div`
   }
 `
 const Modal = styled.div`
-  position: absolute;
-  right: 0;
-  top: 56px;
-  width: 300px;
-  padding: 4px 12px 12px 12px;
-  display: none;
-  padding-left: 20px;
-  padding-bottom: 0;
-  box-sizing: border-box;
-  background: #000;
-  border:1px solid red;
-  box-shadow: 0px 4px 20px rgba(117, 117, 117, 0.1);
-  border-radius: 12px;
+    position: absolute;
+    margin-top: -5px;
+    left: -3px;
+    top: 43px;
+    width: 179px;
+    padding: 4px 12px 12px 12px;
+    display: none;
+    padding-left: 20px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    background: #000;
+    border-color:transparent #e9bfa3 #e9bfa3 #e9bfa3;
+    border-style:solid;
+    border-width:0 3px 3px 3px ;
+    // border: 3px solid #e9bfa3;
+    box-shadow: 0px 4px 20px rgb(117 117 117 / 10%);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 12px;
   .flex {
     display: flex;
     width: 100%;
