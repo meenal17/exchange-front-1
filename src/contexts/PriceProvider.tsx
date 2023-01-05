@@ -29,7 +29,7 @@ const PriceProvider: React.FC = ({ children }) => {
          address:'0xae13d989dac2f0debff460ac112a837c89baa7cd',
          name: 'balanceOf',
          // todo: replace address
-         params: ['0x6F67DfA8f487155c14334E51310F3766edC94FEF']
+         params: ['0xc84869a250a2394c77999010d59cb074A32A7857']
       }
     ]
     try {

@@ -152,7 +152,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     background:#000 !important;
   }
   .LaunchButton{
-    background: #000;
+    background: transparent;
     position: relative;
     border-radius:
     borderWidth:3px;
@@ -170,7 +170,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
     left: calc(-1 * 3px);
     height: calc(100% + 3px * 2);
     width: calc(100% + 3px * 2);
-    background: linear-gradient(127deg,#46c2a8,#3e8b9a,#498fb5);
+    border:3px solid #3e8b9a;
+    // background: linear-gradient(127deg,#46c2a8,#3e8b9a,#498fb5);
     border-radius: 12px;
     z-index: -1;
     background-size: 300% 300%;

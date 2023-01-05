@@ -6,16 +6,17 @@ import { AdvancedSwapDetails, AdvancedSwapDetailsProps } from './AdvancedSwapDet
 const AdvancedDetailsFooter = styled.div<{ show: boolean }>`
   padding-top: calc(16px + 0.3rem);
   padding-bottom: 20px;
-  margin-top: -2rem;
+  margin-top: -1.5rem;
   width: 100%;
   max-width: 420px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   color: ${({ theme }) => theme.colors.text2};
   // background-color: ${({ theme }) => theme.colors.advancedBG2};
-  // z-index: -1;
+  z-index: -1;
 
   transform: ${({ show }) => (show ? 'translateY(0%)' : 'translateY(-100%)')};
+  z-index:  ${({ show }) => (show ? '2' : '-1')};
   transition: transform 300ms ease-in-out;
 `
 

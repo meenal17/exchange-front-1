@@ -37,6 +37,10 @@ background-repeat: no-repeat;
   padding: 0;
   margin: unset;
  `};
+//  ${({ theme }) => theme.mediaWidth.upToLarge`
+//  padding: 143px 0 300px;
+// `};
+
 `
 const Container2 = styled.div`
   padding: 3.8rem 0;

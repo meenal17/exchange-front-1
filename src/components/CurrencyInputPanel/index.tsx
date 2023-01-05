@@ -1,7 +1,7 @@
 import { Currency, Pair } from '@pancakeswap-libs/sdk'
 import React, { useState, useContext, useCallback } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import { darken } from 'polished'
+// import { darken } from 'polished'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
 import CurrencyLogo from '../CurrencyLogo'
@@ -38,7 +38,7 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
 
   :focus,
   :hover {
-    background-color: ${({ selected, theme }) => (selected ? theme.colors.bg0 : darken(0.05, theme.colors.primary1))};
+    background-color: ${({ selected, theme }) => (selected ? theme.colors.bg0 :  theme.colors.mybg)};
   }
 `
 

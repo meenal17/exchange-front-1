@@ -14,9 +14,9 @@
   },
   "timestamp": "2022-05-06T11:11:38.034Z",
   "tokens": [{
-          "name": "Speciex",
-          "symbol": "Spex",
-          "address": "0x44CC24575048749AED404ffa5127040E913E9CEa",
+          "name": "Wyzth",
+          "symbol": "WYZTH",
+          "address": "0x8B34F6827344b2a99Bf3525Ff52db8cCb79124dB",
           "chainId": 97,
           "decimals": 18,
           "logoURI": "https://pancakeswap.finance/images/tokens/0x55d398326f99059fF775485246999027B3197955.png"
