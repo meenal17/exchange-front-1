@@ -4,7 +4,7 @@ import { animated, useTransition } from 'react-spring'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import { isMobile } from 'react-device-detect'
 import '@reach/dialog/styles.css'
-import { transparentize } from 'polished'
+// import { transparentize } from 'polished'
 
 const AnimatedDialogOverlay = animated(DialogOverlay)
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -33,9 +33,9 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, ...r
 })`
   &[data-reach-dialog-content] {
     margin: 0 0 2rem 0;
-    border: 1px solid;
+    border: 1px solid #776c55;
     background-color:#0d0b0b;
-    box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.95, theme.colors.shadow1)};
+    box-shadow: 0px 0px 8px 2px rgb(82 220 174);
     padding: 0px;
     width: 50vw;
     overflow: hidden;
@@ -43,7 +43,7 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, ...r
     align-self: ${({ mobile }) => (mobile ? 'flex-end' : 'center')};
 
     max-width: 420px;
-    min-height:35vh;
+    // min-height:35vh;
     max-height:35vh
     
     display: flex;

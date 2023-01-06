@@ -100,7 +100,7 @@ const StyledBalanceMax = styled.button`
   background:transparent;
   border 1px solid transparent;
   border-radius: 0.5rem;
-  font-size:21px;
+  font-size:18px;
 
   font-weight: 600;
   cursor: pointer;
@@ -119,7 +119,31 @@ const StyledBalanceMax = styled.button`
     margin-right: 0.5rem;
   `};
 `
+const StyledBalanceM = styled.button`
+  height: 28px;
+  // background-color: ${({ theme }) => theme.colors.primary5};
+  background:transparent;
+  border 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size:16px;
 
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  color: ${({ theme }) => theme.colors.text1};
+  :hover {
+    border 1px solid transparent;
+    // border: 1px solid ${({ theme }) => theme.colors.primary1};
+  }
+  :focus {
+    border 1px solid transparent;
+    outline: none;
+  }
+
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    margin-right: 0.5rem;
+  `};
+`
 
 interface CurrencyInputPanelProps {
   value: string
@@ -178,12 +202,12 @@ export default function CurrencyInputPanel({
       <div style={{display:"flex"}}>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
               {account && currency  && label !== 'To' && (
-                <StyledBalanceMax  onClick={onTwentyper}>20%</StyledBalanceMax>
+                <StyledBalanceM  onClick={onTwentyper}>20%</StyledBalanceM>
               )}
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
               {account && currency  && label !== 'To' && (
-                <StyledBalanceMax onClick={onThirtyper}>30%</StyledBalanceMax>
+                <StyledBalanceM onClick={onThirtyper}>30%</StyledBalanceM>
               )}
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>

@@ -36,7 +36,7 @@ import AppBody from '../AppBody'
 import { Dots, Wrapper } from '../Pool/styleds'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { currencyId } from '../../utils/currencyId'
-import { useI18n } from 'i18n/i18n-react'
+// import { useI18n } from 'i18n/i18n-react'
 import { PoolPriceBar } from './PoolPriceBar'
 
 export default function AddLiquidity({
@@ -45,7 +45,7 @@ export default function AddLiquidity({
   },
   history
 }: RouteComponentProps<{ currencyIdA?: string; currencyIdB?: string }>) {
-  const i18n = useI18n()
+  // const i18n = useI18n()
   const { account, chainId, library } = useActiveWeb3React()
   const theme = useContext(ThemeContext)
 
@@ -332,13 +332,13 @@ export default function AddLiquidity({
               <ColumnCenter>
                 <BlueCard>
                   <AutoColumn gap="10px">
-                    <TYPE.link fontWeight={600} color={'primaryText1'}>
+                    <TYPE.link fontWeight={600} color={'cardBg'}>
                       You are the first liquidity provider.
                     </TYPE.link>
-                    <TYPE.link fontWeight={400} color={'primaryText1'}>
+                    <TYPE.link fontWeight={400} color={'cardBg'}>
                       The ratio of tokens you add will set the price of this pool.
                     </TYPE.link>
-                    <TYPE.link fontWeight={400} color={'primaryText1'}>
+                    <TYPE.link fontWeight={400} color={'cardBg'}>
                       Once you are happy with the rate click supply to review.
                     </TYPE.link>
                   </AutoColumn>
@@ -358,7 +358,9 @@ export default function AddLiquidity({
               showCommonBases={false}
             />
             <ColumnCenter>
-              <Plus size="16" color={theme.colors.text2} />
+            <div>
+            <Plus size="16" color={theme.colors.text2} />
+            </div>
             </ColumnCenter>
             <CurrencyInputPanel
               value={formattedAmounts[Field.CURRENCY_B]}
@@ -393,7 +395,7 @@ export default function AddLiquidity({
             )}
 
             {!account ? (
-              <ButtonLight onClick={toggleWalletModal}>{i18n(204, 'Connect Wallet')}</ButtonLight>
+              <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
             ) : (
               <AutoColumn gap={'md'}>
                 {(approvalA === ApprovalState.NOT_APPROVED ||

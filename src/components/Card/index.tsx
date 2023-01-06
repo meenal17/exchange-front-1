@@ -19,7 +19,8 @@ export const LightCard = styled(Card)`
 `
 
 export const GreyCard = styled(Card)`
-  background-color: ${({ theme }) => theme.colors.newb2};
+  background:linear-gradient(88deg,#09393657,#181616);
+  margin: 8px 0px;
 `
 
 export const OutlineCard = styled(Card)`
@@ -40,8 +41,8 @@ export const PinkCard = styled(Card)`
 
 const BlueCardStyled = styled(Card)`
   // background-color: ${({ theme }) => theme.colors.primary5};
-  background:#262321;
-  // color: ${({ theme }) => theme.colors.normal};
+  background:linear-gradient(88deg,#11c9ae,#1f6d99);;
+  color:${({ theme }) => theme.colors.text3};
   border-radius: 12px;
   width: fit-content;
 `

@@ -5,7 +5,7 @@ const ToggleElement = styled.span<{ isActive?: boolean; isOnSwitch?: boolean }>`
   padding: 0.8rem;
   border-radius: 14px;
   background: ${({ theme, isActive, isOnSwitch }) =>
-    isActive ? (isOnSwitch ? theme.colors.primary1 : theme.colors.text4) : 'none'};
+    isActive ? (isOnSwitch ? theme.colors.buttonText : theme.colors.text4) : 'none'};
   color: ${({ theme, isActive, isOnSwitch }) =>
     isActive ? (isOnSwitch ? theme.colors.white : theme.colors.text2) : theme.colors.text3};
   font-size: 0.825rem;
@@ -14,12 +14,12 @@ const ToggleElement = styled.span<{ isActive?: boolean; isOnSwitch?: boolean }>`
 
 const StyledToggle = styled.button<{ isActive?: boolean; activeElement?: boolean ; isOnSwitch?: boolean }>`
   border-radius: 16px;
-  border: 1px solid ${({ theme, isActive }) => (isActive ? theme.colors.primary5 : theme.colors.text4)};
+  border: 1px solid #24585b;
   display: flex;
   width: fit-content;
   cursor: pointer;
   outline: none;
-  padding: 0;
+  padding: 2px 7px;
    background: ${({ theme, isActive, isOnSwitch }) =>
     isActive ? (isOnSwitch ? theme.colors.mybg : theme.colors.textmy) :  theme.colors.mybg};
   // background-color: transparent;

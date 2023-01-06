@@ -1,18 +1,19 @@
-import React, { useRef, useContext, useState,useEffect } from 'react'
+import React, { useRef, useContext, useState, useEffect } from 'react'
 import { X } from 'react-feather'
 import styled from 'styled-components'
-import { useWalletModalOpencustome,useWalletModalTogglecustome, useSettingsMenuOpen, useToggleSettingsMenu  } from '../../state/application/hooks'
 import {
-  useUserSlippageTolerance,
-  useUserDeadline,
-  useAudioModeManager
-} from '../../state/user/hooks'
+  useWalletModalOpencustome,
+  useWalletModalTogglecustome,
+  useSettingsMenuOpen,
+  useToggleSettingsMenu
+} from '../../state/application/hooks'
+import { useUserSlippageTolerance, useUserDeadline, useAudioModeManager } from '../../state/user/hooks'
 import Modalto from '../../components/Modal/Modalto'
 import Modal from '../Modal'
 import { AutoColumn } from '../Column'
 import { RowFixed, RowBetween } from '../Row'
-import { ReactComponent as Close } from '../../assets/images/x.svg'
-import {  fortmatic } from '../../connectors'
+import { ReactComponent as Close } from '../../assets/images/cross.svg'
+import { fortmatic } from '../../connectors'
 import { OVERLAY_READY } from '../../connectors/Fortmatic'
 import { ThemeContext } from 'styled-components'
 import { Text } from 'rebass'
@@ -24,8 +25,13 @@ import Toggle from '../Toggle'
 // import TranslatedText from '../TranslatedText'
 const CloseIcon = styled.div`
   position: absolute;
-  right: 1rem;
-  top: 14px;
+right: 1rem;
+top: 14px;
+border: 3px solid grey;
+padding: 3px 5px;
+width: rem;
+border-radius: 37px;
+text-align: center;
   &:hover {
     cursor: pointer;
     opacity: 0.6;
@@ -47,14 +53,14 @@ const Wrapper = styled.div`
 
 const HeaderRow = styled.div`
   ${({ theme }) => theme.flexRowNoWrap};
-  padding: 1rem 1rem;
+  padding: 0.5rem 4.5rem;
   font-weight: 900;
-  font-size:25px;
+  font-size:33px;
   justify-content:center;
-  color: ${props => (props.color === 'blue' ? ({ theme }) => theme.colors.primary1 : 'inherit')};
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-    padding: 1rem;
-  `};
+  color: #fff;
+  // ${({ theme }) => theme.mediaWidth.upToMedium`
+  //   padding: 1rem;
+  // `};
 `
 
 const ContentWrapper = styled.div`
@@ -89,6 +95,7 @@ const UpperSection = styled.div`
 const StyledCloseIcon = styled(X)`
   height: 20px;
   width: 20px;
+  font-weight:900;
   :hover {
     cursor: pointer;
   }
@@ -97,7 +104,6 @@ const StyledCloseIcon = styled(X)`
     stroke: ${({ theme }) => theme.colors.text1};
   }
 `
-
 
 const StyledMenu = styled.div`
   // margin-left: 0.5rem;
@@ -124,77 +130,72 @@ const ModalContentWrapper = styled.div`
   border-radius: 20px;
 `
 
-export default function  WalletModalcustome() {
-
-
+export default function WalletModalcustome() {
   const walletModalOpencustome = useWalletModalOpencustome()
   const toggleWalletModalcustome = useWalletModalTogglecustome()
 
-  
-// setting code
-const node = useRef<HTMLDivElement>()
-const open = useSettingsMenuOpen()
-const toggle = useToggleSettingsMenu()
+  // setting code
+  const node = useRef<HTMLDivElement>()
+  const open = useSettingsMenuOpen()
+  const toggle = useToggleSettingsMenu()
 
-const theme = useContext(ThemeContext)
-const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
+  const theme = useContext(ThemeContext)
+  const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
 
-const [deadline, setDeadline] = useUserDeadline()
+  const [deadline, setDeadline] = useUserDeadline()
 
-// const [expertMode, toggleExpertMode] = useExpertModeManager()
+  // const [expertMode, toggleExpertMode] = useExpertModeManager()
 
-const [audioMode, toggleSetAudioMode] = useAudioModeManager()
+  const [audioMode, toggleSetAudioMode] = useAudioModeManager()
 
-// show confirmation view before turning on
-const [showConfirmation, setShowConfirmation] = useState(false)
+  // show confirmation view before turning on
+  const [showConfirmation, setShowConfirmation] = useState(false)
 
-useOnClickOutside(node, open ? toggle : undefined)
-// setting code end
+  useOnClickOutside(node, open ? toggle : undefined)
+  // setting code end
 
   // close on connection, when logged out before
- 
 
   // close wallet modal if fortmatic modal is active
   useEffect(() => {
     fortmatic.on(OVERLAY_READY, () => {
-        toggleWalletModalcustome()
+      toggleWalletModalcustome()
     })
   }, [toggleWalletModalcustome])
 
   // get wallets user can switch too, depending on device/browser
 
-
   function getModalContent() {
-    
-      return (
-        <UpperSection>
-          <CloseIcon onClick={toggleWalletModalcustome}>
-            <CloseColor />
-          </CloseIcon>
-          <HeaderRow>Setting</HeaderRow>
-          <ContentWrapper>
-           
+    return (
+      <UpperSection>
+        <CloseIcon onClick={toggleWalletModalcustome}>
+          <CloseColor />
+        </CloseIcon>
+
+        <HeaderRow>Settings</HeaderRow>
+        <div className="headingborderfive"></div>
+        <ContentWrapper>
           <StyledMenu ref={node as any}>
-      <Modal isOpen={showConfirmation} onDismiss={() => setShowConfirmation(false)} maxHeight={100}>
-        <ModalContentWrapper>
-          <AutoColumn gap="lg">
-            <RowBetween style={{ padding: '0 2rem' }}>
-              <div />
-              <Text fontWeight={500} fontSize={20}>
-                Are you sure?
-              </Text>
-              <StyledCloseIcon onClick={() => setShowConfirmation(false)} />
-            </RowBetween>
-            <Break />
-            <AutoColumn gap="lg" style={{ padding: '0 2rem' }}>
-              <Text fontWeight={500} fontSize={20}>
-                Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result
-                in bad rates and lost funds.
-              </Text>
-              <Text fontWeight={600} fontSize={20}>
-                ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING.
-              </Text>
-              {/* <ButtonError
+            <Modal isOpen={showConfirmation} onDismiss={() => setShowConfirmation(false)} maxHeight={100}>
+              <ModalContentWrapper>
+                <AutoColumn gap="lg">
+                  <RowBetween style={{ padding: '0 2rem' }}>
+                    <div />
+                    <Text fontWeight={500} fontSize={20}>
+                      Are you sure?
+                    </Text>
+                    <StyledCloseIcon onClick={() => setShowConfirmation(false)} />
+                  </RowBetween>
+                  <Break />
+                  <AutoColumn gap="lg" style={{ padding: '0 2rem' }}>
+                    <Text fontWeight={500} fontSize={20}>
+                      Expert mode turns off the confirm transaction prompt and allows high slippage trades that often
+                      result in bad rates and lost funds.
+                    </Text>
+                    <Text fontWeight={600} fontSize={20}>
+                      ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING.
+                    </Text>
+                    {/* <ButtonError
                 error={true}
                 padding={'12px'}
                 onClick={() => {
@@ -208,25 +209,25 @@ useOnClickOutside(node, open ? toggle : undefined)
                   Turn On Expert Mode
                 </Text>
               </ButtonError> */}
-            </AutoColumn>
-          </AutoColumn>
-        </ModalContentWrapper>
-      </Modal>
-     
-          <AutoColumn gap="md">
-            {/* <Text fontWeight={600} fontSize={14}>
+                  </AutoColumn>
+                </AutoColumn>
+              </ModalContentWrapper>
+            </Modal>
+
+            <AutoColumn gap="md">
+              {/* <Text fontWeight={600} fontSize={14}>
               <TranslatedText translationId={190}>Transaction Settings</TranslatedText>
             </Text> */}
-            <TransactionSettings
-              rawSlippage={userSlippageTolerance}
-              setRawSlippage={setUserslippageTolerance}
-              deadline={deadline}
-              setDeadline={setDeadline}
-            />
-            {/* <Text fontWeight={600} fontSize={14}>
+              <TransactionSettings
+                rawSlippage={userSlippageTolerance}
+                setRawSlippage={setUserslippageTolerance}
+                deadline={deadline}
+                setDeadline={setDeadline}
+              />
+              {/* <Text fontWeight={600} fontSize={14}>
               <TranslatedText translationId={192}>Interface Settings</TranslatedText>
             </Text> */}
-            {/* <RowBetween>
+              {/* <RowBetween>
               <RowFixed>
                 <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>
                   <h2>Toggle Audio Mode</h2>
@@ -234,30 +235,28 @@ useOnClickOutside(node, open ? toggle : undefined)
               </RowFixed>
               <Toggle isActive={audioMode} toggle={toggleSetAudioMode} />
             </RowBetween> */}
-            <RowBetween>
-              <RowFixed>
-                <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>
-                  <h2>Pro Mode</h2>
-                </TYPE.black>
-              </RowFixed>
-              <Toggle isActive={audioMode} toggle={toggleSetAudioMode} />
-            </RowBetween>
-            <RowBetween>
-              <RowFixed>
-                <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>
-                <h2>Practice Mode</h2>
-                </TYPE.black>
-              </RowFixed>
-              <Toggle isActive={audioMode} toggle={toggleSetAudioMode} />
-            </RowBetween>
-          </AutoColumn>
-        {/* </MenuFlyout> */}
-   
-    </StyledMenu>
-          </ContentWrapper>
-        </UpperSection>
-      )
-    
+              <RowBetween>
+                <RowFixed>
+                  <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>
+                    <h2 className='mode'>Pro Mode</h2>
+                  </TYPE.black>
+                </RowFixed>
+                <Toggle isActive={audioMode} toggle={toggleSetAudioMode} />
+              </RowBetween>
+              <RowBetween>
+                <RowFixed>
+                  <TYPE.black fontWeight={400} fontSize={14} color={theme.colors.text2}>
+                    <h2 className='mode'>Practice Mode</h2>
+                  </TYPE.black>
+                </RowFixed>
+                <Toggle  isActive={!audioMode} toggle={toggleSetAudioMode} />
+              </RowBetween>
+            </AutoColumn>
+            {/* </MenuFlyout> */}
+          </StyledMenu>
+        </ContentWrapper>
+      </UpperSection>
+    )
   }
 
   return (

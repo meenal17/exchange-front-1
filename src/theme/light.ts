@@ -48,6 +48,7 @@ textmy:'#131416',
     normal: '#bbb',
     inputBg: '#FFF9F0',
     strokColor: '#E1E1E1',
-    navBg: '#C4C4C4'
+    navBg: '#C4C4C4',
+    plus:'#0bc496'
   }
 }

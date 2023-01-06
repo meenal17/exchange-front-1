@@ -41,7 +41,7 @@ import { useI18n } from 'i18n/i18n-react'
 import { PoolPriceBar } from './PoolPriceBar'
 import Pool from 'pages/Pool_new'
 import { JSBI } from '@pancakeswap-libs/sdk'
-import  Globe from "../Globe";
+// import  Globe from "../Globe";
 import Particle from "../particle/Particle"
 import Settings from "../../components/Settings/index"
 import AccountButton from "../../components/Header/AccountButton"
@@ -408,13 +408,13 @@ export default function AddLiquidity({
                 <ColumnCenter>
                   <BlueCard>
                     <AutoColumn gap="10px">
-                      <TYPE.link fontWeight={600} color={'primaryText1'}>
+                      <TYPE.link fontWeight={600} color={'cardBg'}>
                         You are the first liquidity provider.
                       </TYPE.link>
-                      <TYPE.link fontWeight={400} color={'primaryText1'}>
+                      <TYPE.link fontWeight={400} color={'cardBg'}>
                         The ratio of tokens you add will set the price of this pool.
                       </TYPE.link>
-                      <TYPE.link fontWeight={400} color={'primaryText1'}>
+                      <TYPE.link fontWeight={400} color={'cardBg'}>
                         Once you are happy with the rate click supply to review.
                       </TYPE.link>
                     </AutoColumn>
@@ -444,7 +444,9 @@ export default function AddLiquidity({
                 showCommonBases={false}
               />
               <ColumnCenter>
-                <Plus size="16" color={theme.colors.text2} />
+              <div className='plusico'>
+                <Plus size="16" color={theme.colors.plus} />
+                </div>
               </ColumnCenter>
               <CurrencyInputPanel
                 value={formattedAmounts[Field.CURRENCY_B]}
@@ -556,7 +558,7 @@ export default function AddLiquidity({
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
         </AutoColumn>
       ) : null}
-       <Globe/>
+       
     </>
   )
 }

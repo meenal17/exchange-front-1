@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 
-import QuestionHelper from '../QuestionHelper'
+// import QuestionHelper from '../QuestionHelper'
 // import { TYPE } from '../../components/Shared'
-import { useI18n } from 'i18n/i18n-react'
+// import { useI18n } from 'i18n/i18n-react'
 import { AutoColumn } from '../Column'
-import { RowBetween, RowFixed } from '../Row'
+import { RowBetween } from '../Row'
 
 import { darken } from 'polished'
 // import TranslatedText from '../TranslatedText'
@@ -23,13 +23,14 @@ enum SlippageError {
 const FancyButton = styled.button`
   color: #fff;
   align-items: center;
-  height: 2rem;
+  // height: 2rem;
   border-radius: 8px;
   font-size: 19px;
   font-weight: 600;
   font-family: Inter, sans-serif !important
   width: auto;
-  max-width: 3.5rem;
+ min-width: 4.4rem;
+    padding: 5px 14px;
   border: 1px solid #00829a;
   outline: none;
   background:#0d0b0b;
@@ -43,10 +44,12 @@ const FancyButton = styled.button`
 
 const Option = styled(FancyButton)<{ active: boolean }>`
   margin-right: 8px;
+  min-width: 4.4rem;
+    padding: 5px 14px;
   :hover {
     cursor: pointer;
   }
-  background: ${({ active, theme }) =>(active ? theme.colors.mybg: theme.colors.textmy)};
+  background: ${({ active, theme }) => (active ? theme.colors.mybg : theme.colors.textmy)};
   color: ${({ active, theme }) => (active ? theme.colors.white : theme.colors.text1)};
 `
 
@@ -98,7 +101,7 @@ export interface SlippageTabsProps {
 }
 
 export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, setDeadline }: SlippageTabsProps) {
-  const i18n = useI18n()
+  // const i18n = useI18n()
   // const theme = useContext(ThemeContext)
 
   const inputRef = useRef<HTMLInputElement>()
@@ -151,14 +154,10 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
   // }
 
   return (
-    <AutoColumn gap="md">
+    <>
+      <h3 className="sliph3"> Slippage Tolerance </h3>
+
       <AutoColumn>
-        <RowFixed>
-          {/* <TYPE.black fontWeight={400} fontSize={16} color={theme.colors.text2}> */}
-           <h3> Slippage Tolerance </h3>
-          {/* </TYPE.black> */}
-          <QuestionHelper text={i18n(762, "Your transaction will revert if the price changes unfavorably by more than this percentage.")} />
-        </RowFixed>
         <RowBetween>
           <Option
             onClick={() => {
@@ -192,7 +191,7 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
               {!!slippageInput &&
               (slippageError === SlippageError.RiskyLow || slippageError === SlippageError.RiskyHigh) ? (
                 <SlippageEmojiContainer>
-                  <span role="img" aria-label="warning">
+                  <span role="img" aria-label="warning" >
                     ⚠️
                   </span>
                 </SlippageEmojiContainer>
@@ -228,31 +227,6 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
           </RowBetween>
         )}
       </AutoColumn>
-
-      {/* <AutoColumn gap="sm">
-        <RowFixed>
-          <TYPE.black fontSize={14} fontWeight={400} color={theme.colors.text2}>
-            <TranslatedText translationId={284}>Transaction deadline</TranslatedText>
-          </TYPE.black>
-          <QuestionHelper text={i18n(760, "Your transaction will revert if it is pending for more than this long.")}  />
-        </RowFixed>
-        <RowFixed>
-          <OptionCustom style={{ width: '80px' }} tabIndex={-1}>
-            <Input
-              color={!!deadlineError ? 'red' : undefined}
-              onBlur={() => {
-                parseCustomDeadline((deadline / 60).toString())
-              }}
-              placeholder={(deadline / 60).toString()}
-              value={deadlineInput}
-              onChange={e => parseCustomDeadline(e.target.value)}
-            />
-          </OptionCustom>
-          <TYPE.body style={{ paddingLeft: '8px' }} fontSize={14}>
-            <TranslatedText translationId={286}>minutes</TranslatedText>
-          </TYPE.body>
-        </RowFixed>
-      </AutoColumn> */}
-    </AutoColumn>
+    </>
   )
 }

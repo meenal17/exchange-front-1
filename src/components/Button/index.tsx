@@ -49,8 +49,8 @@ export const ButtonPrimary = styled(Base)`
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.colors.primary1)};
   }
   &:disabled {
-    background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.gradient : theme.colors.modalBG)};
-    color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.colors.text3)};
+    background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.gradient : theme.colors.mybg)};
+    color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.colors.buttonText)};
     cursor: not-allowed;
     box-shadow: none;
     // border: 1px solid transparent;
