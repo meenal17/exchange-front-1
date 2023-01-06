@@ -283,9 +283,13 @@ ${({ theme }) =>(theme as any).mediaWidth.upToMedium`
   left: 0;
   bottom: 0;
   z-index:-1;
+  bottom: -40px;
   ${({ theme }) => (theme as any).mediaWidth.upToMedium`
 display:none;
 `};
+.globaleimg{
+  width:25%;
+}
 }
 .fontss{
   font-size: 15px !important;
