@@ -169,7 +169,7 @@ export default function WalletModalcustome() {
     return (
       <UpperSection>
         <CloseIcon onClick={toggleWalletModalcustome}>
-          <CloseColor />
+          <CloseColor  style={{position:'relative', top:'2px'}}/>
         </CloseIcon>
 
         <HeaderRow>Settings</HeaderRow>

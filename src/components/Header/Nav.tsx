@@ -71,12 +71,18 @@ const StyledAbsoluteLink = styled.a`
   // color: rgb(127, 134, 143);
   margin-right: 24px;
   text-decoration: none;
-background: linear-gradient(to right, #13B9AA 0%, #1e729a 100%);
+    transition: transform .3s; /* Animation */
+background: #ccc;
   background-clip: border-box;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
+font-size:22px;
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+   background: linear-gradient(to right, #13B9AA 0%, #1e729a 100%);
+  background-clip: border-box;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+ transform: scale(1.2)
   }
   @media (max-width: 400px) {
     margin-right: 24px;

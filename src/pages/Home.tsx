@@ -28,10 +28,9 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-padding: 143px 0 112px;
+padding: 143px 0 143px;
 background: url(/bg_handshake.png);
 background-size: cover;
-background-position: center;
 background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
