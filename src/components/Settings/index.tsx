@@ -15,7 +15,7 @@ const SettingsTab: React.FC<{}> = () => {
     
          <div className="accountbuttontest">
         <Button onClick={toggleWalletModalcustome}>
-        <i className="fa fa-cog seetingstyle" aria-hidden="true" ></i>
+       <img src="images/setting.png" alt="" />
         </Button>
         </div>
       

@@ -13,7 +13,8 @@ const Tabs = styled.div`
   align-items: center;
   border-radius: 15px;
   justify-content: center;
-
+box-shadow: rgb(68 235 214) 0px 0px 5px;
+    border: 1px solid grey;
   column-gap: 24px;
 `
 // const Liquiditybox=styled.div`
@@ -43,15 +44,15 @@ const StyledNavLink = styled(NavLink).attrs({
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
   justify-content: center;
-  height: 2.4rem;
+  height: 2.6rem;
   border-radius: 15px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  padding:2px 40px;
+  padding:2px 17px;
   margin:5px;
   color: ${({ theme }) => theme.colors.text3};
-  font-size: 22px;
+  font-size: 28px;
   font-weight:bold;
 
   &.${activeClassName} {
@@ -80,7 +81,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
 
 export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
   return (
-    <Tabs style={{ marginBottom: '20px', background:'#1a1a1a',    boxShadow: '0px 0 8px rgb(68 235 214)'}}>
+    <Tabs style={{ marginBottom: '20px', background:'#1a1a1a', }}>
       <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
         <TranslatedText translationId={268}>Market</TranslatedText>
       </StyledNavLink>
