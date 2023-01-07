@@ -79,9 +79,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '8px 23px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px 20px' }}>
         <div className="">
-          <img src="LeBo.png" alt="" style={{ width: '5rem' }} />
+          <img src="Lebo_logo.svg" alt="" style={{ width: '10rem' }} />
         </div>
         <div className="footer-bottom">2022 Lebo.All rights reserved</div>
       </div>

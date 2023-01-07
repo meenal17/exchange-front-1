@@ -384,7 +384,8 @@ export default function AddLiquidity({
     <Settings/>
     <AccountButton/>
     </div>
-      <LayoutWrapper>
+   
+    <LayoutWrapper style={{width:"100%",minHeight:"65vh"}}>
         <AppBody>
           <AddRemoveTabs adding={true} />
           <Wrapper>
@@ -559,6 +560,7 @@ export default function AddLiquidity({
         </AutoColumn>
       ) : null}
        
+   
     </>
   )
 }

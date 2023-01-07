@@ -299,7 +299,7 @@ display:none;
 }
 .icons{
   display:flex;
-  gap:10px;
+  gap:30px;
   align-items: center;
   margin-top: 10px;
 }
@@ -372,7 +372,7 @@ margin-top:-4px;
     justify-content: end;
     width: 100%;
     margin-left:-80px;
-    margin-top:65px;
+    margin-top:100px;
     align-items:center;
     ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
     margin-top:0px;

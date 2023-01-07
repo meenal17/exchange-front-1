@@ -10,7 +10,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ isDark }) => {
   return (
     <StyledLogo>
-      <img src="lebo_logo.png" alt="logo" style={{width:"100%"}}/>
+      <img src="Lebo_logo.svg" alt="logo" style={{width:"65%"}}/>
     </StyledLogo>
   )
 }
@@ -24,7 +24,7 @@ const StyledLogo = styled.div`
   // margin-right: 42px;
   text-decoration: none;
   align-item:center;
-  width:150px;
+  // width:150px;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     .text {
       display: none
