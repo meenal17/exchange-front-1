@@ -421,5 +421,60 @@ z-index:1111;
   box-shadow: 0px 0px 2px 4px rgb(22 142 136);
   margin: 10px;
 }
+.pooldiv{
+  height: 140px;
+    overflow-y: scroll;
+}
+.pooldiv::-webkit-scrollbar {
+  width: 3px;
+}
+ 
+.pooldiv::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.pooldiv::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background:grey;
+  
+}
+#postiondiv{
+  position: absolute;
+  top: 36%;
+  padding: 7px !important;
+  width: 300px;
+  right: 768px;
+  color: #fff;
+  height: auto;
+  box-shadow: rgb(17 2 31) -6px 9px 32px 5px;
+  background: linear-gradient(to right,#13b9aa,#1e759b);
+  border-right: 1px solid #1b1f5a;
+  -webkit-animation: slide .5s forwards;
+  -webkit-animation-delay: .5s;
+  animation: slide .5s forwards;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+  animation-delay: .5s;
+  z-index: 1;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  transition: color,background-color,width .2s linear;
+}
+.iconjn{
+  position: absolute;
+    top: 45%;
+    left: -4%;
+    cursor: pointer;
+    background: rgb(15, 178, 151);;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
 `
 

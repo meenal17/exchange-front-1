@@ -401,6 +401,8 @@ export default function Swap() {
               onUserInput={handleTypeOutput}
               label={independentField === Field.INPUT && !showWrap && trade ? 'To (estimated)' : i18n(310, 'To')}
               showMaxButton={false}
+              onTwentyper={handleTwentyinput}
+              onThirtyper={handleThirtyinput}
               currency={currencies[Field.OUTPUT]}
               onCurrencySelect={handleOutputSelect}
               otherCurrency={currencies[Field.INPUT]}

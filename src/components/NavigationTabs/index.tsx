@@ -108,6 +108,9 @@ export function FindPoolTabs() {
 
 export function AddRemoveTabs({ adding }: { adding: boolean }) {
   return (
+  
+    
         <div className='poolcardsd'>{adding ? 'Add' : 'Remove'} Liquidity</div>
+        
   )
 }

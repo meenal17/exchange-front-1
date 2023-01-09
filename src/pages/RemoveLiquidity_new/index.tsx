@@ -42,7 +42,9 @@ import { useWalletModalToggle } from '../../state/application/hooks'
 import { useUserDeadline, useUserSlippageTolerance } from '../../state/user/hooks'
 import { useI18n } from 'i18n/i18n-react'
 import { BigNumber } from '@ethersproject/bignumber'
-
+// import Settings from "../../components/Settings/index"
+import AccountButton from 'components/Header/AccountButton'
+import Particle from "../particle/Particle";
 export default function RemoveLiquidity({
   history,
   match: {
@@ -469,6 +471,12 @@ export default function RemoveLiquidity({
 
   return (
     <>
+       <Particle/>
+    <div className="settingmy">
+        {/* <Settings/> */}
+        <AccountButton />
+       
+      </div>
       <AppBody>
         <AddRemoveTabs adding={false} />
         <Wrapper>
@@ -564,7 +572,7 @@ export default function RemoveLiquidity({
                               currencyB === ETHER ? WETH[chainId].address : currencyIdB
                             }`}
                           >
-                            Receive WHOO
+                            Receive WBNB
                           </StyledInternalLink>
                         ) : oneCurrencyIsWETH ? (
                           <StyledInternalLink
@@ -572,7 +580,7 @@ export default function RemoveLiquidity({
                               currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
                             }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
                           >
-                            Receive HOO
+                            Receive BNB
                           </StyledInternalLink>
                         ) : null}
                       </RowBetween>

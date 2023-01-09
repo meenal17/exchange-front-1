@@ -15,7 +15,7 @@ import { useI18n } from 'i18n/i18n-react'
 import { ButtonError } from '../Button'
 import { AutoColumn } from '../Column'
 import QuestionHelper from '../QuestionHelper'
-import { AutoRow, RowBetween, RowFixed } from '../Row'
+import {  RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
 
@@ -135,7 +135,7 @@ export default function SwapModalFooter({
         </RowBetween>
       </AutoColumn>
 
-      <AutoRow>
+      <div style={{display:"flex",justifyContent:"center",textAlign:"center"}}>
         <ButtonError
           onClick={onConfirm}
           disabled={disabledConfirm}
@@ -149,7 +149,7 @@ export default function SwapModalFooter({
         </ButtonError>
 
         {swapErrorMessage ? <SwapCallbackError error={swapErrorMessage} /> : null}
-      </AutoRow>
+      </div>
     </>
   )
 }

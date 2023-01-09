@@ -19,7 +19,8 @@ export const LightCard = styled(Card)`
 `
 
 export const GreyCard = styled(Card)`
-  background:linear-gradient(88deg,#09393657,#181616);
+  // background:linear-gradient(88deg,#09393657,#181616);
+   border-radius:none;
   margin: 8px 0px;
 `
 

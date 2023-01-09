@@ -61,7 +61,7 @@ export default function Pool() {
 
   return (
     <>
-      
+      <div className='pooldiv'>
 
             {!account ? (
               <LightCard >
@@ -88,7 +88,7 @@ export default function Pool() {
                 </TYPE.body>
               </LightCard>
             )}
-
+</div>
       
     </>
   )

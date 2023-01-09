@@ -84,12 +84,22 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
         ]
       : [undefined, undefined]
 
-      
+      function myFunction() {
+       
+        var x = document.getElementById('postiondiv')?.style
+        if (x?.width === '300px') {
+          x?.setProperty('width', '300px')
+        } else {
+          x?.setProperty('width', '0px')
+        }
+      }
 
   return (
     <>
+    <div id='postiondiv' >
       {userPoolBalance && (
-        <GreyCard border={border}>
+        <GreyCard border={border} onClick={myFunction}>
+         
           <AutoColumn gap="12px">
             <FixedHeightRow>
               <RowFixed>
@@ -144,6 +154,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
           </AutoColumn>
         </GreyCard>
       )}
+      </div>
     </>
   )
 }

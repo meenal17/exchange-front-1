@@ -1,7 +1,7 @@
 import { JSBI, Pair, Percent } from '@pancakeswap-libs/sdk'
 import { darken } from 'polished'
 import React, { useState } from 'react'
-import { ChevronDown, ChevronUp } from 'react-feather'
+import { ChevronDown, ChevronUp,ChevronsLeft } from 'react-feather'
 import { Link } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components'
@@ -60,16 +60,34 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
         ]
       : [undefined, undefined]
 
+      function myFunction() {
+       
+        var x = document.getElementById('postiondiv')?.style
+        var y= document.getElementById('innercard')?.style
+        if (x?.width === '300px') {
+          x?.setProperty('width', '0px')
+          y?.setProperty('visibility','hidden')
+        } else {
+          x?.setProperty('width', '300px')
+          y?.setProperty('visibility','visible')
+        }
+      }
   return (
     <>
+     <div id='postiondiv' >
+     <ChevronsLeft className="iconjn"   onClick={myFunction}/>
+
       {userPoolBalance && (
-        <GreyCard border={border}>
+        <GreyCard id="innercard" border={border}>
+         
+          
           <AutoColumn gap="12px">
             <FixedHeightRow>
               <RowFixed>
                 <Text fontWeight={500} fontSize={16}>
                   Your position
                 </Text>
+               
               </RowFixed>
             </FixedHeightRow>
             <FixedHeightRow onClick={() => setShowMore(!showMore)}>
@@ -80,19 +98,19 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
                 </Text>
               </RowFixed>
               <RowFixed>
-                <Text fontWeight={500} fontSize={20}>
+                <Text fontWeight={500} fontSize={20} style={{color:"#fff"}}>
                   {userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}
                 </Text>
               </RowFixed>
             </FixedHeightRow>
             <AutoColumn gap="4px">
               <FixedHeightRow>
-                <Text color="#888D9B" fontSize={16} fontWeight={500}>
+                <Text color="#fff" fontSize={16} fontWeight={500}>
                   {currency0.symbol}:
                 </Text>
                 {token0Deposited ? (
                   <RowFixed>
-                    <Text color="#888D9B" fontSize={16} fontWeight={500} marginLeft={'6px'}>
+                    <Text color="#fff" fontSize={16} fontWeight={500} marginLeft={'6px'}>
                       {token0Deposited?.toSignificant(6)}
                     </Text>
                   </RowFixed>
@@ -101,12 +119,12 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
                 )}
               </FixedHeightRow>
               <FixedHeightRow>
-                <Text color="#888D9B" fontSize={16} fontWeight={500}>
+                <Text color="#fff" fontSize={16} fontWeight={500}>
                   {currency1.symbol}:
                 </Text>
                 {token1Deposited ? (
                   <RowFixed>
-                    <Text color="#888D9B" fontSize={16} fontWeight={500} marginLeft={'6px'}>
+                    <Text color="#fff" fontSize={16} fontWeight={500} marginLeft={'6px'}>
                       {token1Deposited?.toSignificant(6)}
                     </Text>
                   </RowFixed>
@@ -118,6 +136,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
           </AutoColumn>
         </GreyCard>
       )}
+      </div>
     </>
   )
 }
