@@ -385,7 +385,7 @@ export default function AddLiquidity({
     <AccountButton/>
     </div>
    
-    <LayoutWrapper style={{width:"100%",minHeight:"65vh"}}>
+    <LayoutWrapper style={{width:"100%",minHeight:"65vh",overflow:'hidden'}}>
         <AppBody>
           <AddRemoveTabs adding={true} />
           <Wrapper>
@@ -544,7 +544,16 @@ export default function AddLiquidity({
               )}
             </AutoColumn>
           </Wrapper>
+          {pair && !noLiquidity && pairState !== PairState.INVALID ? (
+       
+       <AutoColumn style={{ minWidth: '20rem', marginTop: '1rem' }}>
+        <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
+      </AutoColumn>
+     
+    ) : null}
+     
         </AppBody>
+
         <AppBody2>
       
             <div className='poolcardsd'>
@@ -554,14 +563,7 @@ export default function AddLiquidity({
           <Pool />
         </AppBody2>
       </LayoutWrapper>
-      {pair && !noLiquidity && pairState !== PairState.INVALID ? (
-       
-         <AutoColumn style={{ minWidth: '20rem', marginTop: '1rem' }}>
-          <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
-        </AutoColumn>
-       
-      ) : null}
-       
+     
    
     </>
   )

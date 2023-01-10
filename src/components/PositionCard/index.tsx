@@ -1,7 +1,7 @@
 import { JSBI, Pair, Percent } from '@pancakeswap-libs/sdk'
 import { darken } from 'polished'
 import React, { useState } from 'react'
-import { ChevronDown, ChevronUp,ChevronsLeft } from 'react-feather'
+import { ChevronDown,ChevronsDown, ChevronsUp, ChevronUp } from 'react-feather'
 import { Link } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components'
@@ -44,7 +44,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
   const currency1 = showUnwrapped ? pair.token1 : unwrappedToken(pair.token1)
 
   const [showMore, setShowMore] = useState(false)
-
+  const [lf, setLF] = useState(true);
   const userPoolBalance = useTokenBalance(account ?? undefined, pair.liquidityToken)
   const totalPoolTokens = useTotalSupply(pair.liquidityToken)
 
@@ -64,20 +64,25 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
        
         var x = document.getElementById('postiondiv')?.style
         var y= document.getElementById('innercard')?.style
-        if (x?.width === '300px') {
-          x?.setProperty('width', '0px')
+        if (x?.height === '145px') {
+          x?.setProperty('height', '0px')
           y?.setProperty('visibility','hidden')
+          setLF(false)
         } else {
-          x?.setProperty('width', '300px')
+          x?.setProperty('height', '145px')
           y?.setProperty('visibility','visible')
+          setLF(true)
         }
       }
   return (
     <>
-     <div id='postiondiv' >
-     <ChevronsLeft className="iconjn"   onClick={myFunction}/>
+   {account?<>
+     <div id='postiondiv' style={{height:'145px'}} >
+     <span    onClick={myFunction}>
+     {lf?<ChevronsDown className="iconjn"/> :<ChevronsUp className="iconjn" />}
+       </span>
 
-      {userPoolBalance && (
+      { userPoolBalance && (
         <GreyCard id="innercard" border={border}>
          
           
@@ -93,7 +98,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
             <FixedHeightRow onClick={() => setShowMore(!showMore)}>
               <RowFixed>
                 <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin={true} size={20} />
-                <Text fontWeight={500} fontSize={20}>
+                <Text fontWeight={500} fontSize={17}>
                   {currency0.symbol}/{currency1.symbol}
                 </Text>
               </RowFixed>
@@ -136,7 +141,9 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
           </AutoColumn>
         </GreyCard>
       )}
+         
       </div>
+      </>:null}
     </>
   )
 }

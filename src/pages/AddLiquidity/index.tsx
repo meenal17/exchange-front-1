@@ -309,7 +309,7 @@ export default function AddLiquidity({
 
   return (
     <>
-      <AppBody>
+      <AppBody >
         <AddRemoveTabs adding={true} />
         <Wrapper>
           <TransactionConfirmationModal

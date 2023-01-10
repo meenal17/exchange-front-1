@@ -1,47 +1,28 @@
-import React, { useCallback } from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-// import useHTPrice from '../../hooks/useHtPrice'
-// import useTokenBalance from '../../hooks/useTokenBalance'
-// import { getBalanceNumber } from '../../utils/formatBalance'
-// import { getPipiAddress } from '../../utils/addressHelpers'
-// import { useI18n } from 'i18n/i18n-react'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { useActiveWeb3React } from '../../hooks'
 import TranslatedText from '../TranslatedText'
 import { shortenAddress } from '../../utils'
-// import copyIcon from '../../assets/images/copy.png'
-
+import { walletlink, bsc } from "../../connectors"
 export const CONNECTOR_STORAGE_ID = 'CONNECTOR_STORAGE_ID'
-
 const AccountButton: React.FC<{}> = () => {
-  // const i18n = useI18n()
-  // const { pippiPrice } = useHTPrice()
-  const { account } = useActiveWeb3React()
+  const { account,connector } = useActiveWeb3React()
+  const [lf, setLF] = useState(true);
+
   // const sushiBalance = useTokenBalance(getPipiAddress() as any)
   const toggleWalletModal = useWalletModalToggle()
-  const handleSignOutClick = useCallback(() => {
-    window.localStorage.removeItem(CONNECTOR_STORAGE_ID)
-    // unsetConnector()
-  }, [])
-  // const copy = () => {
-  //   const input = document.createElement('input')
-  //   input.setAttribute('readonly', 'readonly')
-  //   input.setAttribute('value', account || '')
-  //   document.body.appendChild(input)
-  //   input.setSelectionRange(0, 9999)
-  //   if (document.execCommand('copy')) {
-  //     document.execCommand('copy')
-  //   }
-  //   document.body.removeChild(input)
-  // }
+
 
   function myFunction() {
     console.log("hello im calling");
     var x = document.getElementById('myDIV')?.style
     if (x?.display === 'none') {
       x?.setProperty('display', 'block')
+      setLF(true)
     } else {
       x?.setProperty('display', 'none')
+      setLF(false)
     }
   }
   return (
@@ -61,7 +42,8 @@ const AccountButton: React.FC<{}> = () => {
                 <span className="text customtextstyle" style={{ fontSize: '17px' }}>
                   {shortenAddress(account)}
                 </span>
-                <img src="images/down_arrow.png" alt="" style={{width:"20px",height:"12px"}}/>
+                {lf? <img src="images/up.svg" alt="" style={{width:"20px",height:"12px"}}/> :<img src="images/down.svg" alt="" style={{width:"20px",height:"12px"}}/>}
+               
               </button>
                
             </AccountInner>
@@ -70,7 +52,11 @@ const AccountButton: React.FC<{}> = () => {
               <div>
                 <h4 className="">Transactions</h4>
                 <div>
-                <ButtonCustom onClick={handleSignOutClick}>Disconnect</ButtonCustom>
+                <ButtonCustom onClick={()=>{
+                if(connector && walletlink && bsc){
+                  (connector as any).handleClose();
+                }
+              }} >Disconnect</ButtonCustom>
               </div>
               </div>
 

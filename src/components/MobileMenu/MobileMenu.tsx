@@ -40,7 +40,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
               <TranslatedText translationId={198}>Markets</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
-          <Link to="/swap">
+          <Link to="/swap" style={{textDecoration:"none"}}>
             <Cn>
               <StyledAbsoluteLink>
                 <img src="Vector 2.png" alt="" />
@@ -67,7 +67,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
               <TranslatedText translationId={348}>Farming</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
-          <Link to="/add/ETH">
+          <Link to="/add/ETH" style={{textDecoration:"none"}}>
           <Cn>
             <StyledAbsoluteLink href="#">
               <img src="liquidity.png" alt="" />

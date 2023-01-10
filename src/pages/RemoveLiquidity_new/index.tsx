@@ -15,7 +15,7 @@ import TransactionConfirmationModal, { ConfirmationModalContent } from '../../co
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import DoubleCurrencyLogo from '../../components/DoubleLogo'
 import { AddRemoveTabs } from '../../components/NavigationTabs'
-import { MinimalPositionCard } from '../../components/PositionCard'
+import { MinimalPositionCard } from '../../components/PositionCard_new'
 import Row, { RowBetween, RowFixed } from '../../components/Row'
 
 import Slider from '../../components/Slider'
@@ -477,6 +477,7 @@ export default function RemoveLiquidity({
         <AccountButton />
        
       </div>
+      <div style={{width:"100%",minHeight:"65vh",overflow:'hidden',display:'flex',justifyContent:"center"}}>
       <AppBody>
         <AddRemoveTabs adding={false} />
         <Wrapper>
@@ -495,7 +496,7 @@ export default function RemoveLiquidity({
             )}
             pendingText={pendingText}
           />
-          <AutoColumn gap="md">
+          <AutoColumn gap="md" >
             <LightCard>
               <AutoColumn gap="20px">
                 <RowBetween>
@@ -687,13 +688,14 @@ export default function RemoveLiquidity({
             </div>
           </AutoColumn>
         </Wrapper>
-      </AppBody>
-
-      {pair ? (
+        {pair ? (
         <AutoColumn style={{ minWidth: '20rem', marginTop: '1rem' }}>
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
         </AutoColumn>
       ) : null}
+      </AppBody>
+      </div>
+     
     </>
   )
 }
