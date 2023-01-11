@@ -303,7 +303,7 @@ export default function Swap() {
   }, [maxAmountInput, onUserInput])
 
   const handleThirtyinput = useCallback(() => {
-    maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*30/100).toString());
+    maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*50/100).toString());
 
  }, [maxAmountInput, onUserInput])
   const handleOutputSelect = useCallback(
@@ -355,7 +355,7 @@ export default function Swap() {
 
           <AutoColumn gap={'md'}>
             <CurrencyInputPanel
-              label={independentField === Field.OUTPUT && !showWrap && trade ? 'From (estimated)' : i18n(308, 'From')}
+              label={independentField === Field.OUTPUT && !showWrap && trade ? 'From' : i18n(308, 'From')}
               value={formattedAmounts[Field.INPUT]}
               showMaxButton={!atMaxAmountInput}
               currency={currencies[Field.INPUT]}

@@ -3,13 +3,12 @@ import { ThemeContext } from 'styled-components'
 import { Pair } from '@pancakeswap-libs/sdk'
 // import { Link } from 'react-router-dom'
 // import { SwapPoolTabs } from '../../components/NavigationTabs'
-
 // import Question from '../../components/QuestionHelper'
 import FullPositionCard from '../../components/PositionCard_new'
-// import { useUserHasLiquidityInAllTokens } from '../../data/V1'
+import { useUserHasLiquidityInAllTokens } from '../../data/V1'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
-import { TYPE } from '../../components/Shared'
-// import { Text } from 'rebass'
+import { StyledInternalLink,TYPE } from '../../components/Shared'
+ import { Text } from 'rebass'
 import { LightCard } from '../../components/Card'
 // import { RowBetween } from '../../components/Row'
 // import { ButtonPrimary } from '../../components/Button'
@@ -56,21 +55,41 @@ export default function Pool() {
     fetchingV2PairBalances || v2Pairs?.length < liquidityTokensWithBalances.length || v2Pairs?.some(V2Pair => !V2Pair)
 
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
-
-  // const hasV1Liquidity = useUserHasLiquidityInAllTokens()
+  const hasV1Liquidity = useUserHasLiquidityInAllTokens()
+  
 
   return (
     <>
-      <div className='pooldiv'>
+        {/* <SwapPoolTabs active={'pool'} /> */}
+      {/* <AppBody> */}
+        {/* <AutoColumn gap="lg" justify="center"> */}
+          {/* <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/ETH">
+            <Text fontWeight={500} fontSize={20}>
+              <TranslatedText translationId={288}>Add Liquidity</TranslatedText>
+            </Text>
+          </ButtonPrimary> */}
 
+          {/* <AutoColumn gap="12px" style={{ width: '100%' }}> */}
+            {/* <RowBetween padding={'0 8px'}>
+              <Text color={theme.colors.text1} fontWeight={500}>
+                Your Liquidity
+              </Text>
+              <Question
+                text={i18n(
+                  302,
+                  'When you add liquidity, you are given pool tokens that represent your share. If you don’t see a pool you joined in this list, try importing a pool below.'
+                )}
+              />
+            </RowBetween> */}
+            <div className="pooldiv">
             {!account ? (
-              <LightCard >
+              <LightCard padding="40px">
                 <TYPE.body color={theme.colors.text3} textAlign="center">
                   {i18n(768, 'Connect to a wallet to view your liquidity.')}
                 </TYPE.body>
               </LightCard>
             ) : v2IsLoading ? (
-              <LightCard >
+              <LightCard padding="40px">
                 <TYPE.body color={theme.colors.text3} textAlign="center">
                   <Dots>Loading</Dots>
                 </TYPE.body>
@@ -89,6 +108,18 @@ export default function Pool() {
               </LightCard>
             )}
 </div>
+
+            <div>
+              <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
+                {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : i18n(304, "Don't see a pool you joined?")}{' '}
+                <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
+                  {hasV1Liquidity ? 'Migrate now.' : i18n(306, 'Import it.')}
+                </StyledInternalLink>
+              </Text>
+            </div>
+          {/* </AutoColumn> */}
+        {/* </AutoColumn> */}
+      {/* </AppBody> */}
       
     </>
   )

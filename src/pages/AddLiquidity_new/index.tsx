@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@pancakeswap-libs/sdk'
+import { Currency, ETHER, TokenAmount} from '@pancakeswap-libs/sdk'
 import React, { useCallback, useContext, useState } from 'react'
 import { Plus } from 'react-feather'
 import ReactGA from 'react-ga'
@@ -14,7 +14,7 @@ import TransactionConfirmationModal, { ConfirmationModalContent } from '../../co
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import DoubleCurrencyLogo from '../../components/DoubleLogo'
 import { AddRemoveTabs } from '../../components/NavigationTabs'
-import { MinimalPositionCard } from '../../components/PositionCard'
+// import { MinimalPositionCard } from '../../components/PositionCard'
 import Row, { RowBetween, RowFlat } from '../../components/Row'
 
 import { ROUTER_ADDRESS } from '../../constants'
@@ -32,7 +32,7 @@ import { TYPE } from '../../components/Shared'
 import { calculateGasMargin, calculateSlippageAmount, getRouterContract } from '../../utils'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { wrappedCurrency } from '../../utils/wrappedCurrency'
-import AppBody from '../AppBody'
+// import AppBody from '../AppBody'
 import { Dots, Wrapper } from '../Pool_new/styleds'
 import styled from 'styled-components'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
@@ -46,16 +46,37 @@ import Particle from "../particle/Particle"
 import Settings from "../../components/Settings/index"
 import AccountButton from "../../components/Header/AccountButton"
 export const AppBody2=styled.div`
-background: #121111;
-position: relative;
-width: 100%;
-max-width: 465px;
-box-shadow: 0px 0px 8px 2px rgb(82 220 174);
-border-radius: 9px;
-padding: 1rem;
-margin-bottom: 10px;
-min-height: 245px;
+    background: #121111;
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0px 0px 8px 2px rgb(82 220 174);
+    border-radius: 9px;
+    padding: 1rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    min-height: 263px;
+    /* height: 300px; */
+    max-height: 551px;
+    overflow: auto;
 ${({ theme }) => theme.mediaWidth.upToMedium`
+max-width: 350px;
+`};
+`
+
+export const Appbody1=styled.div`
+ background: ${({ theme }) => theme.colors.newbg3};
+   background: #121111;
+   position: relative;
+   width: 100%;
+   max-width: 420px;
+   box-shadow: 0px 0px 8px 2px rgb(82 220 174);
+   border-radius: 9px;
+   padding: 1rem;
+   /* border: 1px solid #6a7c76; */
+   margin-bottom: 10px;
+   margin-top: 10px;
+   ${({ theme }) => theme.mediaWidth.upToMedium`
 max-width: 350px;
 `};
 `
@@ -71,8 +92,8 @@ export const LayoutWrapper = styled.div`
 
   -webkit-align-items: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  // -ms-flex-align: center;
+  // align-items: center;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -122,11 +143,11 @@ export default function AddLiquidity({
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
 
-  const oneCurrencyIsWETH = Boolean(
-    chainId &&
-      ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
-        (currencyB && currencyEquals(currencyB, WETH[chainId])))
-  )
+  // const oneCurrencyIsWETH = Boolean(
+  //   chainId &&
+  //     ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
+  //       (currencyB && currencyEquals(currencyB, WETH[chainId])))
+  // )
 
   const toggleWalletModal = useWalletModalToggle() // toggle wallet when disconnected
 
@@ -137,7 +158,7 @@ export default function AddLiquidity({
   const {
     dependentField,
     currencies,
-    pair,
+  
     pairState,
     currencyBalances,
     parsedAmounts,
@@ -386,7 +407,7 @@ export default function AddLiquidity({
     </div>
    
     <LayoutWrapper style={{width:"100%",minHeight:"65vh",overflow:'hidden'}}>
-        <AppBody>
+        <Appbody1>
           <AddRemoveTabs adding={true} />
           <Wrapper>
             <TransactionConfirmationModal
@@ -464,7 +485,7 @@ export default function AddLiquidity({
 
                 onThirtyper={()=>{
                   const balance = maxAmounts[Field.CURRENCY_A]?.raw;
-                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(30)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(50)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
                 }}
                 showMaxButton={!atMaxAmounts[Field.CURRENCY_B]}
                 currency={currencies[Field.CURRENCY_B]}
@@ -544,15 +565,15 @@ export default function AddLiquidity({
               )}
             </AutoColumn>
           </Wrapper>
-          {pair && !noLiquidity && pairState !== PairState.INVALID ? (
+          {/* {pair && !noLiquidity && pairState !== PairState.INVALID ? (
        
        <AutoColumn style={{ minWidth: '20rem', marginTop: '1rem' }}>
         <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
       </AutoColumn>
      
-    ) : null}
+    ) : null} */}
      
-        </AppBody>
+        </Appbody1>
 
         <AppBody2>
       

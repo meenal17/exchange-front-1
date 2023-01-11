@@ -207,7 +207,7 @@ export default function CurrencyInputPanel({
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
               {account && currency  && label !== 'To' && (
-                <StyledBalanceM onClick={onThirtyper}>30%</StyledBalanceM>
+                <StyledBalanceM onClick={onThirtyper}>50%</StyledBalanceM>
               )}
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>

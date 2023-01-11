@@ -42,7 +42,7 @@ const AccountButton: React.FC<{}> = () => {
                 <span className="text customtextstyle" style={{ fontSize: '17px' }}>
                   {shortenAddress(account)}
                 </span>
-                {lf? <img src="images/up.svg" alt="" style={{width:"20px",height:"12px"}}/> :<img src="images/down.svg" alt="" style={{width:"20px",height:"12px"}}/>}
+                {lf? <img src="images/down.svg" alt="" style={{width:"20px",height:"12px"}}/> :<img src="images/up.svg" alt="" style={{width:"20px",height:"12px"}}/>}
                
               </button>
                

@@ -19,7 +19,9 @@ import { currencyId } from '../../utils/currencyId'
 import AppBody from '../AppBody'
 import { Dots } from '../Pool_new/styleds'
 import TranslatedText from '../../components/TranslatedText'
-
+import Particle from '../particle/Particle'
+import Settings from "../../components/Settings/index"
+import AccountButton from "../../components/Header/AccountButton"
 enum Fields {
   TOKEN0 = 0,
   TOKEN1 = 1
@@ -70,14 +72,20 @@ export default function PoolFinder() {
   }, [setShowSearch])
 
   const prerequisiteMessage = (
-    <LightCard padding="45px 10px">
+    <div style={{padding:"45px 10px"}}>
       <Text textAlign="center">
         {!account ? 'Connect wallet to find pools' : 'Select a token to find your liquidity.'}
       </Text>
-    </LightCard>
+    </div>
   )
 
   return (
+    <>
+    <Particle/>
+    <div className='settingmy'>
+    <Settings/>
+    <AccountButton/>
+    </div>
     <AppBody>
       <FindPoolTabs />
       <AutoColumn gap="md">
@@ -191,5 +199,6 @@ export default function PoolFinder() {
         selectedCurrency={(activeField === Fields.TOKEN0 ? currency1 : currency0) ?? undefined}
       />
     </AppBody>
+    </>
   )
 }

@@ -94,7 +94,7 @@ export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
 
 export function FindPoolTabs() {
   return (
-    <Tabs>
+    <div>
       <RowBetween style={{ padding: '1rem' }}>
         <HistoryLink to="/add/ETH">
           <StyledArrowLeft />
@@ -102,7 +102,7 @@ export function FindPoolTabs() {
         <ActiveText>Import Pool</ActiveText>
         <QuestionHelper text={"Use this tool to find pairs that don't automatically appear in the interface."} />
       </RowBetween>
-    </Tabs>
+    </div>
   )
 }
 
