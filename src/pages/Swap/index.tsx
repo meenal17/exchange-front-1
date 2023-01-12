@@ -299,7 +299,7 @@ export default function Swap() {
   }, [maxAmountInput, onUserInput])
 
   const handleTwentyinput = useCallback(() => {
-     maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*20/100).toString());
+     maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*25/100).toString());
 
   }, [maxAmountInput, onUserInput])
 

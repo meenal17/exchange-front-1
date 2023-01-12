@@ -1,7 +1,7 @@
 import { JSBI, Pair, Percent } from '@pancakeswap-libs/sdk'
 import { darken } from 'polished'
 import React, { useState } from 'react'
-import { ChevronDown,ChevronsDown, ChevronsUp, ChevronUp } from 'react-feather'
+import { ChevronDown, ChevronUp } from 'react-feather'
 import { Link } from 'react-router-dom'
 import { Text } from 'rebass'
 import styled from 'styled-components'
@@ -44,7 +44,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
   const currency1 = showUnwrapped ? pair.token1 : unwrappedToken(pair.token1)
 
   const [showMore, setShowMore] = useState(false)
-  const [lf, setLF] = useState(true);
+  // const [lf, setLF] = useState(true);
   const userPoolBalance = useTokenBalance(account ?? undefined, pair.liquidityToken)
   const totalPoolTokens = useTotalSupply(pair.liquidityToken)
 
@@ -60,28 +60,12 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
         ]
       : [undefined, undefined]
 
-      function myFunction() {
-       
-        var x = document.getElementById('postiondiv')?.style
-        var y= document.getElementById('innercard')?.style
-        if (x?.height === '145px') {
-          x?.setProperty('height', '0px')
-          y?.setProperty('visibility','hidden')
-          setLF(false)
-        } else {
-          x?.setProperty('height', '145px')
-          y?.setProperty('visibility','visible')
-          setLF(true)
-        }
-      }
+    
   return (
     <>
    {account?<>
      <div id='postiondiv' style={{height:'145px'}} >
-     <span    onClick={myFunction}>
-     {lf?<ChevronsDown className="iconjn"/> :<ChevronsUp className="iconjn" />}
-       </span>
-
+    
       { userPoolBalance && (
         <GreyCard id="innercard" border={border}>
          
@@ -180,12 +164,12 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
     <HoverCard border={border}>
       <AutoColumn gap="12px">
         <FixedHeightRow onClick={() => setShowMore(!showMore)} style={{ cursor: 'pointer' }}>
-          <RowFixed>
+          <div>
             <DoubleCurrencyLogo currency0={currency0} currency1={currency1} margin={true} size={20} />
             <Text fontWeight={500} fontSize={20}>
               {!currency0 || !currency1 ? <Dots>Loading</Dots> : `${currency0.symbol}/${currency1.symbol}`}
             </Text>
-          </RowFixed>
+          </div>
           <RowFixed>
             {showMore ? (
               <ChevronUp size="20" style={{ marginLeft: '10px' }} />

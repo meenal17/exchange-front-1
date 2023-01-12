@@ -76,7 +76,7 @@ background: #ccc;
   background-clip: border-box;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-font-size:22px;
+font-size:20px;
   &:hover {
    background: linear-gradient(to right, #13B9AA 0%, #1e729a 100%);
   background-clip: border-box;

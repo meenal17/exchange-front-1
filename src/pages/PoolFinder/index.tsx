@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { Plus } from 'react-feather'
 import { Text } from 'rebass'
 import { ButtonDropdownLight } from '../../components/Button'
-import { LightCard } from '../../components/Card'
+// import { LightCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { FindPoolTabs } from '../../components/NavigationTabs'
@@ -110,7 +110,10 @@ export default function PoolFinder() {
         </ButtonDropdownLight>
 
         <ColumnCenter>
-          <Plus size="16" color="#888D9B" />
+        <div className='plusicoto'>
+                <Plus size="16" color="#5f907f" />
+                </div>
+
         </ColumnCenter>
 
         <ButtonDropdownLight
@@ -148,7 +151,7 @@ export default function PoolFinder() {
             hasPosition && pair ? (
               <MinimalPositionCard pair={pair} border="1px solid #CED0D9" />
             ) : (
-              <LightCard padding="45px 10px">
+              <div style={{padding:"25px 10px"}}>
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">You don’t have liquidity in this pool yet.</Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
@@ -157,34 +160,34 @@ export default function PoolFinder() {
                     </Text>
                   </StyledInternalLink>
                 </AutoColumn>
-              </LightCard>
+              </div>
             )
           ) : validPairNoLiquidity ? (
-            <LightCard padding="45px 10px">
+            <div style={{padding:"25px 10px"}}>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center">No pool found.</Text>
                 <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                   Create pool.
                 </StyledInternalLink>
               </AutoColumn>
-            </LightCard>
+            </div>
           ) : pairState === PairState.INVALID ? (
-            <LightCard padding="45px 10px">
+            <div style={{padding:"25px 10px"}}>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center" fontWeight={500}>
                   <TranslatedText translationId={208}>Invalid pair.</TranslatedText>
                 </Text>
               </AutoColumn>
-            </LightCard>
+            </div>
           ) : pairState === PairState.LOADING ? (
-            <LightCard padding="45px 10px">
+            <div style={{padding:"25px 10px"}}>
               <AutoColumn gap="sm" justify="center">
                 <Text textAlign="center">
                   Loading
                   <Dots />
                 </Text>
               </AutoColumn>
-            </LightCard>
+            </div>
           ) : null
         ) : (
           prerequisiteMessage

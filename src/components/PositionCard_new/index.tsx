@@ -252,7 +252,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
                 '-'
               )}
                <Text className='fontss' fontWeight={500}>
-                  Pooled {currency0.symbol}:
+                  Pooled {currency0.symbol}
                 </Text>
                </div>
             </FixedHeightRow>
@@ -270,7 +270,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
                 '-'
               )}
               <Text className='fontss' fontWeight={500}>
-                  Pooled {currency1.symbol}:
+                  Pooled {currency1.symbol}
                 </Text>
              
             </div>
@@ -290,7 +290,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
                 {poolTokenPercentage ? poolTokenPercentage.toFixed(2) + '%' : '-'}
               </Text>
               <Text className='fontss' fontWeight={500}>
-                Your pool share:
+                Pool share
               </Text>
               </div>
             </FixedHeightRow>

@@ -134,7 +134,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     gap:6px;
     border:none;
     align-items:center;
-    width:195px;
+    width:170px;
     ${({ theme }) => (theme as any).mediaWidth.upToSmall`
    gap:5px;
 `};
@@ -376,7 +376,7 @@ margin-top:-4px;
     justify-content: end;
     width: 100%;
     margin-left:-80px;
-    margin-top:100px;
+    margin-top:60px;
     align-items:center;
     ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
     margin-top:3px;
@@ -423,6 +423,17 @@ z-index:1111;
   height: 22px;
   text-align: center;
   box-shadow: 0px 0px 2px 4px rgb(22 142 136);
+  margin: 10px;
+}
+.plusicoto{
+  // border: 1px solid rgb(17 115 110);
+  padding: 0.1rem;
+  border-radius: 11px;
+  width: 22px;
+  /* width: 200px; */
+  height: 22px;
+  text-align: center;
+  box-shadow: 0px 0px 2px 4px #5f907f;
   margin: 10px;
 }
 .pooldiv{

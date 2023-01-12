@@ -12,12 +12,12 @@ const Base = styled(RebassButton)<{
   borderRadius?: string
   altDisabledStyle?: boolean
 }>`
-  padding: ${({ padding }) => (padding ? padding : '18px')};
+  padding: ${({ padding }) => (padding ? padding : '12px')};
   width: ${({ width }) => (width ? width : '78%')};
   font-weight: 500;
   margin: 3px auto;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 14px;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   outline: none;
   // border: 1px solid transparent;
@@ -161,18 +161,18 @@ export const ButtonPink = styled(Base)`
 `
 
 export const ButtonOutlined = styled(Base)`
-  border: 1px solid ${({ theme }) => theme.colors.bg2};
+  border: 1px solid #5f907f;
   background-color: transparent;
   color: ${({ theme }) => theme.colors.text1};
 
   &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.bg4};
+    box-shadow: 0 0 0 1px #5f907f;
   }
   &:hover {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.bg4};
+    box-shadow: 0 0 0 1px #5f907f;
   }
   &:active {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.bg4};
+    box-shadow: 0 0 0 1px #5f907f;
   }
   &:disabled {
     opacity: 50%;

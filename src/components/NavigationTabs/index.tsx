@@ -44,13 +44,13 @@ const StyledNavLink = styled(NavLink).attrs({
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
   justify-content: center;
-  height: 2.6rem;
-  border-radius: 15px;
+  height: 2.2rem;
+  border-radius: 12px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
   padding:2px 17px;
-  margin:5px;
+  margin:4px 3px 4px 3px;
   color: ${({ theme }) => theme.colors.text3};
   font-size: 28px;
   font-weight:bold;
@@ -81,7 +81,7 @@ const StyledArrowLeft = styled(ArrowLeft)`
 
 export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
   return (
-    <Tabs style={{ marginBottom: '20px', background:'#1a1a1a', }}>
+    <Tabs style={{ marginBottom: '16px', background:'#1a1a1a', }}>
       <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => active === 'swap'}>
         <TranslatedText translationId={268}>Market</TranslatedText>
       </StyledNavLink>

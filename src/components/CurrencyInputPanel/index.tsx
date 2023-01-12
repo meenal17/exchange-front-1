@@ -202,7 +202,7 @@ export default function CurrencyInputPanel({
       <div style={{display:"flex"}}>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
               {account && currency  && label !== 'To' && (
-                <StyledBalanceM  onClick={onTwentyper}>20%</StyledBalanceM>
+                <StyledBalanceM  onClick={onTwentyper}>25%</StyledBalanceM>
               )}
       </div>
       <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
@@ -275,7 +275,7 @@ export default function CurrencyInputPanel({
                 >
 
                   {!hideBalance && !!currency && selectedCurrencyBalance
-                    ? i18n(754, 'Balance:') + ' ' + selectedCurrencyBalance?.toSignificant(6)
+                    ? i18n(754, 'Available:') + ' ' + selectedCurrencyBalance?.toSignificant(6)
                     : ' -'}
                 </div>
               )}

@@ -15,7 +15,7 @@ const SettingsTab: React.FC<{}> = () => {
     
          <div className="accountbuttontest">
         <Button onClick={toggleWalletModalcustome}>
-       <img src="images/setting.png" alt="" />
+       <img src="images/setting.png" alt="" style={{width:"85%"}} />
         </Button>
         </div>
       

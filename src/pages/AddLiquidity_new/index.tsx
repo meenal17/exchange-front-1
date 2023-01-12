@@ -477,7 +477,7 @@ export default function AddLiquidity({
                 onTwentyper={()=>{
                   const balance = maxAmounts[Field.CURRENCY_A]?.raw;
                   // JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20));
-                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(25)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
                 }}
 
                 onThirtyper={()=>{
@@ -505,7 +505,7 @@ export default function AddLiquidity({
                 onTwentyper={()=>{
                   const balance = maxAmounts[Field.CURRENCY_A]?.raw;
                   // JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20));
-                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(20)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
+                  onFieldAInput((Number(JSBI.divide(JSBI.multiply(JSBI.BigInt(String(balance)), JSBI.BigInt(25)),JSBI.BigInt(100)).toString())/1e18).toString()?? '')
                 }}
 
                 onThirtyper={()=>{
