@@ -43,10 +43,10 @@ export const ButtonPrimary = styled(Base)`
   background: ${({ theme }) => theme.gradient};
   color: ${({ theme }) => theme.colors.white};
   &:focus {
-    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.colors.primary1)};
+    // box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.colors.primary1)};
   }
   &:active {
-    box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.colors.primary1)};
+    // box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.colors.primary1)};
   }
   &:disabled {
     background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.gradient : theme.colors.mybg)};

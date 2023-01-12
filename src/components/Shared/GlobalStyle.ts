@@ -283,7 +283,7 @@ ${({ theme }) => (theme as any).mediaWidth.upToMedium`
 .globe-image-bg {
  margin:0;
  width:100%;
-  position: absolute;
+  position:fixed;
   left: 0;
   bottom: 0;
   z-index:-1;
@@ -426,9 +426,9 @@ z-index:1111;
   margin: 10px;
 }
 .pooldiv{
-  height: 140px;
-    overflow-y: scroll;
-}
+//   height: 140px;
+//     overflow-y: scroll;
+// }
 .pooldiv::-webkit-scrollbar {
   width: 3px;
 }

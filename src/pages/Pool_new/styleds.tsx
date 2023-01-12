@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 `
 
 export const ClickableText = styled(Text)`
+z-index: 22;
   :hover {
     cursor: pointer;
   }

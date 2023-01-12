@@ -21,7 +21,8 @@ import TokenWarningModal from '../../components/TokenWarningModal'
 import SyrupWarningModal from '../../components/SyrupWarningModal'
 import ProgressSteps from '../../components/ProgressSteps'
 
-import { BETTER_TRADE_LINK_THRESHOLD, INITIAL_ALLOWED_SLIPPAGE } from '../../constants'
+import { BETTER_TRADE_LINK_THRESHOLD } from '../../constants'
+// import { INITIAL_ALLOWED_SLIPPAGE } from '../../constants'
 import { getTradeVersion, isTradeBetter } from '../../data/V1'
 import { useActiveWeb3React } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
@@ -30,7 +31,7 @@ import useENSAddress from '../../hooks/useENSAddress'
 import { useSwapCallback } from '../../hooks/useSwapCallback'
 import useToggledVersion, { Version } from '../../hooks/useToggledVersion'
 import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
-import { useToggleSettingsMenu, useWalletModalToggle } from '../../state/application/hooks'
+import { useWalletModalToggle ,useWalletModalTogglecustome} from '../../state/application/hooks'
 import { Field } from '../../state/swap/actions'
 import {
   useDefaultsFromURLSearch,
@@ -83,9 +84,9 @@ export default function Swap() {
 
   // toggle wallet when disconnected
   const toggleWalletModal = useWalletModalToggle()
-
+  const toggleWalletModalcustome = useWalletModalTogglecustome()
   // for expert mode
-  const toggleSettings = useToggleSettingsMenu()
+  // const toggleSettings = useToggleSettingsMenu()
   const [isExpertMode] = useExpertModeManager()
 
   // get custom setting values for user
@@ -399,7 +400,7 @@ export default function Swap() {
             <CurrencyInputPanel
               value={formattedAmounts[Field.OUTPUT]}
               onUserInput={handleTypeOutput}
-              label={independentField === Field.INPUT && !showWrap && trade ? 'To (estimated)' : i18n(310, 'To')}
+              label={independentField === Field.INPUT && !showWrap && trade ? 'To ' : i18n(310, 'To')}
               showMaxButton={false}
               onTwentyper={handleTwentyinput}
               onThirtyper={handleThirtyinput}
@@ -424,30 +425,41 @@ export default function Swap() {
             ) : null}
 
             {showWrap ? null : (
-              <Card padding={'.25rem .75rem 0 .75rem'} borderRadius={'20px'}>
-                <AutoColumn gap="4px">
+              <Card padding={'1rem .60rem .3rem .61rem'} borderRadius={'20px'}>
+                <AutoColumn gap="4px" style={{lineHeight:"25px"}}>
                   {Boolean(trade) && (
+                    <>
                     <RowBetween align="center">
-                      <Text fontWeight={500} fontSize={14} color={theme.colors.text2}>
-                        Price
+                      <Text fontWeight={500} fontSize={14} color={theme.colors.tetst}>
+                        Price:
                       </Text>
                       <TradePrice
                         price={trade?.executionPrice}
                         showInverted={showInverted}
                         setShowInverted={setShowInverted}
                       />
+                     
                     </RowBetween>
+                    <RowBetween>
+                         <ClickableText fontWeight={500} fontSize={14} color={theme.colors.tetst} >
+                        Slippage:
+                      </ClickableText>
+                      <ClickableText fontWeight={500} fontSize={13} color="#dad8d8">
+                        {allowedSlippage / 100}% <i className="fa fa-pencil" aria-hidden="true" style={{cursor:"pointer"}} onClick={toggleWalletModalcustome} ></i>
+                      </ClickableText>
+                    </RowBetween>
+                    </>
                   )}
-                  {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && (
-                    <RowBetween align="center">
-                      <ClickableText fontWeight={500} fontSize={14} color={theme.colors.text2} onClick={toggleSettings}>
+                  {/* {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && ( */}
+                    {/* <RowBetween align="center"> */}
+                      {/* <ClickableText fontWeight={500} fontSize={14} color={theme.colors.text2} onClick={toggleSettings}>
                         Slippage Tolerance
                       </ClickableText>
                       <ClickableText fontWeight={500} fontSize={14} color={theme.colors.text2} onClick={toggleSettings}>
                         {allowedSlippage / 100}%
-                      </ClickableText>
-                    </RowBetween>
-                  )}
+                      </ClickableText> */}
+                    {/* </RowBetween> */}
+                  {/* )} */}
                 </AutoColumn>
               </Card>
             )}

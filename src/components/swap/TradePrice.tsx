@@ -1,9 +1,9 @@
 import React from 'react'
 import { Price } from '@pancakeswap-libs/sdk'
-import { useContext } from 'react'
-import { RefreshCw } from 'react-feather'
+// import { useContext } from 'react'
+import { RotateCw } from 'react-feather'
 import { Text } from 'rebass'
-import { ThemeContext } from 'styled-components'
+// import { ThemeContext } from 'styled-components'
 import { StyledBalanceMaxMini } from './styleds'
 
 interface TradePriceProps {
@@ -13,7 +13,7 @@ interface TradePriceProps {
 }
 
 export default function TradePrice({ price, showInverted, setShowInverted }: TradePriceProps) {
-  const theme = useContext(ThemeContext)
+  // const theme = useContext(ThemeContext)
 
   const formattedPrice = showInverted ? price?.toSignificant(6) : price?.invert()?.toSignificant(6)
 
@@ -25,16 +25,16 @@ export default function TradePrice({ price, showInverted, setShowInverted }: Tra
   return (
     <Text
       fontWeight={500}
-      fontSize={14}
-      color={theme.colors.text2}
+      fontSize={13}
+      color="#dad8d8"
       style={{ justifyContent: 'center', alignItems: 'center', display: 'flex' }}
     >
       {show ? (
         <>
-          {formattedPrice ?? '-'} {label}
-          <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
-            <RefreshCw size={14} />
+        <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
+            <RotateCw size={14} />
           </StyledBalanceMaxMini>
+          {formattedPrice ?? '-'} {label}
         </>
       ) : (
         '-'

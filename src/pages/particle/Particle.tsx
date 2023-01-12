@@ -5,7 +5,7 @@ const particle = () => {
     <div style={{height:"0"}}>
       
      
-  <svg className="stars" width="100%" height="100%" preserveAspectRatio="none">
+  <svg className="stars" width="100%" height="100%" preserveAspectRatio="none" style={{position:"fixed"}}>
     <circle className="star" cx="93.33%" cy="67.24%" r="1.4"></circle>
     <circle className="star" cx="80.45%" cy="58.43%" r="0.5"></circle>
     <circle className="star" cx="82.91%" cy="83.41%" r="0.7"></circle>

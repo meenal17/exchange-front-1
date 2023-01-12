@@ -48,10 +48,11 @@ import AccountButton from "../../components/Header/AccountButton"
 export const AppBody2=styled.div`
     background: #121111;
     position: relative;
-    width: 100%;
-    max-width: 420px;
-    box-shadow: 0px 0px 8px 2px rgb(82 220 174);
-    border-radius: 9px;
+    // width: 100%;
+    width: 420px;
+    box-shadow: 0px 0px 10px 0px rgb(82 220 174);
+    border:1px solid grey;
+    border-radius: 12px;
     padding: 1rem;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -59,8 +60,25 @@ export const AppBody2=styled.div`
     /* height: 300px; */
     max-height: 551px;
     overflow: auto;
+    margin-left:20px;
+
+    &::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+&::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background:grey;
+  
+}
+
 ${({ theme }) => theme.mediaWidth.upToMedium`
-max-width: 350px;
+margin-left:unset;
+margin:25px 0px 25px 0px;
+`};
+${({ theme }) => theme.mediaWidth.upToExtraSmall`
+width:320px;
+margin:25px 0px 25px 0px;
 `};
 `
 
@@ -68,64 +86,71 @@ export const Appbody1=styled.div`
  background: ${({ theme }) => theme.colors.newbg3};
    background: #121111;
    position: relative;
-   width: 100%;
-   max-width: 420px;
-   box-shadow: 0px 0px 8px 2px rgb(82 220 174);
-   border-radius: 9px;
+   float:left;
+   width: 420px;
+   margin-right:20px;
+   box-shadow: 0px 0px 10px 0px rgb(82 220 174);
+    border:1px solid grey;
+   border-radius: 12px;
    padding: 1rem;
    /* border: 1px solid #6a7c76; */
    margin-bottom: 10px;
    margin-top: 10px;
+   
    ${({ theme }) => theme.mediaWidth.upToMedium`
-max-width: 350px;
+   float:unset;
+   margin-right:unset;
+`};
+${({ theme }) => theme.mediaWidth.upToExtraSmall`
+width:320px;
 `};
 `
 export const LayoutWrapper = styled.div`
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: unset !important;
-  -ms-flex-direction: initial !important;
-  flex-direction: initial !important;
-  width: 100%;
+  // display: -webkit-box;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display: flex;
+  // -webkit-flex-direction: unset !important;
+  // -ms-flex-direction: initial !important;
+  // flex-direction: initial !important;
+  // width: 100%;
 
-  -webkit-align-items: center;
-  -webkit-box-align: center;
+  // -webkit-align-items: center;
+  // -webkit-box-align: center;
+  // // -ms-flex-align: center;
+  // // align-items: center;
+  // -webkit-flex: 1;
+  // -ms-flex: 1;
+  // flex: 1;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  // justify-content: center;
+  // z-index: 10;
+  // z-index: 1;
+  // gap: 47px;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+  // display: -webkit-box;
+  // display: -webkit-flex;
+  // display: -ms-flexbox;
+  // display: flex;
+  // -webkit-flex-direction: column !important;
+  // -ms-flex-direction: column !important;
+  // flex-direction: column !important;
+  // width: 100%;
+  
+  // -webkit-align-items: center;
+  // -webkit-box-align: center;
   // -ms-flex-align: center;
   // align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  justify-content: center;
-  z-index: 10;
-  z-index: 1;
-  gap: 47px;
-  ${({ theme }) => theme.mediaWidth.upToMedium`
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
-  width: 100%;
-  
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  justify-content: center;
-  z-index: 10;
-  z-index: 1;
-  gap: 47px;
+  // -webkit-flex: 1;
+  // -ms-flex: 1;
+  // flex: 1;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  // justify-content: center;
+  // z-index: 10;
+  // z-index: 1;
+  // gap: 47px;
   `};
 
 
@@ -406,7 +431,7 @@ export default function AddLiquidity({
     <AccountButton/>
     </div>
    
-    <LayoutWrapper style={{width:"100%",minHeight:"65vh",overflow:'hidden'}}>
+    <LayoutWrapper style={{width:"",minHeight:"65vh",overflow:''}}>
         <Appbody1>
           <AddRemoveTabs adding={true} />
           <Wrapper>

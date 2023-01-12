@@ -34,7 +34,7 @@ textmy:'#131416',
     // color text
     primaryText1: '#fd8137',
     buttonText: '#ffffff',
-
+    tetst:'#bbbbbb',
     // secondary colors
     secondary1: '#fd8137',
     bg: '#FFFFFF',
