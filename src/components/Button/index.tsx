@@ -54,6 +54,7 @@ export const ButtonPrimary = styled(Base)`
     cursor: not-allowed;
     box-shadow: none;
     // border: 1px solid transparent;
+    margin-top:15px;
     outline: none;
     opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.7' : '1')};
   }
