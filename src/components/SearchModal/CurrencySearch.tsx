@@ -201,7 +201,7 @@ export function CurrencySearch({
       {null && (
         <>
           <Separator />
-          <Card className="currency_scroller">
+          <Card>
             <RowBetween>
               {selectedListInfo.current ? (
                 <Row>
