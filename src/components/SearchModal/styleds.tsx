@@ -49,7 +49,7 @@ export const SearchInput = styled.input`
   border-radius: 20px;
   color: #ccc;
   border-style: solid;
-  border: 1px solid #706f6f;
+  border: 1px solid #bbb;
   -webkit-appearance: none;
 
   font-size: 18px;

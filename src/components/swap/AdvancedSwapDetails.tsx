@@ -12,6 +12,7 @@ import { RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { SectionBreak } from './styleds'
 import SwapRoute from './SwapRoute'
+import {useWalletModalTogglecustome} from '../../state/application/hooks'
 function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippage: number }) {
   const i18n = useI18n()
   const theme = useContext(ThemeContext)
@@ -19,7 +20,8 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
   // const {realizedLPFee } = computeTradePriceBreakdown(trade)
   const isExactIn = trade.tradeType === TradeType.EXACT_INPUT
   const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
-
+  // const toggleWalletModal = useWalletModalToggle()
+  const toggleWalletModalcustome = useWalletModalTogglecustome()
   return (
     <>
       <AutoColumn style={{ padding: '0 10px',lineHeight:"25px"}}>
@@ -44,6 +46,24 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
                   '-'}
             </TYPE.black>
           </RowFixed>
+         
+        </RowBetween>
+        <RowBetween>
+           {/* slippage */}
+           <RowFixed>
+            <TYPE.black fontSize={14} fontWeight={400} color={theme.colors.tetst}>
+            Slippage:
+            </TYPE.black>
+          </RowFixed>
+
+          <RowFixed>
+            <TYPE.black fontSize={14} fontWeight={400} color="dad8d8">
+            {allowedSlippage / 100}% <i className="fa fa-pencil" aria-hidden="true" style={{cursor:"pointer"}} onClick={toggleWalletModalcustome} ></i>
+            </TYPE.black>
+          </RowFixed>
+
+          
+          {/* slippage end */}
         </RowBetween>
         <RowBetween>
           <RowFixed>

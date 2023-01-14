@@ -31,7 +31,7 @@ import useENSAddress from '../../hooks/useENSAddress'
 import { useSwapCallback } from '../../hooks/useSwapCallback'
 import useToggledVersion, { Version } from '../../hooks/useToggledVersion'
 import useWrapCallback, { WrapType } from '../../hooks/useWrapCallback'
-import { useWalletModalToggle ,useWalletModalTogglecustome} from '../../state/application/hooks'
+import { useWalletModalToggle } from '../../state/application/hooks'
 import { Field } from '../../state/swap/actions'
 import {
   useDefaultsFromURLSearch,
@@ -44,7 +44,7 @@ import { LinkStyledButton, TYPE } from '../../components/Shared'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import AppBody from '../AppBody'
-import { ClickableText } from '../Pool_new/styleds'
+// import { ClickableText } from '../Pool_new/styleds'
 import Loader from '../../components/Loader'
 import { useI18n } from 'i18n/i18n-react'
 import BottomDecoration from './BottomDecoration'
@@ -84,7 +84,7 @@ export default function Swap() {
 
   // toggle wallet when disconnected
   const toggleWalletModal = useWalletModalToggle()
-  const toggleWalletModalcustome = useWalletModalTogglecustome()
+  // const toggleWalletModalcustome = useWalletModalTogglecustome()
   // for expert mode
   // const toggleSettings = useToggleSettingsMenu()
   const [isExpertMode] = useExpertModeManager()
@@ -440,14 +440,14 @@ export default function Swap() {
                       />
                      
                     </RowBetween>
-                    <RowBetween>
+                    {/* <RowBetween>
                          <ClickableText fontWeight={500} fontSize={14} color={theme.colors.tetst} >
                         Slippage:
                       </ClickableText>
                       <ClickableText fontWeight={500} fontSize={13} color="#dad8d8">
                         {allowedSlippage / 100}% <i className="fa fa-pencil" aria-hidden="true" style={{cursor:"pointer"}} onClick={toggleWalletModalcustome} ></i>
                       </ClickableText>
-                    </RowBetween>
+                    </RowBetween> */}
                     </>
                   )}
                   {/* {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && ( */}

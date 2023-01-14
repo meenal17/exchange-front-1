@@ -23,7 +23,7 @@ const Section = styled(AutoColumn)`
 
 const BottomSection = styled(Section)`
   // background-color: ${({ theme }) => theme.colors.bg2};
-  background:#242222;
+  background:#121111;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 `
@@ -185,7 +185,7 @@ export default function TransactionConfirmationModal({
 
   // confirmation screen
   return (
-    <Modal isOpen={isOpen} onDismiss={onDismiss} maxHeight={90} >
+    <Modal isOpen={isOpen} onDismiss={onDismiss} minHeight={false} >
       {attemptingTxn ? (
         <ConfirmationPendingContent onDismiss={onDismiss} pendingText={pendingText} />
       ) : hash ? (

@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
-import { Currency, ETHER, TokenAmount, CurrencyAmount, Fraction, Percent } from '@pancakeswap-libs/sdk'
+import { Currency, ETHER, TokenAmount, CurrencyAmount, Percent, Price } from '@pancakeswap-libs/sdk'
 import React, { useCallback, useContext, useState } from 'react'
 import { Plus } from 'react-feather'
 import ReactGA from 'react-ga'
@@ -15,7 +15,7 @@ import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 // import DoubleCurrencyLogo from '../../components/DoubleLogo'
 import { AddRemoveTabs } from '../../components/NavigationTabs'
 // import { MinimalPositionCard } from '../../components/PositionCard'
-import  { RowBetween,RowFixed} from '../../components/Row'
+import { RowBetween, RowFixed } from '../../components/Row'
 import TradePriceto from '../../components/swap/Tradepriceto'
 import { ROUTER_ADDRESS } from '../../constants'
 import { PairState } from '../../data/Reserves'
@@ -107,15 +107,13 @@ width:320px;
 `};
 `
 export const Mycard = styled.div`
-
-// background:linear-gradient(88deg,#09393657,#181616);
- border-radius:none;
-margin: 8px 0px;
-width: 100%;
-// border-radius: 16px;
-padding: 1rem;
-// padding:0px;
-
+  // background:linear-gradient(88deg,#09393657,#181616);
+  border-radius: none;
+  margin: 8px 0px;
+  width: 100%;
+  // border-radius: 16px;
+  padding: 1rem;
+  // padding:0px;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
   //  float:unset;
@@ -125,8 +123,6 @@ padding: 1rem;
 // width:320px;
 `};
 `
-
-
 
 export const LayoutWrapper = styled.div`
   // display: -webkit-box;
@@ -185,56 +181,80 @@ export function ConfirmAddModalBottom({
   onAdd
 }: {
   noLiquidity?: boolean
-  price?: Fraction
+  price?: Price
   currencies: { [field in Field]?: Currency }
   parsedAmounts: { [field in Field]?: CurrencyAmount }
   poolTokenPercentage?: Percent
   onAdd: () => void
 }) {
+  const [showInverted, setShowInverted] = useState<boolean>(false)
+  const { liquidityMinted } = useDerivedMintInfo(
+    currencies[Field.CURRENCY_A] ?? undefined,
+    currencies[Field.CURRENCY_B] ?? undefined
+  )
+  const [allowedSlippage] = useUserSlippageTolerance()
   return (
     <>
-      {noLiquidity?<><RowBetween>
-        <TYPE.body>{currencies[Field.CURRENCY_A]?.symbol} Deposited</TYPE.body>
-        <RowFixed>
-          {/* <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} /> */}
-          <TYPE.body>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</TYPE.body>
-        </RowFixed>
-      </RowBetween>
-      <RowBetween>
-        <TYPE.body>{currencies[Field.CURRENCY_B]?.symbol} Deposited</TYPE.body>
-        <RowFixed>
-          {/* <CurrencyLogo currency={currencies[Field.CURRENCY_B]} style={{ marginRight: '8px' }} /> */}
-          <TYPE.body>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</TYPE.body>
-        </RowFixed>
-      </RowBetween>
-      <RowBetween>
-        <TYPE.body>Price</TYPE.body>
-        <TYPE.body>
-          {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
-            currencies[Field.CURRENCY_B]?.symbol
-          }`}
-        </TYPE.body>
-      </RowBetween>
-      <RowBetween style={{ justifyContent: 'flex-end' }}>
-        <TYPE.body>
-          {`1 ${currencies[Field.CURRENCY_B]?.symbol} = ${price?.invert().toSignificant(4)} ${
-            currencies[Field.CURRENCY_A]?.symbol
-          }`}
-        </TYPE.body>
-      </RowBetween>
-      <RowBetween>
-        <TYPE.body>Pool Share:</TYPE.body>
-        <TYPE.body>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
-      </RowBetween></>:<>
-      
-      </>}
-      <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-      <ButtonPrimary style={{ margin: '20px 0 0 0' }} onClick={onAdd}>
-        <Text fontWeight={500} fontSize={20}>
-          {noLiquidity ? 'Create Pool & Supply' : 'Confirm Supply'}
-        </Text>
-      </ButtonPrimary>
-      </div> 
+      {noLiquidity ? (
+        <>
+          <RowBetween>
+            <TYPE.body>{currencies[Field.CURRENCY_A]?.symbol} Deposited</TYPE.body>
+            <RowFixed>
+              {/* <CurrencyLogo currency={currencies[Field.CURRENCY_A]} style={{ marginRight: '8px' }} /> */}
+              <TYPE.body>{parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)}</TYPE.body>
+            </RowFixed>
+          </RowBetween>
+          <RowBetween>
+            <TYPE.body>{currencies[Field.CURRENCY_B]?.symbol} Deposited</TYPE.body>
+            <RowFixed>
+              {/* <CurrencyLogo currency={currencies[Field.CURRENCY_B]} style={{ marginRight: '8px' }} /> */}
+              <TYPE.body>{parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)}</TYPE.body>
+            </RowFixed>
+          </RowBetween>
+          <RowBetween>
+            <TYPE.body>Price</TYPE.body>
+            <TYPE.body>
+              <TradePriceto price={price} showInverted={showInverted} setShowInverted={setShowInverted} />
+            </TYPE.body>
+          </RowBetween>
+          <RowBetween>
+            <TYPE.body>Pool Share:</TYPE.body>
+            <TYPE.body>100%</TYPE.body>
+          </RowBetween>
+        </>
+      ) : (
+        <>
+          <AutoColumn gap="20px">
+            <RowBetween>
+              <TYPE.body>Price</TYPE.body>
+              <TYPE.body>
+                <TradePriceto price={price} showInverted={showInverted} setShowInverted={setShowInverted} />
+              </TYPE.body>
+            </RowBetween>
+
+            <RowBetween>
+              <TYPE.body> Lp Token Recived</TYPE.body>
+              <TYPE.body>{liquidityMinted?.toSignificant(6)}</TYPE.body>
+            </RowBetween>
+
+            <RowBetween>
+              <TYPE.body>Pool Share</TYPE.body>
+              <TYPE.body>{poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
+            </RowBetween>
+            <RowBetween>
+              <TYPE.body>Price impact</TYPE.body>
+              <TYPE.body>{allowedSlippage / 100}%</TYPE.body>
+            </RowBetween>
+          </AutoColumn>
+        </>
+      )}
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <ButtonPrimary style={{ margin: '20px 0 0 0' }} onClick={onAdd}>
+          <Text fontWeight={500} fontSize={20}>
+            {noLiquidity ? 'Create Pool & Supply' : 'Confirm Supply'}
+          </Text>
+        </ButtonPrimary>
+      </div>
     </>
   )
 }
@@ -266,7 +286,6 @@ export default function AddLiquidity({
   const {
     dependentField,
     currencies,
-
     pairState,
     currencyBalances,
     parsedAmounts,
@@ -414,73 +433,40 @@ export default function AddLiquidity({
 
   const modalHeader = () => {
     return noLiquidity ? (
-      <AutoColumn gap="20px">
-        {/* <LightCard mt="20px" borderRadius="20px">
-          <RowFlat>
-            <Text fontSize="48px" fontWeight={500} lineHeight="42px" marginRight={10}>
-              {currencies[Field.CURRENCY_A]?.symbol + '/' + currencies[Field.CURRENCY_B]?.symbol}
-            </Text>
-            <DoubleCurrencyLogo
-              currency0={currencies[Field.CURRENCY_A]}
-              currency1={currencies[Field.CURRENCY_B]}
-              size={30}
-            />
-          </RowFlat>
-        </LightCard> */}
-      </AutoColumn>
+      ''
     ) : (
-      <AutoColumn gap="20px">
+      <>
+        {/* <AutoColumn gap="20px">
         <RowBetween>
-          <TYPE.body>Price</TYPE.body>
-          <TYPE.body>
-          <TradePriceto
-                         price={price}
-                        showInverted={showInverted}
+         <TYPE.body>Price</TYPE.body>
+         <TYPE.body>
+     <TradePriceto
+                        price={price}
+                       showInverted={showInverted}
                         setShowInverted={setShowInverted}
-                      />
+                    />
           </TYPE.body>
-        </RowBetween>
-    
-        <RowBetween>
-          <TYPE.body> Lp Token Recived</TYPE.body>
-          <TYPE.body>{liquidityMinted?.toSignificant(6)}</TYPE.body>
+       </RowBetween>
+        
+       <RowBetween>
+         <TYPE.body> Lp Token Recived</TYPE.body>
+         <TYPE.body>{liquidityMinted?.toSignificant(6)}</TYPE.body>
         </RowBetween> 
-       
-        <RowBetween>
+           
+      <RowBetween>
           <TYPE.body>Pool Share</TYPE.body>
-          <TYPE.body>{noLiquidity ?'100': poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
-        </RowBetween>
+        <TYPE.body>{noLiquidity ?'100': poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
+     </RowBetween>
         <RowBetween>
-          <TYPE.body>Price impact</TYPE.body>
-          <TYPE.body>{allowedSlippage / 100}%</TYPE.body>
-        </RowBetween>
-
-        {/* <RowFlat style={{ marginTop: '20px' }}>
-          <Text fontSize="15px" fontWeight={500} lineHeight="42px" marginRight={10}>
-            Lp Token Recived{liquidityMinted?.toSignificant(6)}
-          </Text> */}
-        {/* <DoubleCurrencyLogo
-            currency0={currencies[Field.CURRENCY_A]}
-            currency1={currencies[Field.CURRENCY_B]}
-            size={30}
-          /> */}
-        {/* </RowFlat> */}
-        {/* <RowBetween>
-        <TYPE.body>Share of Pool:</TYPE.body>
-        <TYPE.body>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
-      </RowBetween> */}
-        {/* <Row>
-          <Text fontSize="15px">
-            {currencies[Field.CURRENCY_A]?.symbol + '/' + currencies[Field.CURRENCY_B]?.symbol + ' Pool Tokens'}
-          </Text>
-        </Row> */}
-        {/* <Text fontSize={15}padding={'8px 0 0 0 '}>
-        Price impact  {allowedSlippage /
-            100}% 
-        </Text> */}
-      </AutoColumn>
+         <TYPE.body>Price impact</TYPE.body>
+         <TYPE.body>{allowedSlippage / 100}%</TYPE.body>
+      </RowBetween>
+      </AutoColumn> */}
+      </>
     )
   }
+
+  
 
   const modalBottom = () => {
     return (
@@ -490,7 +476,7 @@ export default function AddLiquidity({
         parsedAmounts={parsedAmounts}
         noLiquidity={noLiquidity}
         onAdd={onAdd}
-        //  poolTokenPercentage={poolTokenPercentage}
+          poolTokenPercentage={poolTokenPercentage}
       />
     )
   }
@@ -546,27 +532,21 @@ export default function AddLiquidity({
       <LayoutWrapper style={{ width: '', minHeight: '65vh' }}>
         <Appbody1>
           <AddRemoveTabs adding={true} />
-          <Wrapper className='ff'>
+          <Wrapper className="ff">
             <TransactionConfirmationModal
-
-
               isOpen={showConfirm}
               onDismiss={handleDismissConfirmation}
               attemptingTxn={attemptingTxn}
               hash={txHash}
-             
-              
               content={() => (
                 <ConfirmationModalContent
                   title={noLiquidity ? 'You are creating a pool' : 'You will receive'}
                   onDismiss={handleDismissConfirmation}
                   topContent={modalHeader}
                   bottomContent={modalBottom}
-                  
                 />
               )}
               pendingText={pendingText}
-             
             />
             <AutoColumn gap="20px">
               {noLiquidity && (
@@ -673,49 +653,43 @@ export default function AddLiquidity({
                 <>
                   <Mycard>
                     {/* <RowBetween padding="1rem"> */}
-                      {/* <TYPE.subHeader fontWeight={500} fontSize={14}>
+                    {/* <TYPE.subHeader fontWeight={500} fontSize={14}>
                         {noLiquidity ? 'Initial prices' : 'Prices'} and pool share
                       </TYPE.subHeader> */}
                     {/* </RowBetween>{' '} */}
-                   
-                      <AutoColumn gap="20px">
-                        <RowBetween>
-                          <TYPE.body>Price:</TYPE.body>
-                          <TYPE.body>
-                          <TradePriceto
-                         price={price}
-                        showInverted={showInverted}
-                        setShowInverted={setShowInverted}
-                      />
-                            {/* {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
+
+                    <AutoColumn gap="20px">
+                      <RowBetween>
+                        <TYPE.body>Price:</TYPE.body>
+                        <TYPE.body>
+                          <TradePriceto price={price} showInverted={showInverted} setShowInverted={setShowInverted} />
+                          {/* {`1 ${currencies[Field.CURRENCY_A]?.symbol} = ${price?.toSignificant(4)} ${
                               currencies[Field.CURRENCY_B]?.symbol
                             }`} */}
-                          </TYPE.body>
-                        </RowBetween>
-                      
-                       
-                        <RowBetween>
-                          <TYPE.body> Lp Token Recived:</TYPE.body>
-                          <TYPE.body>{noLiquidity ?"0.00":<>{liquidityMinted?.toSignificant(6)}</>}</TYPE.body>
-                        </RowBetween>
-                        
-                        <RowBetween>
-                          <TYPE.body>Pool Share:</TYPE.body>
-                          <TYPE.body>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
-                        </RowBetween>
-                        <RowBetween>
-                          <TYPE.body>Price impact:</TYPE.body>
-                          <TYPE.body>{allowedSlippage / 100}%</TYPE.body>
-                        </RowBetween>
-                      </AutoColumn>
-                      {/* <PoolPriceBar
+                        </TYPE.body>
+                      </RowBetween>
+
+                      <RowBetween>
+                        <TYPE.body> Lp Token Recived:</TYPE.body>
+                        <TYPE.body>{noLiquidity ? '0.00' : <>{liquidityMinted?.toSignificant(6)}</>}</TYPE.body>
+                      </RowBetween>
+
+                      <RowBetween>
+                        <TYPE.body>Pool Share:</TYPE.body>
+                        <TYPE.body>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
+                      </RowBetween>
+                      <RowBetween>
+                        <TYPE.body>Price impact:</TYPE.body>
+                        <TYPE.body>{allowedSlippage / 100}%</TYPE.body>
+                      </RowBetween>
+                    </AutoColumn>
+                    {/* <PoolPriceBar
                         currencies={currencies}
                         poolTokenPercentage={poolTokenPercentage}
                         noLiquidity={noLiquidity}
                         price={price}
                       /> */}
-                    </Mycard>
-                 
+                  </Mycard>
                 </>
               )}
 
