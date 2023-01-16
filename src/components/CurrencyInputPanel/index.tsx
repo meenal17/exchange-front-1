@@ -271,7 +271,7 @@ export default function CurrencyInputPanel({
                 <div
                   onClick={onMax}
                   color={theme.colors.text2}
-                  style={{textAlign:"end", cursor: 'pointer',fontWeight:500,fontSize:14,paddingRight:"18px"}}
+                  style={{textAlign:"end", cursor: 'pointer',fontWeight:500,fontSize:14,paddingRight:"18px", marginBottom:'15px'}}
                 >
 
                   {!hideBalance && !!currency && selectedCurrencyBalance

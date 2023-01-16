@@ -28,9 +28,12 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-padding: 143px 0 143px;
+// padding: 143px 0 143px;
+margin-top:2rem;
+min-height:615px;
 background: url(/bg_handshake.png);
 background-size: cover;
+background-position: bottom;
 background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
@@ -149,6 +152,7 @@ padding: 0px 49px;
 const Mytext = styled.div`
   color: #fff;
   font-size: 55px;
+  
   line-height: 1.2em;
   font-weight: 600;
   text-align: center;
@@ -209,6 +213,7 @@ const Mytextto = styled.div`
   color: #fff;
   font-size: 3rem;
   line-height: 1.2em;
+  padding-top: 9.7rem;
   font-weight: 900;
   text-align: center;
   font-family: 'Inter', sans-serif !important;

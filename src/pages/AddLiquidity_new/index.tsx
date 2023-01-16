@@ -611,6 +611,7 @@ export default function AddLiquidity({
                 </div>
               </ColumnCenter>
               <CurrencyInputPanel
+               
                 value={formattedAmounts[Field.CURRENCY_B]}
                 onUserInput={onFieldBInput}
                 onCurrencySelect={handleCurrencyBSelect}
@@ -694,7 +695,7 @@ export default function AddLiquidity({
               )}
 
               {!account ? (
-                <ButtonLight onClick={toggleWalletModal}>{i18n(204, 'Connect Wallet')}</ButtonLight>
+                <ButtonLight style={{marginTop:'1.2rem'}} onClick={toggleWalletModal}>{i18n(204, 'Connect Wallet')}</ButtonLight>
               ) : (
                 <AutoColumn gap={'md'}>
                   {(approvalA === ApprovalState.NOT_APPROVED ||

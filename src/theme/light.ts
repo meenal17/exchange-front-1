@@ -9,7 +9,7 @@ export default {
     text2: '#aa9b9b',
     text3: '#888D9B',
     text4: '#C3C5CB',
-textmy:'#131416',
+    textmy:'#131416',
     // backgrounds / greys
     bg0: '#343131',
     bg1: '#242222',
@@ -49,6 +49,7 @@ textmy:'#131416',
     inputBg: '#FFF9F0',
     strokColor: '#E1E1E1',
     navBg: '#C4C4C4',
-    plus:'#0bc496'
+    plus:'#0bc496',
+    themeColor:'#1f6d99'
   }
 }

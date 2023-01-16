@@ -45,7 +45,7 @@ const ErrorButton = styled.div`
   border-radius: 8px;
   font-size: 12px;
   color: ${({ theme }) => theme.colors.text1};
-  background-color: ${({ theme }) => theme.colors.bg4};
+  background-color: ${({ theme }) => theme.colors.themeColor};
   margin-left: 1rem;
   padding: 0.5rem;
   font-weight: 600;
