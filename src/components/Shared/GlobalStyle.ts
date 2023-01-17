@@ -469,7 +469,6 @@ z-index:1111;
   bottom: 0;
   padding: 7px !important;
   width: 300px;
-  
   // height:145px;
   // right: 247px;
   color: rgb(255, 255, 255);
@@ -506,7 +505,6 @@ right: 21px;
   bottom: 0;
   padding: 7px !important;
   width: 300px;
-  
   // height:145px;
   // right: 247px;
   color: rgb(255, 255, 255);

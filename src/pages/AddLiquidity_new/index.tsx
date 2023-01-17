@@ -669,12 +669,26 @@ export default function AddLiquidity({
 
                       <RowBetween>
                         <TYPE.body> Lp Token Recived:</TYPE.body>
-                        <TYPE.body>{noLiquidity ? '0.00' : <>{liquidityMinted?.toSignificant(6)}</>}</TYPE.body>
+                        <TYPE.body>
+                          {/* {noLiquidity ? '0.00' : <>{liquidityMinted?.toSignificant()}</>} */}
+                          {noLiquidity
+                            ? '0.00'
+                            : liquidityMinted?.toSignificant(6)
+                            ? liquidityMinted?.toSignificant(6)
+                            : '-'}
+                        </TYPE.body>
                       </RowBetween>
 
                       <RowBetween>
                         <TYPE.body>Pool Share:</TYPE.body>
-                        <TYPE.body>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</TYPE.body>
+                        <TYPE.body>
+                          {/* {noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}% */}
+                          {noLiquidity
+                            ? '100'
+                            : poolTokenPercentage?.toSignificant(4)
+                            ? poolTokenPercentage?.toSignificant(4)
+                            : '-'}
+                        </TYPE.body>
                       </RowBetween>
                       <RowBetween>
                         <TYPE.body>Price impact:</TYPE.body>
