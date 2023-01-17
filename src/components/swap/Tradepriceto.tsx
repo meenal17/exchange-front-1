@@ -37,7 +37,6 @@ export default function TradePriceto({ price, showInverted, setShowInverted }: T
         <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
             <RotateCw size={14} />
           </StyledBalanceMaxMini>
-         
         </>
       ) : (
         '-'
