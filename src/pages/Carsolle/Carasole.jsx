@@ -24,7 +24,6 @@ function Carsole() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Lorem ipsum dolor sit amet consect.
         Lorem ipsum dolor sit amet consectetur .
-        
       </div>
       
     </div>
