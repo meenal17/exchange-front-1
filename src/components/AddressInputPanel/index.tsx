@@ -49,7 +49,8 @@ const Input = styled.input<{ error?: boolean }>`
   ::placeholder {
     color: ${({ theme }) => theme.colors.text4};
   }
-  padding: 0px;
+  padding: 0 10px;
+  font-family: 'Inter', sans-serif !important;
   -webkit-appearance: textfield;
 
   ::-webkit-search-decoration {

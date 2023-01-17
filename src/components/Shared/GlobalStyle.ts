@@ -60,17 +60,17 @@ export const ThemedGlobalStyle = createGlobalStyle`
     
   
     .currency_scroller::-webkit-scrollbar {
-      width: 3px;
+      width: 4px;
     }
      
     .currency_scroller::-webkit-scrollbar-track {
-      background:blue;
       box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
      
     .currency_scroller::-webkit-scrollbar-thumb {
-      background-color: red;
+      background-color: grey;
       outline: 1px solid slategrey;
+
     }
 
    @media screen and (max-width:480px){
@@ -78,6 +78,16 @@ export const ThemedGlobalStyle = createGlobalStyle`
       display:none!important
     }
    }
+
+
+.handshake_bg_img {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
    .accountbutton{
     background: #1D1F20;
     position: relative;
@@ -161,8 +171,8 @@ export const ThemedGlobalStyle = createGlobalStyle`
     border-radius:
     borderWidth:3px;
     border-radius:9px;
-    padding: 12px 1rem;
-   font-size: 28px;
+    padding: 6px 1rem;
+   font-size: 1.5rem;
     display: inline-flex;
     font-weight:600;
    
@@ -172,7 +182,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     position: absolute;
     top: calc(-1 * 3px);
     left: calc(-1 * 3px);
-    height: calc(100% + 3px * 2);
+    height: calc(100% + 1px * 2);
     width: calc(100% + 3px * 2);
     border:3px solid #3e8b9a;
     // background: linear-gradient(127deg,#46c2a8,#3e8b9a,#498fb5);
@@ -297,6 +307,7 @@ display:none;
 }
 .fontss{
   font-size: 15px !important;
+  text-align:center;
   ${({ theme }) => (theme as any).mediaWidth.upToMedium`
   font-size:13px !important;
   `};
@@ -416,14 +427,13 @@ z-index:1111;
 }
 .plusico{
   // border: 1px solid rgb(17 115 110);
-  padding: 0.1rem;
+  padding: 0.2rem;
   border-radius: 11px;
   width: 22px;
-  /* width: 200px; */
   height: 22px;
   text-align: center;
   box-shadow: 0px 0px 2px 4px rgb(22 142 136);
-  margin: 10px;
+  margin: 20px;
 }
 .plusicoto{
   // border: 1px solid rgb(17 115 110);
@@ -437,9 +447,9 @@ z-index:1111;
   margin: 10px;
 }
 .pooldiv{
-//   height: 140px;
-//     overflow-y: scroll;
-// }
+  height: 140px;
+    overflow-y: scroll;
+}
 .pooldiv::-webkit-scrollbar {
   width: 3px;
 }

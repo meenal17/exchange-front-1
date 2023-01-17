@@ -58,9 +58,9 @@ export const AppBody2 = styled.div`
   padding: 1rem;
   margin-bottom: 10px;
   margin-top: 10px;
-  min-height: 263px;
-  /* height: 300px; */
-  max-height: 551px;
+  // min-height: 263px;
+  height: 300px;
+  // max-height: 551px;
   overflow: auto;
   margin-left: 20px;
 
@@ -226,7 +226,7 @@ export function ConfirmAddModalBottom({
         <>
           <AutoColumn gap="20px">
             <RowBetween>
-              <TYPE.body>Price</TYPE.body>
+              <TYPE.body>Price </TYPE.body>
               <TYPE.body>
                 <TradePriceto price={price} showInverted={showInverted} setShowInverted={setShowInverted} />
               </TYPE.body>
@@ -466,8 +466,6 @@ export default function AddLiquidity({
     )
   }
 
-  
-
   const modalBottom = () => {
     return (
       <ConfirmAddModalBottom
@@ -476,7 +474,7 @@ export default function AddLiquidity({
         parsedAmounts={parsedAmounts}
         noLiquidity={noLiquidity}
         onAdd={onAdd}
-          poolTokenPercentage={poolTokenPercentage}
+        poolTokenPercentage={poolTokenPercentage}
       />
     )
   }
@@ -611,7 +609,6 @@ export default function AddLiquidity({
                 </div>
               </ColumnCenter>
               <CurrencyInputPanel
-               
                 value={formattedAmounts[Field.CURRENCY_B]}
                 onUserInput={onFieldBInput}
                 onCurrencySelect={handleCurrencyBSelect}
@@ -695,7 +692,9 @@ export default function AddLiquidity({
               )}
 
               {!account ? (
-                <ButtonLight style={{marginTop:'1.2rem'}} onClick={toggleWalletModal}>{i18n(204, 'Connect Wallet')}</ButtonLight>
+                <ButtonLight style={{ marginTop: '1.2rem' }} onClick={toggleWalletModal}>
+                  {i18n(204, 'Connect Wallet')}
+                </ButtonLight>
               ) : (
                 <AutoColumn gap={'md'}>
                   {(approvalA === ApprovalState.NOT_APPROVED ||
@@ -756,7 +755,7 @@ export default function AddLiquidity({
     ) : null} */}
         </Appbody1>
 
-        <AppBody2>
+        <AppBody2 className="currency_scroller">
           <div className="poolcardsd">My Pools</div>
 
           <Pool />

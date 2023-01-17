@@ -18,7 +18,7 @@ import { useI18n } from 'i18n/i18n-react'
 const InputRow = styled.div<{ selected: boolean }>`
   ${({ theme }) => theme.flexRowNoWrap}
   align-items: center;
-  padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
+  padding: ${({ selected }) => (selected ? '0.25rem 0.5rem 0.75rem 1rem' : '0.25rem 0.75rem 0.75rem 1rem')};
 `
 
 const CurrencySelect = styled.button<{ selected: boolean }>`
@@ -28,17 +28,17 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   font-weight: 500;
   background-color: ${({ selected, theme }) => (selected ? theme.colors.newb1 : theme.colors.newb1)};
   color: ${({ selected, theme }) => (selected ? theme.colors.text1 : theme.colors.white)};
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: ${({ selected }) => (selected ? 'none' : '0px 6px 10px rgba(0, 0, 0, 0.075)')};
   outline: none;
   cursor: pointer;
   user-select: none;
   border: none;
-  padding: 0 0.5rem;
+  padding: 0.25rem 0.5rem;
 
   :focus,
   :hover {
-    background-color: ${({ selected, theme }) => (selected ? theme.colors.bg0 :  theme.colors.mybg)};
+    background-color: ${({ selected, theme }) => (selected ? theme.colors.bg0 : theme.colors.mybg)};
   }
 `
 
@@ -66,7 +66,7 @@ const StyledDropDown = styled(DropDown)<{ selected: boolean }>`
   height: 35%;
 
   path {
-    stroke: ${({ selected, theme }) => (selected ? theme.colors.text1 : theme.colors.white)};
+    stroke: ${({ selected, theme }) => (selected ? theme.colors.text1 : theme.colors.tetst)};
     stroke-width: 1.5px;
   }
 `
@@ -74,14 +74,14 @@ const StyledDropDown = styled(DropDown)<{ selected: boolean }>`
 const InputPanel = styled.div<{ hideInput?: boolean }>`
   ${({ theme }) => theme.flexColumnNoWrap}
   position: relative;
-  border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
+  border-radius: ${({ hideInput }) => (hideInput ? '8px' : '15px')};
   // background-color: ${({ theme }) => theme.colors.bg0};
   background:linear-gradient(88deg,#09393657,#181616);
   z-index: 1;
 `
 
 const Container = styled.div<{ hideInput: boolean }>`
-  border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
+  border-radius: ${({ hideInput }) => (hideInput ? '8px' : '50px')};
   // border: 1px solid ${({ theme }) => theme.colors.bg0};
   // background-color: ${({ theme }) => theme.colors.bg1};
   // background:linear-gradient(88deg,#09393657,#121111);
@@ -90,7 +90,10 @@ const Container = styled.div<{ hideInput: boolean }>`
 
 const StyledTokenName = styled.span<{ active?: boolean }>`
   ${({ active }) => (active ? '  margin: 0 0.25rem 0 0.75rem;' : '  margin: 0 0.25rem 0.2rem 0.25rem;')}
-  font-size:  ${({ active }) => (active ? '20px' : '16px')};
+  font-size:  ${({ active }) => (active ? '20px' : '15px')};
+  color: #bbb;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
 
 `
 
@@ -100,8 +103,8 @@ const StyledBalanceMax = styled.button`
   background:transparent;
   border 1px solid transparent;
   border-radius: 0.5rem;
-  font-size:18px;
-
+  font-size:16px;
+  font-family: 'Inter', sans-serif !important;
   font-weight: 600;
   cursor: pointer;
   margin-right: 0.5rem;
@@ -160,8 +163,8 @@ interface CurrencyInputPanelProps {
   otherCurrency?: Currency | null
   id: string
   showCommonBases?: boolean
-  onTwentyper?:() => void
-  onThirtyper?:()=>void
+  onTwentyper?: () => void
+  onThirtyper?: () => void
 }
 export default function CurrencyInputPanel({
   value,
@@ -183,7 +186,7 @@ export default function CurrencyInputPanel({
 }: CurrencyInputPanelProps) {
   const i18n = useI18n()
   label = label || i18n(298, 'Input')
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
   const theme = useContext(ThemeContext)
@@ -192,35 +195,31 @@ export default function CurrencyInputPanel({
     setModalOpen(false)
   }, [setModalOpen])
 
-  
   return (
     <InputPanel id={id}>
-         <div style={{display:"flex" ,justifyContent:"space-between",padding:"8px 8px 0px 8px"}}>
-     <div color={theme.colors.text1} style={{fontWeight:"bold",paddingTop:"10",fontSize:"21px"}} >
-      {label}
+      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 8px 0px 8px' }}>
+        <div
+          color={theme.colors.text1}
+          style={{ fontWeight: 'bold', paddingTop: '10px', paddingLeft: '10px', fontSize: '21px' }}
+        >
+          {label}
+        </div>
+        <div style={{ display: 'flex' }}>
+          <div color={theme.colors.text1} style={{ fontWeight: 'bold', paddingTop: '10px', paddingLeft: '10px' }}>
+            {account && currency && label !== 'To' && <StyledBalanceM onClick={onTwentyper}>25%</StyledBalanceM>}
+          </div>
+          <div color={theme.colors.text1} style={{ fontWeight: 'bold', paddingTop: '10px', paddingLeft: '10px' }}>
+            {account && currency && label !== 'To' && <StyledBalanceM onClick={onThirtyper}>50%</StyledBalanceM>}
+          </div>
+          <div color={theme.colors.text1} style={{ fontWeight: 'bold', paddingTop: '10px', paddingLeft: '10px' }}>
+            {account && currency && showMaxButton && label !== 'To' && (
+              <StyledBalanceMax onClick={onMax}>MAX</StyledBalanceMax>
+            )}
+          </div>
+        </div>
       </div>
-      <div style={{display:"flex"}}>
-      <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
-              {account && currency  && label !== 'To' && (
-                <StyledBalanceM  onClick={onTwentyper}>25%</StyledBalanceM>
-              )}
-      </div>
-      <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
-              {account && currency  && label !== 'To' && (
-                <StyledBalanceM onClick={onThirtyper}>50%</StyledBalanceM>
-              )}
-      </div>
-      <div color={theme.colors.text1}  style={{fontWeight:"bold",paddingTop:"10"}}>
-              {account && currency && showMaxButton && label !== 'To' && (
-                <StyledBalanceMax onClick={onMax}>MAX</StyledBalanceMax>
-              )}
-      </div>
-      </div>
-     </div>
       <Container hideInput={hideInput}>
         <InputRow style={hideInput ? { padding: '0', borderRadius: '8px' } : {}} selected={disableCurrencySelect}>
-          
-          
           <CurrencySelect
             selected={!!currency}
             className="open-currency-select-button"
@@ -261,28 +260,33 @@ export default function CurrencyInputPanel({
                   onUserInput(val)
                 }}
               />
-             
             </>
           )}
         </InputRow>
         {!hideInput && (
           <div>
-              {account && (
-                <div
-                  onClick={onMax}
-                  color={theme.colors.text2}
-                  style={{textAlign:"end", cursor: 'pointer',fontWeight:500,fontSize:14,paddingRight:"18px", marginBottom:'15px'}}
-                >
-
-                  {!hideBalance && !!currency && selectedCurrencyBalance
-                    ? i18n(754, 'Available:') + ' ' + selectedCurrencyBalance?.toSignificant(6)
-                    : ' -'}
-                </div>
-              )}
+            {account && (
+              <div
+                onClick={onMax}
+                color={theme.colors.text2}
+                style={{
+                  textAlign: 'end',
+                  cursor: 'pointer',
+                  fontWeight: 500,
+                  fontSize: 15,
+                  paddingRight: '18px',
+                  marginBottom: '15px',
+                  letterSpacing: '1px',
+                  fontFamily: 'Inter'
+                }}
+              >
+                {!hideBalance && !!currency && selectedCurrencyBalance
+                  ? i18n(754, 'Available:') + ' ' + selectedCurrencyBalance?.toSignificant(6)
+                  : ' -'}
+              </div>
+            )}
           </div>
         )}
-       
-        
       </Container>
       {!disableCurrencySelect && onCurrencySelect && (
         <CurrencySearchModal

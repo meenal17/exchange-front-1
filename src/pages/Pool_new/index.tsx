@@ -7,8 +7,8 @@ import { Pair } from '@pancakeswap-libs/sdk'
 import FullPositionCard from '../../components/PositionCard_new'
 import { useUserHasLiquidityInAllTokens } from '../../data/V1'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
-import { StyledInternalLink,TYPE } from '../../components/Shared'
- import { Text } from 'rebass'
+import { StyledInternalLink, TYPE } from '../../components/Shared'
+import { Text } from 'rebass'
 import { LightCard } from '../../components/Card'
 // import { RowBetween } from '../../components/Row'
 // import { ButtonPrimary } from '../../components/Button'
@@ -30,7 +30,11 @@ export default function Pool() {
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
   const tokenPairsWithLiquidityTokens = useMemo(
-    () => trackedTokenPairs.map(tokens => ({ liquidityToken: toV2LiquidityToken(tokens), tokens })),
+    () =>
+      trackedTokenPairs.map(tokens => ({
+        liquidityToken: toV2LiquidityToken(tokens),
+        tokens
+      })),
     [trackedTokenPairs]
   )
   const liquidityTokens = useMemo(() => tokenPairsWithLiquidityTokens.map(tpwlt => tpwlt.liquidityToken), [
@@ -56,21 +60,20 @@ export default function Pool() {
 
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
   const hasV1Liquidity = useUserHasLiquidityInAllTokens()
-  
 
   return (
     <>
-        {/* <SwapPoolTabs active={'pool'} /> */}
+      {/* <SwapPoolTabs active={'pool'} /> */}
       {/* <AppBody> */}
-        {/* <AutoColumn gap="lg" justify="center"> */}
-          {/* <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/ETH">
+      {/* <AutoColumn gap="lg" justify="center"> */}
+      {/* <ButtonPrimary id="join-pool-button" as={Link} style={{ padding: 16 }} to="/add/ETH">
             <Text fontWeight={500} fontSize={20}>
               <TranslatedText translationId={288}>Add Liquidity</TranslatedText>
             </Text>
           </ButtonPrimary> */}
 
-          {/* <AutoColumn gap="12px" style={{ width: '100%' }}> */}
-            {/* <RowBetween padding={'0 8px'}>
+      {/* <AutoColumn gap="12px" style={{ width: '100%' }}> */}
+      {/* <RowBetween padding={'0 8px'}>
               <Text color={theme.colors.text1} fontWeight={500}>
                 Your Liquidity
               </Text>
@@ -81,46 +84,45 @@ export default function Pool() {
                 )}
               />
             </RowBetween> */}
-            <div className="pooldiv">
-            {!account ? (
-              <LightCard padding="40px">
-                <TYPE.body color={theme.colors.text3} textAlign="center">
-                  {i18n(768, 'Connect to a wallet to view your liquidity.')}
-                </TYPE.body>
-              </LightCard>
-            ) : v2IsLoading ? (
-              <LightCard padding="40px">
-                <TYPE.body color={theme.colors.text3} textAlign="center">
-                  <Dots>Loading</Dots>
-                </TYPE.body>
-              </LightCard>
-            ) : allV2PairsWithLiquidity?.length > 0 ? (
-              <>
-                {allV2PairsWithLiquidity.map(v2Pair => (
-                  <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
-                ))}
-              </>
-            ) : (
-              <LightCard padding="40px">
-                <TYPE.body color={theme.colors.text3} textAlign="center">
-                  <TranslatedText translationId={292}>No liquidity found.</TranslatedText>
-                </TYPE.body>
-              </LightCard>
-            )}
-</div>
+      <div className="pooldiv">
+        {!account ? (
+          <LightCard padding="40px">
+            <TYPE.body color={theme.colors.text3} textAlign="center">
+              {i18n(768, 'Connect to a wallet to view your liquidity.')}
+            </TYPE.body>
+          </LightCard>
+        ) : v2IsLoading ? (
+          <LightCard padding="40px">
+            <TYPE.body color={theme.colors.text3} textAlign="center">
+              <Dots>Loading</Dots>
+            </TYPE.body>
+          </LightCard>
+        ) : allV2PairsWithLiquidity?.length > 0 ? (
+          <>
+            {allV2PairsWithLiquidity.map(v2Pair => (
+              <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
+            ))}
+          </>
+        ) : (
+          <LightCard padding="40px">
+            <TYPE.body color={theme.colors.text3} textAlign="center">
+              <TranslatedText translationId={292}>No liquidity found.</TranslatedText>
+            </TYPE.body>
+          </LightCard>
+        )}
+      </div>
 
-            <div>
-              <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
-                {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : i18n(304, "Don't see a pool you joined?")}{' '}
-                <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
-                  {hasV1Liquidity ? 'Migrate now.' : i18n(306, 'Import it.')}
-                </StyledInternalLink>
-              </Text>
-            </div>
-          {/* </AutoColumn> */}
-        {/* </AutoColumn> */}
+      <div>
+        <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
+          {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : i18n(304, "Don't see a pool you joined?")}{' '}
+          <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
+            {hasV1Liquidity ? 'Migrate now.' : i18n(306, 'Import it.')}
+          </StyledInternalLink>
+        </Text>
+      </div>
+      {/* </AutoColumn> */}
+      {/* </AutoColumn> */}
       {/* </AppBody> */}
-      
     </>
   )
 }

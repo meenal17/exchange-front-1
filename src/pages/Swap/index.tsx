@@ -299,14 +299,12 @@ export default function Swap() {
   }, [maxAmountInput, onUserInput])
 
   const handleTwentyinput = useCallback(() => {
-     maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*25/100).toString());
-
+    maxAmountInput && onUserInput(Field.INPUT, ((Number(maxAmountInput?.toExact()) * 25) / 100).toString())
   }, [maxAmountInput, onUserInput])
 
   const handleThirtyinput = useCallback(() => {
-    maxAmountInput && onUserInput(Field.INPUT,(Number(maxAmountInput?.toExact())*50/100).toString());
-
- }, [maxAmountInput, onUserInput])
+    maxAmountInput && onUserInput(Field.INPUT, ((Number(maxAmountInput?.toExact()) * 50) / 100).toString())
+  }, [maxAmountInput, onUserInput])
   const handleOutputSelect = useCallback(
     outputCurrency => {
       onCurrencySelection(Field.OUTPUT, outputCurrency)
@@ -316,7 +314,6 @@ export default function Swap() {
     },
     [onCurrencySelection, checkForSyrup]
   )
-  
 
   return (
     <>
@@ -324,7 +321,6 @@ export default function Swap() {
       <div className="settingmy">
         <Settings />
         <AccountButton />
-       
       </div>
 
       <TokenWarningModal
@@ -426,21 +422,20 @@ export default function Swap() {
 
             {showWrap ? null : (
               <Card padding={'1rem .60rem .3rem .61rem'} borderRadius={'20px'}>
-                <AutoColumn gap="4px" style={{lineHeight:"25px"}}>
+                <AutoColumn gap="4px" style={{ lineHeight: '25px' }}>
                   {Boolean(trade) && (
                     <>
-                    <RowBetween align="center">
-                      <Text fontWeight={500} fontSize={14} color={theme.colors.tetst}>
-                        Price:
-                      </Text>
-                      <TradePrice
-                        price={trade?.executionPrice}
-                        showInverted={showInverted}
-                        setShowInverted={setShowInverted}
-                      />
-                     
-                    </RowBetween>
-                    {/* <RowBetween>
+                      <RowBetween align="center">
+                        <Text fontWeight={500} fontSize={14} color={theme.colors.tetst}>
+                          Price:
+                        </Text>
+                        <TradePrice
+                          price={trade?.executionPrice}
+                          showInverted={showInverted}
+                          setShowInverted={setShowInverted}
+                        />
+                      </RowBetween>
+                      {/* <RowBetween>
                          <ClickableText fontWeight={500} fontSize={14} color={theme.colors.tetst} >
                         Slippage:
                       </ClickableText>
@@ -451,14 +446,14 @@ export default function Swap() {
                     </>
                   )}
                   {/* {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && ( */}
-                    {/* <RowBetween align="center"> */}
-                      {/* <ClickableText fontWeight={500} fontSize={14} color={theme.colors.text2} onClick={toggleSettings}>
+                  {/* <RowBetween align="center"> */}
+                  {/* <ClickableText fontWeight={500} fontSize={14} color={theme.colors.text2} onClick={toggleSettings}>
                         Slippage Tolerance
                       </ClickableText>
                       <ClickableText fontWeight={500} fontSize={14} color={theme.colors.text2} onClick={toggleSettings}>
                         {allowedSlippage / 100}%
                       </ClickableText> */}
-                    {/* </RowBetween> */}
+                  {/* </RowBetween> */}
                   {/* )} */}
                 </AutoColumn>
               </Card>

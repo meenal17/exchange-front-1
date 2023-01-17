@@ -28,13 +28,7 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-// padding: 143px 0 143px;
-margin-top:2rem;
-min-height:615px;
-background: url(/bg_handshake.png);
-background-size: cover;
-background-position: bottom;
-background-repeat: no-repeat;
+margin-top:1rem;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
   margin: unset;
@@ -57,7 +51,7 @@ const Container2 = styled.div`
  `};
 `
 const Container3 = styled.div`
-//  padding: 0 0 14rem 0;
+  //  padding: 0 0 14rem 0;
   margin: 0 auto;
   background: url(/images/astroball.png);
   // background-size: cover;
@@ -152,7 +146,7 @@ padding: 0px 49px;
 const Mytext = styled.div`
   color: #fff;
   font-size: 55px;
-  
+
   line-height: 1.2em;
   font-weight: 600;
   text-align: center;
@@ -163,9 +157,9 @@ const Mytext = styled.div`
 `
 const Textwhy = styled.div`
   color: #fff;
-  font-size:46px;
+  font-size: 46px;
   font-family: 'Inter', sans-serif !important;
- background: linear-gradient(113deg,#45ff6c,#47a7ae,#0892ff);
+  background: linear-gradient(113deg, #45ff6c, #47a7ae, #0892ff);
   font-weight: 800;
   text-align: center;
   -webkit-background-clip: text;
@@ -183,14 +177,14 @@ const Textwhy = styled.div`
   `};
 `
 const HeadingMytext = styled.div`
- font-family: 'Inter', sans-serif !important;
- background: linear-gradient(113deg,#45ff6c,#47a7ae,#0892ff);
+  font-family: 'Inter', sans-serif !important;
+  background: linear-gradient(113deg, #45ff6c, #47a7ae, #0892ff);
   color: #fff;
   font-size: 46px;
   line-height: 0.9em;
   font-weight: 900;
   text-align: center;
-  
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0 auto;
@@ -208,7 +202,6 @@ const HeadingMytext = styled.div`
   `};
 `
 
-
 const Mytextto = styled.div`
   color: #fff;
   font-size: 3rem;
@@ -217,7 +210,7 @@ const Mytextto = styled.div`
   font-weight: 900;
   text-align: center;
   font-family: 'Inter', sans-serif !important;
- background: linear-gradient(113deg,#92f0a6,#47a7ae,#0892ff);
+  background: linear-gradient(113deg, #92f0a6, #47a7ae, #0892ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -233,15 +226,15 @@ const Mytextto = styled.div`
   `};
 `
 const Bannertxt = styled.div`
-font-family: 'Inter', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   color: #fff;
-  font-size: 22px;
+  font-size: 1.8rem;
   margin-top: 10px;
   line-height: 1.3em;
   padding: 0 9rem;
   font-weight: 600;
   text-align: center;
-  background: linear-gradient(92deg,#ebc1a3,#d890a2);
+  background: linear-gradient(92deg, #ebc1a3, #d890a2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -253,7 +246,7 @@ font-family: 'Inter', sans-serif !important;
     padding:0 5px;
     font-size:19px;
    `};
-   ${({ theme }) => theme.mediaWidth.upToMedium`
+  ${({ theme }) => theme.mediaWidth.upToMedium`
     padding:0 5px;
     font-size:12px;
    `};
@@ -265,9 +258,24 @@ const Bannerheading = styled.div`
   margin-bottom:unset;
  `};
 `
+
+const Handshakeheading = styled.div`
+  margin-bottom: 43px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+  // padding: 1.5rem;
+  //margin-bottom:unset;
+ `};
+`
+
 const Buttondiv = styled.div`
   text-align: -webkit-center;
-   text-align: center;
+  text-align: center;
   padding-top: 50px;
 `
 
@@ -329,15 +337,15 @@ display: none;
 const Home = () => {
   return (
     <>
-  
       <div className="xyz">
-      {/* <Particle />  */}
+        {/* <Particle />  */}
         <Body>
-        {/* <Particle /> */}
+          {/* <Particle /> */}
           <div className="stars-wrapper">
-          <Particle /> 
+            <Particle />
             <Container1>
-              <Bannerheading>
+              <img className="handshake_bg_img" src="bg_handshake.png" alt="" />
+              <Handshakeheading>
                 <Mytextto>
                   A Cross-Chain Protocol
                   <div>
@@ -346,7 +354,8 @@ const Home = () => {
                 </Mytextto>
 
                 <Bannertxt>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. <div>Minima nostrum delectus commodi.</div>
+                  Lorem ipsum dolor sit amet consectetur
+                  <div> adipisicing elit ut aliquam, purus sit </div>
                 </Bannertxt>
                 <Buttondiv>
                   <div className="LaunchButton">
@@ -354,19 +363,15 @@ const Home = () => {
                     <span className="textnew">Launch Swap</span>{' '}
                   </div>
                 </Buttondiv>
-              </Bannerheading>
+              </Handshakeheading>
             </Container1>
             {/* section two start  */}
 
             <Container2>
-            
               <Containerto>
                 <Bannerheading>
                   <HeadingMytext>Statistics</HeadingMytext>
-                  <div className='headingborder'>
-
-                  </div>
-
+                  <div className="headingborder"></div>
                 </Bannerheading>
                 <Sectiotwosection>
                   <div>
@@ -409,22 +414,16 @@ const Home = () => {
               <Bannerheading>
                 <Textwhy>Why We Use LeBo</Textwhy>
 
-                <div className='headingborderto'>
-
-                  </div>
+                <div className="headingborderto"></div>
               </Bannerheading>
               <Carsolesection>
                 <Carsole />
               </Carsolesection>
               <Support />
-
             </Container3>
             <Footer />
           </div>
-          
         </Body>
-
-       
       </div>
     </>
   )
