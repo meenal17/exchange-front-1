@@ -64,10 +64,10 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
   return (
     <>
    {account?<>
-     <div id='postiondiv' style={{height:'145px'}} >
+     <div  style={{height:'145px'}} >
     
       { userPoolBalance && (
-        <GreyCard id="innercard" border={border}>
+        <GreyCard border={border}>
          
           
           <AutoColumn gap="12px">
