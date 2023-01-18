@@ -3,17 +3,17 @@ import styled from 'styled-components'
 const Support = () => {
   const Supportecard = styled.div`
     padding: 7px 4px;
-    border-radius: 9px;
+    border-radius: 15px;
     background: #2b2b2b91;
     color: #d2d2d2;
-    width: 25rem;
-    margin: 10px;
+    width: 16rem;
+    margin: 5px;
     opacity: 0.2px;
     // box-shadow: 0px 0px 5px 4px rgb(38 49 91);
     box-shadow: crimson;
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     align-items: center;
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
      width: 10rem !important;
@@ -54,19 +54,19 @@ max-height: 95px;
 `};
   `
   const Supportecarddesk = styled.div`
-    padding: 14px 75px;
+    padding: 14px 20px;
     border-radius: 9px;
     background: #2b2b2b91;
     color: #d2d2d2;
-    margin: 10px;
-    // width: 20rem;
+    margin: 10px 37px;
+    width: 24rem;
     opacity: 0.2px;
     box-shadow: 0px 0px 5px 4px rgb(38 49 91);
     box-shadow: crimson;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     margin:19px 1px;
     width: 10.8rem;
@@ -211,6 +211,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
   `
   const Containersupport = styled.div`
   padding: 13rem 0;
+  width:80%;
     margin: 0 auto;
     background: url(/astronaut.png);
     background-position: bottom;
@@ -305,7 +306,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
 
       {/* backend by the best */}
       <Bannerheading>
-        <HeadingMytext>Backend By The Best</HeadingMytext>
+        <HeadingMytext style={{marginTop:'2rem'}}>Backend By The Best</HeadingMytext>
         <div className='headingborderfour'>
 
                   </div>

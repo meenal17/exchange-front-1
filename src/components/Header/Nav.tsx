@@ -72,13 +72,14 @@ const StyledAbsoluteLink = styled.a`
   margin-right: 24px;
   text-decoration: none;
     transition: transform .3s; /* Animation */
-background: #ccc;
+
+background: linear-gradient(to right, #13B9AA 0%, #1e729a 100%);
   background-clip: border-box;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 font-size:20px;
   &:hover {
-   background: linear-gradient(to right, #13B9AA 0%, #1e729a 100%);
+    background: #ccc;
   background-clip: border-box;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;

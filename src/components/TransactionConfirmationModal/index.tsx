@@ -23,7 +23,7 @@ const Section = styled(AutoColumn)`
 
 const BottomSection = styled(Section)`
   // background-color: ${({ theme }) => theme.colors.bg2};
-  background:#121111;
+  background:#242424;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 `
