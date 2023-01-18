@@ -4,6 +4,8 @@ import Carsole from './Carsolle/Carasole'
 import Support from './Support'
 import Footer from './HomeFooter/Footer'
 import Particle from './particle/Particle'
+
+
 const Body = styled.div`
   // background: url('/background.png');
   // background: black;
@@ -28,7 +30,12 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-margin-top:1rem;
+// margin-top:1rem;
+background: url('/bg_handshake.png') center;
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 690px;
+
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
   margin: unset;
@@ -204,9 +211,9 @@ const HeadingMytext = styled.div`
 
 const Mytextto = styled.div`
   color: #fff;
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1.2em;
-  padding-top: 9.7rem;
+  padding-top: 10.7rem;
   font-weight: 900;
   text-align: center;
   font-family: 'Inter', sans-serif !important;
@@ -229,7 +236,7 @@ const Bannertxt = styled.div`
   font-family: 'Inter', sans-serif !important;
   color: #fff;
   font-size: 1.8rem;
-  margin-top: 10px;
+  margin-top: 1.5rem;
   line-height: 1.3em;
   padding: 0 9rem;
   font-weight: 600;
@@ -344,7 +351,7 @@ const Home = () => {
           <div className="stars-wrapper">
             <Particle />
             <Container1>
-              <img className="handshake_bg_img" src="bg_handshake.png" alt="" />
+              {/* <img className="handshake_bg_img" src="bg_handshake.png" alt="" /> */}
               <Handshakeheading>
                 <Mytextto>
                   A Cross-Chain Protocol

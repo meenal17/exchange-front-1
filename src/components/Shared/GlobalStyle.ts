@@ -80,13 +80,13 @@ export const ThemedGlobalStyle = createGlobalStyle`
    }
 
 
-.handshake_bg_img {
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-}
+// .handshake_bg_img {
+//   position: relative;
+//   display: block;
+//   width: 100%;
+//   max-width: 1920px;
+//   margin: 3rem auto;
+// }
 
    .accountbutton{
     background: #1D1F20;
