@@ -141,7 +141,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     border-radius:10px;
     padding:10px;
     display: inline-flex;
-    gap:6px;
+    gap:1px;
     border:none;
     align-items:center;
     width:170px;
