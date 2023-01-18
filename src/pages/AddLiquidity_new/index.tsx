@@ -233,7 +233,7 @@ export function ConfirmAddModalBottom({
             </RowBetween>
 
             <RowBetween>
-              <TYPE.body> Lp Token Recived</TYPE.body>
+              <TYPE.body> LP Token Received</TYPE.body>
               <TYPE.body>{liquidityMinted?.toSignificant(6)}</TYPE.body>
             </RowBetween>
 
@@ -668,7 +668,7 @@ export default function AddLiquidity({
                       </RowBetween>
 
                       <RowBetween>
-                        <TYPE.body> Lp Token Recived:</TYPE.body>
+                        <TYPE.body> LP Token Received:</TYPE.body>
                         <TYPE.body>
                           {/* {noLiquidity ? '0.00' : <>{liquidityMinted?.toSignificant()}</>} */}
                           {noLiquidity

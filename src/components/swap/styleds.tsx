@@ -62,7 +62,7 @@ export const StyledBalanceMaxMini = styled.button`
   justify-content: center;
   align-items: center;
   float: right;
-
+z-index:222;
   :hover {
     // background-color: ${({ theme }) => theme.colors.bg3};
     background: transparent
