@@ -550,4 +550,8 @@ right: 21px;
 overflow:hidden;
 
 }
+
+.active{
+  color:#fcfcfc;
+ }
 `

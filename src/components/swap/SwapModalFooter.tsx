@@ -1,6 +1,6 @@
 import { Trade, TradeType } from '@pancakeswap-libs/sdk'
-import React, { useContext, useMemo, useState } from 'react'
-import { Repeat } from 'react-feather'
+import React, { useContext, useMemo,useState } from 'react'
+// import { Repeat } from 'react-feather'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
 import { Field } from '../../state/swap/actions'
@@ -8,7 +8,6 @@ import { TYPE } from '../Shared'
 import {
   computeSlippageAdjustedAmounts,
   computeTradePriceBreakdown,
-  formatExecutionPrice,
   warningSeverity
 } from '../../utils/prices'
 import { useI18n } from 'i18n/i18n-react'
@@ -17,8 +16,9 @@ import { AutoColumn } from '../Column'
 import QuestionHelper from '../QuestionHelper'
 import {  RowBetween, RowFixed } from '../Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
-import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
-
+import { SwapCallbackError } from './styleds'
+import {useWalletModalTogglecustome} from '../../state/application/hooks'
+import TradePrice from '../../components/swap/TradePrice'
 export default function SwapModalFooter({
   trade,
   onConfirm,
@@ -33,13 +33,15 @@ export default function SwapModalFooter({
   disabledConfirm: boolean
 }) {
   const i18n = useI18n()
-  const [showInverted, setShowInverted] = useState<boolean>(false)
+  // const [showInverted, setShowInverted] = useState<boolean>(false)
+  const toggleWalletModalcustome = useWalletModalTogglecustome()
   const theme = useContext(ThemeContext)
   const slippageAdjustedAmounts = useMemo(() => computeSlippageAdjustedAmounts(trade, allowedSlippage), [
     allowedSlippage,
     trade
   ])
-  const { priceImpactWithoutFee, realizedLPFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
+  const [showInverted, setShowInverted] = useState<boolean>(false)
+  const { priceImpactWithoutFee } = useMemo(() => computeTradePriceBreakdown(trade), [trade])
   const severity = warningSeverity(priceImpactWithoutFee)
 
   return (
@@ -49,6 +51,7 @@ export default function SwapModalFooter({
           <Text fontWeight={400} fontSize={14} color={theme.colors.text2}>
             Price
           </Text>
+
           <Text
             fontWeight={500}
             fontSize={14}
@@ -61,10 +64,12 @@ export default function SwapModalFooter({
               paddingLeft: '10px'
             }}
           >
-            {formatExecutionPrice(trade, showInverted)}
-            <StyledBalanceMaxMini onClick={() => setShowInverted(!showInverted)}>
-              <Repeat size={14} />
-            </StyledBalanceMaxMini>
+          <TradePrice
+                          price={trade?.executionPrice}
+                          showInverted={showInverted}
+                          setShowInverted={setShowInverted}
+                        />
+            
           </Text>
         </RowBetween>
 
@@ -72,15 +77,10 @@ export default function SwapModalFooter({
           <RowFixed>
             <TYPE.black fontSize={14} fontWeight={400} color={theme.colors.text2}>
               {trade.tradeType === TradeType.EXACT_INPUT
-                ? i18n(828, 'Minimum received')
-                : i18n(830, 'Maximum sold')}
+                ? i18n(828, 'Min received')
+                : i18n(830, 'Min received')}
             </TYPE.black>
-            <QuestionHelper
-              text={i18n(
-                832,
-                'Your transaction will revert if there is a large, unfavorable price movement before it is confirmed.'
-              )}
-            />
+           
           </RowFixed>
           <RowFixed>
             <TYPE.black fontSize={14}>
@@ -98,6 +98,18 @@ export default function SwapModalFooter({
         <RowBetween>
           <RowFixed>
             <TYPE.black color={theme.colors.text2} fontSize={14} fontWeight={400}>
+            Slippage
+            </TYPE.black>
+           
+          </RowFixed>
+          <TYPE.black>
+          {allowedSlippage / 100}% <i className="fa fa-pencil" aria-hidden="true" style={{cursor:"pointer"}} onClick={toggleWalletModalcustome}></i>
+          </TYPE.black>
+        
+        </RowBetween>
+        <RowBetween>
+          <RowFixed>
+            <TYPE.black color={theme.colors.text2} fontSize={14} fontWeight={400}>
               {i18n(836, 'Price Impact')}
             </TYPE.black>
             <QuestionHelper
@@ -109,30 +121,7 @@ export default function SwapModalFooter({
           </RowFixed>
           <FormattedPriceImpact priceImpact={priceImpactWithoutFee} />
         </RowBetween>
-        <RowBetween>
-          <RowFixed>
-            <TYPE.black fontSize={14} fontWeight={400} color={theme.colors.text2}>
-              {i18n(838, 'Liquidity Provider Fee')}
-            </TYPE.black>
-            <QuestionHelper
-              text={i18n(
-                844,
-                'For each trade a %totalFee% fee is paid. %treasuryFee% goes to liquidity providers, %teamFee% goes to the %team% treasury and %buybackFee% goes to %token% buyback and burn.',
-                {
-                  totalFee: '0.25',
-                  treasuryFee: '0.15%',
-                  teamFee: '0.05%',
-                  buybackFee: '0.05%',
-                  token: 'PUD',
-                  team: 'PuddingSwap'
-                }
-              )}
-            />
-          </RowFixed>
-          <TYPE.black fontSize={14}>
-            {realizedLPFee ? realizedLPFee?.toSignificant(6) + ' ' + trade.inputAmount.currency.symbol : '-'}
-          </TYPE.black>
-        </RowBetween>
+      
       </AutoColumn>
 
       <div style={{display:"flex",justifyContent:"center",textAlign:"center"}}>

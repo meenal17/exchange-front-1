@@ -5,7 +5,7 @@ import TransactionConfirmationModal, {
   TransactionErrorContent
 } from '../TransactionConfirmationModal'
 import SwapModalFooter from './SwapModalFooter'
-import SwapModalHeader from './SwapModalHeader'
+// import SwapModalHeader from './SwapModalHeader'
 
 /**
  * Returns true if the trade requires a confirmation of details before we can submit it
@@ -54,13 +54,7 @@ export default function ConfirmSwapModal({
 
   const modalHeader = useCallback(() => {
     return trade ? (
-      <SwapModalHeader
-        trade={trade}
-        allowedSlippage={allowedSlippage}
-        recipient={recipient}
-        showAcceptChanges={showAcceptChanges}
-        onAcceptChanges={onAcceptChanges}
-      />
+      ""
     ) : null
   }, [allowedSlippage, onAcceptChanges, recipient, showAcceptChanges, trade])
 
