@@ -85,7 +85,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
   display: block;
   width: 100%;
   max-width: 1920px;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
    .accountbutton{

@@ -206,7 +206,7 @@ const Mytextto = styled.div`
   color: #fff;
   font-size: 3rem;
   line-height: 1.2em;
-  padding-top: 9.7rem;
+  padding-top: 13.7rem;
   font-weight: 900;
   text-align: center;
   font-family: 'Inter', sans-serif !important;
