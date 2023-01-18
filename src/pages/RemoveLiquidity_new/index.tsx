@@ -15,7 +15,7 @@ import TransactionConfirmationModal, { ConfirmationModalContent } from '../../co
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import DoubleCurrencyLogo from '../../components/DoubleLogo'
 import { AddRemoveTabs } from '../../components/NavigationTabs'
-import { MinimalPositionCard } from '../../components/PositionCard_new'
+// import { MinimalPositionCard } from '../../components/PositionCard_new'
 import Row, { RowBetween, RowFixed } from '../../components/Row'
 
 import Slider from '../../components/Slider'
@@ -688,11 +688,11 @@ export default function RemoveLiquidity({
             </div>
           </AutoColumn>
         </Wrapper>
-        {pair ? (
+        {/* {pair ? (
         <AutoColumn style={{ minWidth: '20rem', marginTop: '1rem' }}>
           <MinimalPositionCard showUnwrapped={oneCurrencyIsWETH} pair={pair} />
         </AutoColumn>
-      ) : null}
+      ) : null} */}
       </AppBody>
       </div>
      
