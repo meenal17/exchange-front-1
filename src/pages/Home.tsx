@@ -4,6 +4,8 @@ import Carsole from './Carsolle/Carasole'
 import Support from './Support'
 import Footer from './HomeFooter/Footer'
 import Particle from './particle/Particle'
+
+
 const Body = styled.div`
   // background: url('/background.png');
   // background: black;
@@ -28,10 +30,16 @@ const Body = styled.div`
 //  `};
 // `
 const Container1 = styled.div`
-margin-top:1rem;
+// margin-top:1rem;
+background: url('/bg_handshake.png') center;
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 690px;
+
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   padding: 0;
   margin: unset;
+  min-height: 350px;
  `};
 //  ${({ theme }) => theme.mediaWidth.upToLarge`
 //  padding: 143px 0 300px;
@@ -136,6 +144,7 @@ const Homecardthree = styled.div`
   text-align: center;
   margin-bottom: 50px;
   color: rgb(63 34 108);
+  margin-left: 25px;
   box-shadow: 0px 0px 5px 4px rgb(63 34 108);
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
 white-space:no-wrap;
@@ -206,7 +215,7 @@ const Mytextto = styled.div`
   color: #fff;
   font-size: 3rem;
   line-height: 1.2em;
-  padding-top: 9.7rem;
+  padding-top: 10.7rem;
   font-weight: 900;
   text-align: center;
   font-family: 'Inter', sans-serif !important;
@@ -221,18 +230,19 @@ const Mytextto = styled.div`
   font-family: 'Inter', sans-serif !important;
   background: linear-gradient(113deg,#abe0b6,#47a7ae,#0892ff);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent
+  -webkit-text-fill-color: transparent;
+  padding-top: 2rem;
   color: #fff;
   `};
 `
 const Bannertxt = styled.div`
   font-family: 'Inter', sans-serif !important;
   color: #fff;
-  font-size: 1.8rem;
-  margin-top: 10px;
-  line-height: 1.3em;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  line-height: 1.5em;
   padding: 0 9rem;
-  font-weight: 600;
+  font-weight: normal;
   text-align: center;
   background: linear-gradient(92deg, #ebc1a3, #d890a2);
   -webkit-background-clip: text;
@@ -297,9 +307,9 @@ const Sectiotwosection = styled.div`
 `
 
 const Carsolesection = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  // display: flex;
+  // justify-content: space-around;
+  // align-items: center;
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   display: unset;
@@ -344,7 +354,7 @@ const Home = () => {
           <div className="stars-wrapper">
             <Particle />
             <Container1>
-              <img className="handshake_bg_img" src="bg_handshake.png" alt="" />
+              {/* <img className="handshake_bg_img" src="bg_handshake.png" alt="" /> */}
               <Handshakeheading>
                 <Mytextto>
                   A Cross-Chain Protocol
@@ -412,7 +422,7 @@ const Home = () => {
             {/* section three start */}
             <Container3>
               <Bannerheading>
-                <Textwhy>Why We Use LeBo</Textwhy>
+                <Textwhy>Why Use LeBo?</Textwhy>
 
                 <div className="headingborderto"></div>
               </Bannerheading>

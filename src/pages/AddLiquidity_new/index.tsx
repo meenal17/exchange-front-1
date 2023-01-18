@@ -51,7 +51,7 @@ export const AppBody2 = styled.div`
   background: #121111;
   position: relative;
   // width: 100%;
-  width: 420px;
+  width: 470px;
   box-shadow: 0px 0px 10px 0px rgb(82 220 174);
   border: 1px solid grey;
   border-radius: 12px;
@@ -59,7 +59,7 @@ export const AppBody2 = styled.div`
   margin-bottom: 10px;
   margin-top: 10px;
   // min-height: 263px;
-  height: 300px;
+  // height: 300px;
   // max-height: 551px;
   overflow: auto;
   margin-left: 20px;

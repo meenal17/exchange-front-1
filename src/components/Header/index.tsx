@@ -19,8 +19,8 @@ const HeaderFrame = styled.div`
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
-  top: 0;
-  position: absolute;
+  // top: 0;
+  // position: absolute;
   background:#2422220d;
  // background:  ${({ theme }) => theme.colors.bg1}
   z-index: 2;

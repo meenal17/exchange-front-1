@@ -196,7 +196,7 @@ const Modal = styled.div`
     margin-top: -5px;
     left: -3px;
     top: 37px;
-    width: 200px;
+    width: 176px;
     padding: 4px 12px 12px 12px;
     display: none;
     padding-left: 20px;

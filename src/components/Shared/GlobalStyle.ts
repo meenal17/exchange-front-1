@@ -2,13 +2,13 @@ import { createGlobalStyle } from 'styled-components'
 
 export const FixedGlobalStyle = createGlobalStyle`
     html, input, textarea, button {
-      font-family: "Noto Sans", sans-serif;
+      font-family: 'Inter', sans-serif !important;
       letter-spacing: -0.018em;
       font-display: fallback;
     }
     @supports (font-variation-settings: normal) {
       html, input, textarea, button {
-        font-family: "Noto Sans", sans-serif;
+        font-family: 'Inter', sans-serif !important;
       }
     }
 
@@ -80,13 +80,13 @@ export const ThemedGlobalStyle = createGlobalStyle`
    }
 
 
-.handshake_bg_img {
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-}
+// .handshake_bg_img {
+//   position: relative;
+//   display: block;
+//   width: 100%;
+//   max-width: 1920px;
+//   margin: 3rem auto;
+// }
 
    .accountbutton{
     background: #1D1F20;
@@ -199,7 +199,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     background: linear-gradient(92deg,#ebc1a3,#d890a2,#f5c1a9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bolder;
+    font-weight: 600;
   }
 
  .poolcardsd{
@@ -207,7 +207,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
   font-size: 25px;
   font-weight: bolder;
   color: #e5e6e6;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #282828;
   padding: 0px 10px 10px;
   margin-bottom:15px;
 }
@@ -307,10 +307,18 @@ display:none;
 }
 .fontss{
   font-size: 15px !important;
+  font-weight: bold;
   text-align:center;
+  margin-bottom:7px;
   ${({ theme }) => (theme as any).mediaWidth.upToMedium`
   font-size:13px !important;
   `};
+}
+.sub-font {
+  font-size: 15px !important;
+  font-weight: 400;
+  text-align:center;
+  margin-bottom:5px;
 }
 .icons{
   display:flex;
@@ -338,7 +346,7 @@ width:9rem !important;
 }
 .headingborderto{
   border-top: 1px solid #53ad9e;
-  width: 26rem !important;
+  width: 20rem !important;
   margin: 0 auto;
   
   margin-top: -8px;
@@ -387,7 +395,7 @@ margin-top:-4px;
     justify-content: end;
     width: 100%;
     margin-left:-80px;
-    margin-top:60px;
+    // margin-top:60px;
     align-items:center;
     ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
     margin-top:3px;
@@ -437,7 +445,7 @@ z-index:1111;
 }
 .plusicoto{
   // border: 1px solid rgb(17 115 110);
-  padding: 0.1rem;
+  padding: 0.2rem;
   border-radius: 11px;
   width: 22px;
   /* width: 200px; */
@@ -447,7 +455,7 @@ z-index:1111;
   margin: 10px;
 }
 .pooldiv{
-  height: 140px;
+  height: 166px;
     overflow-y: scroll;
 }
 .pooldiv::-webkit-scrollbar {

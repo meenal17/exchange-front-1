@@ -23,12 +23,12 @@ const Base = styled(RebassButton)<{
   // border: 1px solid transparent;
   color: white;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
+  // display: flex;
+  // justify-content: center;
+  // flex-wrap: nowrap;
   align-items: center;
   cursor: pointer;
-  position: relative;
+  // position: relative;
   z-index: 1;
   &:disabled {
     cursor: auto;
@@ -110,10 +110,10 @@ export const ButtonSecondary = styled(Base)`
 background: linear-gradient(88deg,#0bc496,#1f6d99);
   color: ${({ theme }) => theme.colors.buttonText};
   font-size: 18px;
-  font-weight:bold;
-  border-radius: 8px;
-  padding: 8px 43px;
-  // padding: ${({ padding }) => (padding ? padding : '10px')};
+  font-weight: bold;
+  border-radius: 15px;
+  // padding: 8px 43px;
+  padding: ${({ padding }) => (padding ? padding : '10px')};
 
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.colors.primary4};
@@ -161,8 +161,11 @@ export const ButtonPink = styled(Base)`
 `
 
 export const ButtonOutlined = styled(Base)`
-  border: 1px solid #5f907f;
+  // border: 1px solid #5f907f;
+  border: 1px solid #E5B0A3;
   background-color: transparent;
+  font-weight: bold;
+  font-size: 18px
   color: ${({ theme }) => theme.colors.text1};
 
   &:focus {

@@ -11,7 +11,7 @@ import { useActiveWeb3React } from '../../hooks'
 import { useTokenBalance } from '../../state/wallet/hooks'
 import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/wrappedCurrency'
-import { ButtonSecondary } from '../Button'
+import { ButtonSecondary, ButtonOutlined } from '../Button'
 
 import Card, { GreyCard } from '../Card'
 import { AutoColumn } from '../Column'
@@ -33,11 +33,13 @@ export const MyRowfixed = styled.div`
   display: -ms-flexbox;
   -ms-flex-align: center;
   width: -moz-fit-content;
+  justify-content: space-between;
 `
 export const Childcard = styled.div`
   display: flex;
+  justify-content: space-between;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0 0;
   ${({ theme }) => theme.mediaWidth.upToMedium`
 white-space: nowrap;
  padding:unset;
@@ -211,29 +213,39 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
                 {currency1.symbol}
               </div>
 
-              <ButtonSecondary as={Link} to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`} width="26%">
-                Add
-              </ButtonSecondary>
+              <div style={{ marginTop: '10px' }}>
+                <ButtonSecondary
+                  as={Link}
+                  to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}
+                  style={{ padding: '7px 16px' }}
+                >
+                  Add
+                </ButtonSecondary>
 
-              <ButtonSecondary as={Link} width="26%" to={`/remove/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                Remove
-              </ButtonSecondary>
+                <ButtonOutlined
+                  as={Link}
+                  to={`/remove/${currencyId(currency0)}/${currencyId(currency1)}`}
+                  style={{ marginLeft: '10px', padding: '5px 16px' }}
+                >
+                  <span className="customtextstyle">Remove</span>
+                </ButtonOutlined>
+              </div>
             </MyRowfixed>
           </FixedHeightRow>
           <Childcard>
-            <FixedHeightRow>
+            <div>
               <div style={{ marginTop: '10px' }}>
                 {token0Deposited ? <div className="fontss">{token0Deposited?.toSignificant(6)}</div> : '-'}
-                <div className="fontss">Pooled {currency0.symbol}</div>
+                <div className="sub-font">Pooled {currency0.symbol}</div>
               </div>
-            </FixedHeightRow>
+            </div>
 
-            <FixedHeightRow>
+            <div>
               <div style={{ marginTop: '10px' }}>
                 {token1Deposited ? <div className="fontss">{token1Deposited?.toSignificant(6)}</div> : '-'}
-                <div className="fontss">Pooled {currency1.symbol}</div>
+                <div className="sub-font">Pooled {currency1.symbol}</div>
               </div>
-            </FixedHeightRow>
+            </div>
             {/* <FixedHeightRow>
               <Text fontSize={16} fontWeight={500}>
                 Your pool tokens:
@@ -242,12 +254,12 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
                 {userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}
               </Text>
             </FixedHeightRow> */}
-            <FixedHeightRow>
+            <div>
               <div style={{ marginTop: '10px' }}>
                 <div className="fontss">{poolTokenPercentage ? poolTokenPercentage.toFixed(2) + '%' : '-'}</div>
-                <div className="fontss">Pool share</div>
+                <div className="sub-font">Pool share</div>
               </div>
-            </FixedHeightRow>
+            </div>
           </Childcard>
         </AutoColumn>
       </AutoColumn>
