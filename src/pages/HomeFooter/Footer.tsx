@@ -27,12 +27,12 @@ const Footer = () => {
           {/* <div className="border1"></div> */}
           <div className="productparent">
             <div>
-              <div>swap</div>
+              <div>Swap</div>
               <div>Bridge</div>
               <div>Farm</div>
             </div>
             <div>
-              <div>liquidity</div>
+              <div>Liquidity</div>
               <div>Staking</div>
               <div className='Markets'>Markets</div>
             </div>

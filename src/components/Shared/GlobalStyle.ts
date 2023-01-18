@@ -138,7 +138,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     position: relative;
     border-radius:
     borderWidth:3px;
-    border-radius:3px;
+    border-radius:10px;
     padding:10px;
     display: inline-flex;
     gap:6px;
@@ -158,7 +158,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     height: calc(100% + 3px * 2);
     width: calc(100% + 3px * 2);
     background: linear-gradient(92deg,#ebc1a3,#d890a2,#be7d8d,#f5c1a9,#f0c1a6);
-    border-radius: calc(2 * 3px);
+    border-radius: calc(2 * 6px);
     z-index: -1;
     background-size: 300% 300%;
   }
