@@ -438,6 +438,7 @@ margin-top:-4px;
     margin-left:-80px;
     // margin-top:60px;
     align-items:center;
+    margin-top:10px;
     ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
     margin-top:3px;
     margin-bottom:10px;

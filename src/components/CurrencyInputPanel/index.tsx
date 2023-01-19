@@ -35,7 +35,6 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   user-select: none;
   border: none;
   padding: 0.25rem 0.5rem;
-
   :focus,
   :hover {
     background-color: ${({ selected, theme }) => (selected ? theme.colors.bg0 : theme.colors.mybg)};
@@ -272,12 +271,12 @@ export default function CurrencyInputPanel({
                 style={{
                   textAlign: 'end',
                   cursor: 'pointer',
-                  fontWeight: 500,
+                  // fontWeight: 500,
                   fontSize: 15,
                   paddingRight: '18px',
                   marginBottom: '15px',
-                  letterSpacing: '1px',
-                  fontFamily: 'Inter'
+                  letterSpacing: '0.5px'
+                 
                 }}
               >
                 {!hideBalance && !!currency && selectedCurrencyBalance
