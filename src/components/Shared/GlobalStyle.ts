@@ -35,6 +35,37 @@ export const FixedGlobalStyle = createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
+
+    nav a {
+      
+      color: rgb(127, 134, 143);
+      margin-right: 30px;
+      text-decoration: none;
+      transition: transform 0.3s; 
+      background: linear-gradient(to right, #13b9aa 0%, #1e729a 100%);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 20px;
+
+    }
+
+    nav a.active{
+      background: #ccc;
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav a:hover {
+      background: #ccc;
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transform: scale(1.2);
+    }
 `
 
 export const ThemedGlobalStyle = createGlobalStyle`
@@ -137,11 +168,11 @@ export const ThemedGlobalStyle = createGlobalStyle`
     background: #1D1F20;
     position: relative;
     border-radius:
-    borderWidth:3px;
-    border-radius:3px;
+    border-width:3px;
+    border-radius:10px;
     padding:10px;
     display: inline-flex;
-    gap:6px;
+    gap:10px;
     border:none;
     align-items:center;
     width:170px;
@@ -158,7 +189,7 @@ export const ThemedGlobalStyle = createGlobalStyle`
     height: calc(100% + 3px * 2);
     width: calc(100% + 3px * 2);
     background: linear-gradient(92deg,#ebc1a3,#d890a2,#be7d8d,#f5c1a9,#f0c1a6);
-    border-radius: calc(2 * 3px);
+    border-radius: calc(2 * 6px);
     z-index: -1;
     background-size: 300% 300%;
   }
@@ -558,4 +589,8 @@ right: 21px;
 overflow:hidden;
 
 }
+
+.active{
+  color:#fcfcfc;
+ }
 `
