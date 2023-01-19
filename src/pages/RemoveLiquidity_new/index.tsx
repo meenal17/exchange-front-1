@@ -384,9 +384,9 @@ export default function RemoveLiquidity({
   function modalBottom() {
     return (
       <>
-        <RowBetween>
+        <RowBetween style={{marginBottom:"10px"}}>
           <Text color={theme.colors.text2} fontWeight={500} fontSize={16}>
-            {'FLIP ' + currencyA?.symbol + '/' + currencyB?.symbol} Burned
+            {currencyA?.symbol + '/' + currencyB?.symbol} LP Burned
           </Text>
           <RowFixed>
             <DoubleCurrencyLogo currency0={currencyA} currency1={currencyB} margin={true} />
@@ -395,25 +395,7 @@ export default function RemoveLiquidity({
             </Text>
           </RowFixed>
         </RowBetween>
-        {pair && (
-          <>
-            <RowBetween>
-              <Text color={theme.colors.text2} fontWeight={500} fontSize={16}>
-                Price
-              </Text>
-           {/* <PoolPriceBar/> */}
-              <Text fontWeight={500} fontSize={16} color={theme.colors.text1}>
-                1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
-              </Text>
-            </RowBetween>
-            <RowBetween>
-              <div />
-              <Text fontWeight={500} fontSize={16} color={theme.colors.text1}>
-                1 {currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol}
-              </Text>
-            </RowBetween>
-          </>
-        )}
+      
         <ButtonPrimary disabled={!(approval === ApprovalState.APPROVED || signatureData !== null)} onClick={onRemove}>
           <Text fontWeight={500} fontSize={20}>
             Confirm
@@ -423,6 +405,26 @@ export default function RemoveLiquidity({
     )
   }
 
+
+    {/* {pair && ( */}
+          // <>
+          //   <RowBetween>
+          //     <Text color={theme.colors.text2} fontWeight={500} fontSize={16}>
+          //       Price
+          //     </Text>
+          //  {/* <PoolPriceBar/> */}
+          //     <Text fontWeight={500} fontSize={16} color={theme.colors.text1}>
+          //       1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
+          //     </Text>
+          //   </RowBetween>
+          //   <RowBetween>
+          //     <div />
+          //     <Text fontWeight={500} fontSize={16} color={theme.colors.text1}>
+          //       1 {currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'} {currencyA?.symbol}
+          //     </Text>
+          //   </RowBetween>
+          // </>
+        // )}
   const pendingText = `Removing ${parsedAmounts[Field.CURRENCY_A]?.toSignificant(6)} ${
     currencyA?.symbol
   } and ${parsedAmounts[Field.CURRENCY_B]?.toSignificant(6)} ${currencyB?.symbol}`
