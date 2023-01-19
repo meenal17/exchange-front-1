@@ -19,11 +19,11 @@ const StyledRangeInput = styled.input<{ size: number }>`
     -webkit-appearance: none;
     height: ${({ size }) => size}px;
     width: ${({ size }) => size}px;
-    background-color: #565a69;
+    background-color: #1f6d99;
     border-radius: 100%;
     border: none;
     transform: translateY(-50%);
-    color: ${({ theme }) => theme.colors.bg1};
+    color: ${({ theme }) => theme.colors.bg0};
 
     &:hover,
     &:focus {
@@ -35,7 +35,7 @@ const StyledRangeInput = styled.input<{ size: number }>`
   &::-moz-range-thumb {
     height: ${({ size }) => size}px;
     width: ${({ size }) => size}px;
-    background-color: #565a69;
+    background-color: #1f6d99;
     border-radius: 100%;
     border: none;
     color: ${({ theme }) => theme.colors.bg1};
@@ -50,7 +50,7 @@ const StyledRangeInput = styled.input<{ size: number }>`
   &::-ms-thumb {
     height: ${({ size }) => size}px;
     width: ${({ size }) => size}px;
-    background-color: #565a69;
+    background-color: #1f6d99;
     border-radius: 100%;
     color: ${({ theme }) => theme.colors.bg1};
 
@@ -62,12 +62,12 @@ const StyledRangeInput = styled.input<{ size: number }>`
   }
 
   &::-webkit-slider-runnable-track {
-    background: linear-gradient(90deg, ${({ theme }) => theme.colors.bg5}, ${({ theme }) => theme.colors.bg3});
+    background: linear-gradient(90deg, ${({ theme }) => theme.colors.plus}, ${({ theme }) => theme.colors.themeColor});
     height: 2px;
   }
 
   &::-moz-range-track {
-    background: linear-gradient(90deg, ${({ theme }) => theme.colors.bg5}, ${({ theme }) => theme.colors.bg3});
+    background: linear-gradient(90deg, ${({ theme }) => theme.colors.plus}, ${({ theme }) => theme.colors.themeColor});
     height: 2px;
   }
 
@@ -109,7 +109,7 @@ export default function Slider({ value, onChange, min = 0, step = 1, max = 100, 
       size={size}
       type="range"
       value={value}
-      style={{ width: '90%', marginLeft: 15, marginRight: 15, padding: '15px 0' }}
+      style={{ width: '95%', marginLeft: 5, marginRight: 15, padding: '15px 0' }}
       onChange={changeCallback}
       aria-labelledby="input slider"
       step={step}

@@ -50,6 +50,7 @@ export default {
     strokColor: '#E1E1E1',
     navBg: '#C4C4C4',
     plus:'#0bc496',
-    themeColor:'#1f6d99'
+    themeColor:'#1f6d99',
+    RedBg:'#f16f6f'
   }
 }

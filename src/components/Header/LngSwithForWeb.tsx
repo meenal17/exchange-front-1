@@ -49,7 +49,7 @@ const StyledButton = styled.div`
     position: absolute;
     height: 60px;
     top: 0;
-    padding-top: 10px;
+    padding: 10px;
     box-sizing: border-box;
   }
   &:hover {
