@@ -6,13 +6,13 @@ const Nav: React.FC = () => {
   return (
     <StyledNav>
       <NavLink to="/home">
-        <div style={{ display: 'flex', gap: '3px' }}>
+        <div style={{ display: 'flex', gap: '4px' }}>
           <img src="Vector.png" alt="" />
           <TranslatedText translationId={198}>Markets</TranslatedText>
         </div>
       </NavLink>
       <NavLink to="/swap">
-        <div style={{ display: 'flex', gap: '3px' }}>
+        <div style={{ display: 'flex', gap: '4px' }}>
           <img src="Vector 2.png" alt="" />
           <TranslatedText translationId={200}>Swap</TranslatedText>
         </div>

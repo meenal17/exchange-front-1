@@ -49,9 +49,14 @@ export const FixedGlobalStyle = createGlobalStyle`
       background-clip: border-box;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 20px;
+      font-size: 22px;
 
     }
+    nav a img {
+      width: 18px;
+      height: 18px;
+      align-self: center;
+         }
 
     nav a.active{
       background: #ccc;
@@ -64,7 +69,12 @@ export const FixedGlobalStyle = createGlobalStyle`
       background-clip: border-box;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      transform: scale(1.2);
+      // transform: scale(1.2);
+    }
+
+    nav a:hover img,
+    nav a.active img {
+      filter: brightness(10);
     }
 `
 
