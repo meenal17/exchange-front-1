@@ -35,6 +35,47 @@ export const FixedGlobalStyle = createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
+
+    nav a {
+      
+      color: rgb(127, 134, 143);
+      margin-right: 30px;
+      text-decoration: none;
+      transition: transform 0.3s; 
+      background: linear-gradient(to right, #13b9aa 0%, #1e729a 100%);
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 22px;
+
+    }
+    nav a img {
+      width: 18px;
+      height: 18px;
+      align-self: center;
+         }
+
+    nav a.active{
+      background: #ccc;
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    nav a:hover {
+      background: #ccc;
+      background-clip: border-box;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // transform: scale(1.2);
+    }
+
+    nav a:hover img,
+    nav a.active img {
+      filter: brightness(10);
+    }
 `
 
 export const ThemedGlobalStyle = createGlobalStyle`
@@ -136,12 +177,11 @@ export const ThemedGlobalStyle = createGlobalStyle`
   .accountbuttonxyz{
     background: #1D1F20;
     position: relative;
-    border-radius:
-    borderWidth:3px;
+    border-width:3px;
     border-radius:10px;
     padding:10px;
     display: inline-flex;
-    gap:1px;
+    gap:10px;
     border:none;
     align-items:center;
     width:170px;
