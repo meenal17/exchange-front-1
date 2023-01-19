@@ -588,7 +588,7 @@ export default function RemoveLiquidity({
                           </Text>
                         </RowFixed>
                       </RowBetween>
-                      {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
+                      {/* {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
                         <RowBetween style={{ justifyContent: 'flex-end' }}>
                           {oneCurrencyIsETH ? (
                             <StyledInternalLink
@@ -608,7 +608,7 @@ export default function RemoveLiquidity({
                             </StyledInternalLink>
                           ) : null}
                         </RowBetween>
-                      ) : null}
+                      ) : null} */}
                     </AutoColumn>
                   </LightCard>
                 </>
@@ -708,7 +708,7 @@ export default function RemoveLiquidity({
                       
                     >
                       <Text fontSize={16} fontWeight={500}>
-                        {error || ' x Remove'}
+                        {error || ' XRemove'}
                       </Text>
                     </ButtonError>
                   </RowBetween>

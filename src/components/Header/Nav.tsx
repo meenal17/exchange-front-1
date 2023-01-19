@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 const Nav: React.FC = () => {
   return (
     <StyledNav>
-      <NavLink to="/home">
+      <NavLink to="/undefined">
         <div style={{ display: 'flex', gap: '4px' }}>
           <img src="images/Vector.png" alt="" />
           <TranslatedText translationId={198}>Markets</TranslatedText>

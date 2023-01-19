@@ -27,7 +27,7 @@ export default function TradePrice({ price, showInverted, setShowInverted }: Tra
       fontWeight={500}
       fontSize={13}
       color="#dad8d8"
-      style={{ justifyContent: 'center', alignItems: 'center', display: 'flex' }}
+      className='refreshicon'
     >
       {show ? (
         <>
