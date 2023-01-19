@@ -213,7 +213,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
   padding: 13rem 0;
   width:80%;
     margin: 0 auto;
-    background: url(/astronaut.png);
+    background: url(/images/astronaut.png);
     background-position: bottom;
     background-repeat: no-repeat;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -235,7 +235,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
         <Parentsupportcard>
           <Supportecard style={{ boxShadow: '0px 0px 5px 4px rgb(38 49 91)' }}>
             <Cardimg>
-              <img src="eth.png" alt="bsc" className="cardimgsize" />
+              <img src="images/eth.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize">Ethereum</h2>
@@ -243,7 +243,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
           </Supportecard>
           <Supportecard style={{ boxShadow: 'hsl(0deg 1% 66% / 63%) 1px 0px 4px 3px' }}>
             <Cardimg>
-              <img src="polygon.png" alt="bsc" className="cardimgsize" />
+              <img src="images/polygon.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize"> Polygon</h2>
@@ -252,7 +252,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
 
           <Supportecard style={{ boxShadow: '#742c2c 0px 0px 5px 4px' }}>
             <Cardimg>
-              <img src="ava.png" alt="bsc" className="cardimgsize" />
+              <img src="images/ava.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize">Avalanche</h2>
@@ -260,7 +260,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
           </Supportecard>
           <Supportecard style={{ boxShadow: '0px 0px 5px 4px rgb(38 49 91)' }}>
             <Cardimg>
-              <img src="fantom.png" alt="bsc" className="cardimgsize" />
+              <img src="images/fantom.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize">Fantom</h2>
@@ -271,7 +271,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
         <Parentsupportcard>
           <Supportecard style={{ boxShadow: ' rgb(240 185 11) 0px 0px 7px 1px' }}>
             <Cardimg>
-              <img src="bsc.png" alt="bsc" className="cardimgsize" />
+              <img src="images/bsc.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize">Bsc</h2>
@@ -279,7 +279,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
           </Supportecard>
           <Supportecard style={{ boxShadow: 'rgb(90 15 15) 0px 0px 5px 4px' }}>
             <Cardimg>
-              <img src="tron.png" alt="bsc" className="cardimgsize" />
+              <img src="images/tron.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize">Tron</h2>
@@ -287,7 +287,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
           </Supportecard>
           <Supportecard style={{ boxShadow: 'rgb(48 23 91) 0px 0px 5px 4px' }}>
             <Cardimg>
-              <img src="wyzth.png" alt="bsc" className="cardimgsize" />
+              <img src="images/wyzth.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize">Wyzth</h2>
@@ -295,7 +295,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
           </Supportecard>
           <Supportecard style={{ boxShadow: 'rgb(47 75 88) 0px 0px 5px 4px' }}>
             <Cardimg>
-              <img src="fantom.png" alt="bsc" className="cardimgsize" />
+              <img src="images/fantom.png" alt="bsc" className="cardimgsize" />
             </Cardimg>
             <Cardimg>
               <h2 className="headingfontsize">Lebo Chain</h2>
@@ -315,7 +315,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
       <Parentsupportcardnew>
         <Supportecardto>
           <Cardimg>
-            <img src="Group6.png" alt="bsc" className="cardimgsizeto" />
+            <img src="images/Group6.png" alt="bsc" className="cardimgsizeto" />
           </Cardimg>
           <Cardimg>
             <h2 className="mobiletext">Conitelgraph</h2>
@@ -323,7 +323,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
         </Supportecardto>
         <Supportecardto>
           <Cardimg>
-            <img src="Group7.png" alt="bsc" className="cardimgsizeto" />
+            <img src="images/Group7.png" alt="bsc" className="cardimgsizeto" />
           </Cardimg>
           <Cardimg>
             <h2 className="mobiletext">Yourstory</h2>
@@ -331,7 +331,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
         </Supportecardto>
         <Supportecardto>
           <Cardimg>
-            <img src="Group8.png" alt="bsc" className="cardimgsizeto" />
+            <img src="images/Group8.png" alt="bsc" className="cardimgsizeto" />
           </Cardimg>
           <Cardimg>
             <h2 className="mobiletext">Coindesk</h2>
@@ -344,7 +344,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
       <Parentsupportcarddesk>
         <Supportecarddesk>
           <Cardimg>
-            <img src="Group6.png" alt="bsc" className="cardimgsize" />
+            <img src="images/Group6.png" alt="bsc" className="cardimgsize" />
           </Cardimg>
           <Cardimg>
             <h2>Conitelgraph</h2>
@@ -352,7 +352,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
         </Supportecarddesk>
         <Supportecarddesk>
           <Cardimg>
-            <img src="Group7.png" alt="bsc" className="cardimgsize" />
+            <img src="images/Group7.png" alt="bsc" className="cardimgsize" />
           </Cardimg>
           <Cardimg>
             <h2>Yourstory</h2>
@@ -360,7 +360,7 @@ background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
         </Supportecarddesk>
         <Supportecarddesk>
           <Cardimg>
-            <img src="Group8.png" alt="bsc" className="cardimgsize" />
+            <img src="images/Group8.png" alt="bsc" className="cardimgsize" />
           </Cardimg>
           <Cardimg>
             <h2>Coindesk</h2>

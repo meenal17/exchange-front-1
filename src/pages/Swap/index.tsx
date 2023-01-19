@@ -369,7 +369,7 @@ export default function Swap() {
                 <ArrowWrapper clickable>
                   <img
                     width="50"
-                    src="arrowswap.png"
+                    src="images/arrowswap.png"
                     onClick={() => {
                       setApprovalSubmitted(false) // reset 2 step UI for approvals
                       onSwitchTokens()

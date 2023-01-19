@@ -7,38 +7,38 @@ const Nav: React.FC = () => {
     <StyledNav>
       <NavLink to="/home">
         <div style={{ display: 'flex', gap: '4px' }}>
-          <img src="Vector.png" alt="" />
+          <img src="images/Vector.png" alt="" />
           <TranslatedText translationId={198}>Markets</TranslatedText>
         </div>
       </NavLink>
       <NavLink to="/swap">
         <div style={{ display: 'flex', gap: '4px' }}>
-          <img src="Vector 2.png" alt="" />
+          <img src="images/Vector 2.png" alt="" />
           <TranslatedText translationId={200}>Swap</TranslatedText>
         </div>
       </NavLink>
       <NavLink to="/undefined">
         <div style={{ display: 'flex', gap: '3px' }}>
-          <img src="bridge.png" />
+          <img src="images/bridge.png" />
           <TranslatedText translationId="nav-pud-vault">Bridge</TranslatedText>
         </div>
       </NavLink>
       <NavLink to="/undefined">
         <div style={{ display: 'flex', gap: '3px' }}>
-          <img src="staking.png" alt="" />
+          <img src="images/staking.png" alt="" />
           <TranslatedText translationId={218}>Staking</TranslatedText>
         </div>
       </NavLink>
       <NavLink to="/undefined">
         <div style={{ display: 'flex', gap: '3px' }}>
-          <img src="farming.png" alt="" />
+          <img src="images/farming.png" alt="" />
           <TranslatedText translationId={219}>Farming</TranslatedText>
         </div>
       </NavLink>
 
       <NavLink to="/add/ETH">
         <div style={{ display: 'flex', gap: '3px' }}>
-          <img src="liquidity.png" alt="" />
+          <img src="images/liquidity.png" alt="" />
           <TranslatedText translationId={220}>Liquidity</TranslatedText>
         </div>
       </NavLink>

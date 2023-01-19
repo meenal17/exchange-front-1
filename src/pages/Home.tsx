@@ -31,7 +31,7 @@ const Body = styled.div`
 // `
 const Container1 = styled.div`
 // margin-top:1rem;
-background: url('/bg_handshake.png') center;
+background: url('/images/bg_handshake.png') center;
 background-repeat: no-repeat;
 background-size: cover;
 min-height: 690px;
@@ -49,7 +49,7 @@ min-height: 690px;
 const Container2 = styled.div`
   padding: 3.8rem 0;
   margin: 0 auto;
-  background: url(/bg_moon.png);
+  background: url(/images/bg_moon.png);
   // background-size: cover;
   // background-position: center;
   background-repeat: no-repeat;
@@ -74,7 +74,7 @@ const Containerto = styled.div`
   // padding: 3rem 0;
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
   background-size: contain;
-    background-image: url(./missioto.png);
+    background-image: url(./images/missioto.png);
     background-repeat: no-repeat;
     background-position: center;
     top: 25%;
@@ -82,14 +82,14 @@ const Containerto = styled.div`
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
  background-size: contain;
- background-image: url(./missioto.png);
+ background-image: url(./images/missioto.png);
  background-repeat: no-repeat;
  background-position: center;
  top: 25%;
 `};
   ${({ theme }) => theme.mediaWidth.upToMedium`
 background-size: contain;
-    background-image: url(./missioto.png);
+    background-image: url(./images/missioto.png);
     background-repeat: no-repeat;
     background-position: center;
     top: 25%;
@@ -413,7 +413,7 @@ const Home = () => {
                     </Cardcustom>
                   </div>
                   <Imangecard>
-                    <img src="mission.png" alt="" style={{ width: '100%' }} />
+                    <img src="images/mission.png" alt="" style={{ width: '100%' }} />
                   </Imangecard>
                 </Sectiotwosection>
               </Containerto>

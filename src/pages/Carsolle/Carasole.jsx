@@ -18,7 +18,7 @@ function Carsole() {
 
           <div className="inner_part">
             <label for="slideImg" className="img">
-              <img className="img_1" src="indicate.png" />
+              <img className="img_1" src="images/indicate.png" />
             </label>
             <div className="content content_1">
               <div className="title">Token Swap</div>
@@ -37,7 +37,7 @@ function Carsole() {
 
           <div className="inner_part">
             <label for="slideImg" className="img">
-              <img className="img_2" src="indicate.png" />
+              <img className="img_2" src="images/indicate.png" />
             </label>
             <div className="content content_2">
               <div className="title">Ankara</div>
@@ -56,7 +56,7 @@ function Carsole() {
 
           <div className="inner_part">
             <label for="slideImg" className="img">
-              <img className="img_3" src="indicate.png" />
+              <img className="img_3" src="images/indicate.png" />
             </label>
             <div className="content content_3">
               <div className="title">İzmir</div>
