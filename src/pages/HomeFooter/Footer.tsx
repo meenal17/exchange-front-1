@@ -61,19 +61,19 @@ const Footer = () => {
             <h1>Community</h1>
             <div className="icons">
               <div>
-                <img src="icon1.png" alt="" className='iconfont' />
+                <img src="images/icon1.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon2.png" alt="" className='iconfont' />
+                <img src="images/icon2.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon3.png" alt="" className='iconfont' />
+                <img src="images/icon3.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon4.png" alt="" className='iconfont' />
+                <img src="images/icon4.png" alt="" className='iconfont' />
               </div>
               <div>
-                <img src="icon5.png" alt="" className='iconfont' />
+                <img src="images/icon5.png" alt="" className='iconfont' />
               </div>
             </div>
           </div>
@@ -81,7 +81,7 @@ const Footer = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: '0px 20px' }}>
         <div className="">
-          <img src="Lebo_logo.svg" alt="" style={{ width: '10rem' }} />
+          <img src="images/Lebo_logo.svg" alt="" style={{ width: '10rem' }} />
         </div>
         <div className="footer-bottom">2022 Lebo.All rights reserved</div>
       </div>

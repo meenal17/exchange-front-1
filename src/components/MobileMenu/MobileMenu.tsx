@@ -36,34 +36,34 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
-              <img src="Vector.png" alt="" />
+              <img src="images/Vector.png" alt="" />
               <TranslatedText translationId={198}>Markets</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Link to="/swap" style={{textDecoration:"none"}}>
             <Cn>
               <StyledAbsoluteLink>
-                <img src="Vector 2.png" alt="" />
+                <img src="images/Vector 2.png" alt="" />
                 <TranslatedText translationId={200}>Swap</TranslatedText>
               </StyledAbsoluteLink>
             </Cn>
           </Link>
           <Cn>
             <StyledAbsoluteLink href="#">
-              <img src="bridge.png" />
+              <img src="images/bridge.png" />
               <TranslatedText translationId="nav-pud-vault">Bridge</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
           <Cn>
             <StyledAbsoluteLink href="#">
-              <img src="staking.png" alt="" />
+              <img src="images/staking.png" alt="" />
               <TranslatedText translationId={218}>Staking</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>
 
           <Cn>
             <StyledAbsoluteLink href="#">
-              <img src="farming.png" alt="" />
+              <img src="images/farming.png" alt="" />
               <TranslatedText translationId={348}>Farming</TranslatedText>
             </StyledAbsoluteLink>
           </Cn>

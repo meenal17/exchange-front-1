@@ -38,7 +38,7 @@ const AccountButton: React.FC<{}> = () => {
           <AccountCn>
             <AccountInner>
               <button className="accountbuttonxyz" onClick={myFunction}>
-              <img src="wallet.png" alt="" className="link" width={21} />
+              <img src="images/wallet.png" alt="" className="link" width={21} />
                 <span className="text customtextstyle" style={{ fontSize: '17px' }}>
                   {shortenAddress(account)}
                 </span>
