@@ -182,6 +182,27 @@ export const ButtonOutlined = styled(Base)`
     cursor: auto;
   }
 `
+export const ButtonOutlinedto = styled(Base)`
+   border: 1px solid #5f907f;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 18px
+  color: ${({ theme }) => theme.colors.text1};
+
+  &:focus {
+    box-shadow: 0 0 0 1px #5f907f;
+  }
+  &:hover {
+    box-shadow: 0 0 0 1px #5f907f;
+  }
+  &:active {
+    box-shadow: 0 0 0 1px #5f907f;
+  }
+  &:disabled {
+    opacity: 50%;
+    cursor: auto;
+  }
+`
 
 
 
@@ -298,12 +319,12 @@ export function ButtonDropdown({ disabled = false, children, ...rest }: { disabl
 
 export function ButtonDropdownLight({ disabled = false, children, ...rest }: { disabled?: boolean } & ButtonProps) {
   return (
-    <ButtonOutlined {...rest} disabled={disabled}>
+    <ButtonOutlinedto {...rest} disabled={disabled}>
       <RowBetween>
         <div style={{ display: 'flex', alignItems: 'center' }}>{children}</div>
         <ChevronDown size={24} />
       </RowBetween>
-    </ButtonOutlined>
+    </ButtonOutlinedto>
   )
 }
 

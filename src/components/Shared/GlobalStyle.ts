@@ -177,7 +177,6 @@ export const ThemedGlobalStyle = createGlobalStyle`
   .accountbuttonxyz{
     background: #1D1F20;
     position: relative;
-    border-radius:
     border-width:3px;
     border-radius:10px;
     padding:10px;
@@ -436,7 +435,7 @@ margin-top:-4px;
     justify-content: end;
     width: 100%;
     margin-left:-80px;
-    // margin-top:60px;
+   margin-top:5px;
     align-items:center;
     margin-top:10px;
     ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`

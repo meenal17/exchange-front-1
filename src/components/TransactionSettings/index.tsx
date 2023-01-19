@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 // import QuestionHelper from '../QuestionHelper'
@@ -45,7 +45,7 @@ const FancyButton = styled.button`
 const Option = styled(FancyButton)<{ active: boolean }>`
   margin-right: 8px;
   min-width: 4.4rem;
-    padding: 5px 14px;
+  padding: 5px 14px;
   :hover {
     cursor: pointer;
   }
@@ -69,7 +69,7 @@ const Input = styled.input`
 `
 
 const OptionCustom = styled(FancyButton)<{ active?: boolean; warning?: boolean }>`
-max-width:4.4rem;
+  max-width: 4.4rem;
   height: 2rem;
   position: relative;
   padding: 0;
@@ -93,7 +93,7 @@ max-width:4.4rem;
 //   color: #f3841e;
 //   width:10px;
 //   ${({ theme }) => theme.mediaWidth.upToSmall`
-//     display: none;  
+//     display: none;
 //   `}
 // `
 
@@ -135,6 +135,9 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
   //   deadlineError = undefined
   // }
 
+  useEffect(() => {
+    setRawSlippage(50)
+  }, [])
   function parseCustomSlippage(value: string) {
     setSlippageInput(value)
 
@@ -211,7 +214,6 @@ export default function SlippageTabs({ rawSlippage, setRawSlippage, deadline, se
                 onChange={e => parseCustomSlippage(e.target.value)}
                 color={!slippageInputIsValid ? 'red' : ''}
               />
-              
             </RowBetween>
           </OptionCustom>
         </RowBetween>
