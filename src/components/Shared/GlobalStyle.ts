@@ -602,4 +602,13 @@ overflow:hidden;
 .active{
   color:#fcfcfc;
  }
+ .refreshicon{
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  align-items: center;
+  ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
+  font-size: 10px !important;
+      `};
+ }
 `

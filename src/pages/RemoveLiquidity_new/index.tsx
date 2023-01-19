@@ -569,7 +569,7 @@ export default function RemoveLiquidity({
                   <LightCard>
                     <AutoColumn gap="10px">
                       <RowBetween>
-                        <Text fontSize={25} fontWeight={500}>
+                        <Text fontSize={20} fontWeight={600}>
                           {formattedAmounts[Field.CURRENCY_A] || '-'}
                         </Text>
                         <RowFixed>
@@ -580,7 +580,7 @@ export default function RemoveLiquidity({
                         </RowFixed>
                       </RowBetween>
                       <RowBetween>
-                        <Text fontSize={25} fontWeight={500}>
+                        <Text fontSize={20} fontWeight={600}>
                           {formattedAmounts[Field.CURRENCY_B] || '-'}
                         </Text>
                         <RowFixed>
@@ -590,7 +590,7 @@ export default function RemoveLiquidity({
                           </Text>
                         </RowFixed>
                       </RowBetween>
-                      {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
+                      {/* {chainId && (oneCurrencyIsWETH || oneCurrencyIsETH) ? (
                         <RowBetween style={{ justifyContent: 'flex-end' }}>
                           {oneCurrencyIsETH ? (
                             <StyledInternalLink
@@ -610,7 +610,7 @@ export default function RemoveLiquidity({
                             </StyledInternalLink>
                           ) : null}
                         </RowBetween>
-                      ) : null}
+                      ) : null} */}
                     </AutoColumn>
                   </LightCard>
                 </>
@@ -662,18 +662,18 @@ export default function RemoveLiquidity({
               )}
               {pair && (
                 <div style={{ padding: '10px 20px' }}>
-                  <RowBetween>
+                  <RowBetween style={{justifyContent:"center",marginBottom:"10px"}}>
                     Price of Token
-                   
                   </RowBetween>
                   <RowBetween>
-                    <div style={{fontSize: "15px"}}></div>
-                  <div>
+                  
                     {/* <PoolPriceBar/> */}
-                      1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'}{currencyB?.symbol}
-                     </div> <div >
+                    
+                    <Text fontSize={12} fontWeight={600}>
+                    1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'}{currencyB?.symbol}
+                    <br />
                       1 {currencyB?.symbol} = {tokenB ? pair.priceOf(tokenB).toSignificant(6) : '-'}{currencyA?.symbol}
-                    </div>
+                      </Text>
                   </RowBetween>
                 </div>
               )}
