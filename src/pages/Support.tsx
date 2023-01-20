@@ -203,7 +203,7 @@ justify-content:center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-font-size: 28px;
+font-size: 24px;
 background: linear-gradient(113deg,#c0f5cb,#47a7ae,#0892ff);
  -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

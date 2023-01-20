@@ -53,7 +53,7 @@ function ConfirmationPendingContent({ onDismiss, pendingText }: { onDismiss: () 
             Waiting For Confirmation
           </Text>
           <AutoColumn gap="12px" justify={'center'}>
-            <Text fontWeight={600} fontSize={14} color="" textAlign="center">
+            <Text fontWeight={600} fontSize={14} color="" textAlign="center" style={{lineHeight:"1.6rem"}}>
               {pendingText}
             </Text>
           </AutoColumn>

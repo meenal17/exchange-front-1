@@ -392,7 +392,7 @@ width:9rem !important;
   margin-top: -8px;
 ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
 
-width: 15rem !important;
+width: 13rem !important;
 margin-top: -4px;
 `};
 }
@@ -404,7 +404,7 @@ margin-top: -4px;
   margin-top: 0px;
   margin-top: -8px;
 ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
-width:15rem;
+width:13rem;
 margin-top:-5px;
 `};
 }
@@ -415,7 +415,7 @@ margin-top:-5px;
     margin-top: 0px;
   margin-top: -8px;  
 ${({ theme }) => (theme as any).mediaWidth.upToExtraSmall`
-width:18rem;
+width:16rem;
 margin-top:-4px;
 `};
 }
