@@ -2,7 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import TranslatedText from '../TranslatedText'
 import { NavLink } from 'react-router-dom'
+import { useLocation } from "react-router-dom"
 const Nav: React.FC = () => {
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  console.log(params,"paramsparams");
+  
+  let url = window.location.href;
+  let metaurl = url.split("/remove")[0]+'/remove'
+  let metaurlto=url.split("/add")[0]+'/add'
+ 
+ if(metaurl==="http://localhost:3001/#/remove" || metaurlto==="http://localhost:3001/#/add" ){
+
+ }
+ 
   return (
     <StyledNav>
       <NavLink to="/undefined">
@@ -36,7 +49,7 @@ const Nav: React.FC = () => {
         </div>
       </NavLink>
 
-      <NavLink to="/add/ETH">
+      <NavLink to="/add/ETH" className={(metaurl==="http://localhost:3001/#/remove" || metaurlto==="http://localhost:3001/#/add")?"active":""}>
         <div style={{ display: 'flex', gap: '3px' }}>
           <img src="images/liquidity.png" alt="" />
           <TranslatedText translationId={220}>Liquidity</TranslatedText>

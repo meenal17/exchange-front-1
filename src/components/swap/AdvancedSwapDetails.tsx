@@ -28,7 +28,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
         <RowBetween>
           <RowFixed>
             <TYPE.black fontSize={14} fontWeight={400} color={theme.colors.tetst}>
-              {isExactIn ? "Min received:" : 'Min received'}
+              {isExactIn ? "Min received:" : 'Min received:'}
             </TYPE.black>
             <QuestionHelper
               text={i18n(

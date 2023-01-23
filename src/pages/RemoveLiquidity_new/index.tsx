@@ -45,6 +45,7 @@ import { BigNumber } from '@ethersproject/bignumber'
 // import TradePriceto from '../../components/swap/Tradepriceto'
 import AccountButton from 'components/Header/AccountButton'
 import Particle from '../particle/Particle'
+import { useLocation } from "react-router-dom"
 export default function RemoveLiquidity({
   history,
   match: {
@@ -61,7 +62,17 @@ export default function RemoveLiquidity({
   ])
 
   const theme = useContext(ThemeContext)
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  console.log(params,"paramsparams");
+  
+  let url = window.location.href;
+  let metaurl = url.split("/remove")[0]+'/remove'
+ 
+ if(metaurl==="http://localhost:3001/#/remove"){
 
+ }
+ 
   // toggle wallet when disconnected
   const toggleWalletModal = useWalletModalToggle()
 
@@ -80,7 +91,7 @@ export default function RemoveLiquidity({
   const [txHash, setTxHash] = useState<string>('')
   const [deadline] = useUserDeadline()
   const [allowedSlippage] = useUserSlippageTolerance()
-
+  
   const formattedAmounts = {
     [Field.LIQUIDITY_PERCENT]: parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('0')
       ? '0'
