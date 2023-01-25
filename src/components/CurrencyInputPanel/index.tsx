@@ -205,10 +205,10 @@ export default function CurrencyInputPanel({
         </div>
         <div style={{ display: 'flex' }}>
           <div color={theme.colors.text1} style={{ fontWeight: 'bold', paddingTop: '10px', paddingLeft: '10px' }}>
-            {account && currency && label !== 'To' && <StyledBalanceM onClick={onTwentyper}>25%</StyledBalanceM>}
+            {account && currency && showMaxButton && label !== 'To' && <StyledBalanceM onClick={onTwentyper}>25%</StyledBalanceM>}
           </div>
           <div color={theme.colors.text1} style={{ fontWeight: 'bold', paddingTop: '10px', paddingLeft: '10px' }}>
-            {account && currency && label !== 'To' && <StyledBalanceM onClick={onThirtyper}>50%</StyledBalanceM>}
+            {account && currency && showMaxButton && label !== 'To' && <StyledBalanceM onClick={onThirtyper}>50%</StyledBalanceM>}
           </div>
           <div color={theme.colors.text1} style={{ fontWeight: 'bold', paddingTop: '10px', paddingLeft: '10px' }}>
             {account && currency && showMaxButton && label !== 'To' && (

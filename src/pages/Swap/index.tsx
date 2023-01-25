@@ -397,9 +397,8 @@ export default function Swap() {
               value={formattedAmounts[Field.OUTPUT]}
               onUserInput={handleTypeOutput}
               label={independentField === Field.INPUT && !showWrap && trade ? 'To ' : i18n(310, 'To')}
-              showMaxButton={!atMaxAmountInput}
-              onTwentyper={handleTwentyinput}
-              onThirtyper={handleThirtyinput}
+              showMaxButton={false}
+              
               currency={currencies[Field.OUTPUT]}
               onCurrencySelect={handleOutputSelect}
               otherCurrency={currencies[Field.INPUT]}

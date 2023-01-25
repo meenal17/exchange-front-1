@@ -12,7 +12,7 @@ const Nav: React.FC = () => {
   let metaurl = url.split("/remove")[0]+'/remove'
   let metaurlto=url.split("/add")[0]+'/add'
  
- if(metaurl==="http://localhost:3001/#/remove" || metaurlto==="http://localhost:3001/#/add" ){
+ if(metaurl==="https://lebo.pro/#/remove" || metaurlto==="https://lebo.pro/#/add" ){
 
  }
  
@@ -49,7 +49,7 @@ const Nav: React.FC = () => {
         </div>
       </NavLink>
 
-      <NavLink to="/add/ETH" className={(metaurl==="http://localhost:3001/#/remove" || metaurlto==="http://localhost:3001/#/add")?"active":""}>
+      <NavLink to="/add/ETH" className={(metaurl==="https://lebo.pro/#/remove" || metaurlto==="https://lebo.pro/#/add")?"active":""}>
         <div style={{ display: 'flex', gap: '3px' }}>
           <img src="images/liquidity.png" alt="" />
           <TranslatedText translationId={220}>Liquidity</TranslatedText>
